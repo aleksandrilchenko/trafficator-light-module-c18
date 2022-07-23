@@ -44,7 +44,7 @@ void InitApp(void)
 //unsigned char wasTurningRight;
 //unsigned char wasTurningLeft; 
 
-InitADC(Channel)
+void InitADC(Channel)
 {
     /* ADC Initialisation*/
     
@@ -160,7 +160,7 @@ int GetCurrentValue(void)  // the value is in ADC code
 
     
  /*========  Turn On Right lamps  ==========*/ 
-   unsigned char TurnRight(void)
+   TurnRight()
   {
         //TRISIO = 0b00001011;
         R_ch_out = 1; 
