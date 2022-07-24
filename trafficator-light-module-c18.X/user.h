@@ -34,14 +34,14 @@ void InitApp(void);         /* I/O and Peripheral Initialization */
 /* TODO User level functions prototypes (i.e. InitApp) go here */
 
 
-unsigned char wasTurningRight; // extern
-unsigned char wasTurningLeft; // extern
-unsigned char hazardIsOn; // extern
-unsigned char PWM; // extern
-unsigned char Channel;
+extern bool wasTurningRight; // extern
+extern bool wasTurningLeft; // extern
+extern bool hazardIsOn; // extern
+//unsigned char PWM; // extern
+//extern unsigned char Channel;
 
-int ADC2_value; // extern
-int ADC3_value; // extern
+extern int ADC2_value; // extern
+extern int ADC3_value; // extern
 
 // Function declarations
 //void InitPWM(void);
@@ -49,15 +49,15 @@ void StartBip(void);
 void StopBip(void);
 void InitADC(unsigned char);         /* I/O and Peripheral Initialization */
 
-//int GetADCValue(unsigned char);
-//int GetCurrentValue(void);
+int GetADCValue(unsigned char);
+int GetCurrentValue(void);
 
 //void InitInterrupt (void);
 //void interrupt ISR(void);
 
-//unsigned char TurnRight(void);
-//unsigned char TurnLeft(void);
-//unsigned char AddRightBlinks(void);
-//unsigned char AddLeftBlinks(void);
-//void ReversOn(void);
-//unsigned char Turn_Hazard(void);
+bool TurnRight(void);
+bool TurnLeft(void);
+bool AddRightBlinks(void);
+bool AddLeftBlinks(void);
+void ReversOn(void);
+bool Turn_Hazard(void);
