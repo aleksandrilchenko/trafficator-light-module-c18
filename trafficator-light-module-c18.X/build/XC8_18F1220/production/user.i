@@ -20,35 +20,35 @@ extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\xc8debug.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\xc8debug.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdlib.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdlib.h" 2 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 2 3
 
 
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdlib.h" 2 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\features.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 122 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 3
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 168 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 3
+# 168 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef __int24 int24_t;
-# 204 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 3
+# 204 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef __uint24 uint24_t;
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 2 3
 
 
 int atoi (const char *);
@@ -70,12 +70,23 @@ unsigned long long strtoull (const char *restrict, char **restrict, int);
 int rand (void);
 void srand (unsigned);
 
+void *malloc (size_t);
+void *calloc (size_t, size_t);
+void *realloc (void *, size_t);
+void free (void *);
+
           void abort (void);
 int atexit (void (*) (void));
           void exit (int);
           void _Exit (int);
 
 void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+
+
+
+
+
+
 
 __attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
 
@@ -95,13 +106,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-
-
-
-
-
-size_t __ctype_get_mb_cur_max(void);
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\xc8debug.h" 2 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\xc8debug.h" 2 3
 
 
 
@@ -117,21 +122,21 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 3
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 3
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef signed char int8_t;
 
 
 
 
 typedef short int16_t;
-# 173 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 3
+# 173 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int32_t;
 
 
@@ -139,7 +144,7 @@ typedef long int32_t;
 
 
 typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 3
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long intmax_t;
 
 
@@ -152,7 +157,7 @@ typedef unsigned char uint8_t;
 
 
 typedef unsigned short uint16_t;
-# 209 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 3
+# 209 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long uint32_t;
 
 
@@ -160,9 +165,9 @@ typedef unsigned long uint32_t;
 
 
 typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/alltypes.h" 3
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdint.h" 2 3
 
 
 typedef int8_t int_fast8_t;
@@ -195,13 +200,13 @@ typedef uint24_t uint_fast24_t;
 typedef uint32_t uint_least32_t;
 
 typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\bits/stdint.h" 1 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/stdint.h" 1 3
 typedef int16_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdint.h" 2 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdint.h" 2 3
 # 5 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\builtins.h" 2 3
 
 
@@ -3171,7 +3176,7 @@ unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
 # 7 "user.c" 2
 # 16 "user.c"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdbool.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdbool.h" 1 3
 # 17 "user.c" 2
 
 
@@ -3179,21 +3184,35 @@ unsigned char __t3rd16on(void);
 # 1 "./user.h" 1
 # 13 "./user.h"
 void InitApp(void);
-# 37 "./user.h"
-unsigned char wasTurningRight;
-unsigned char wasTurningLeft;
-unsigned char hazardIsOn;
-unsigned char PWM;
-unsigned char Channel;
+# 43 "./user.h"
+extern _Bool wasTurningRight;
+extern _Bool wasTurningLeft;
 
-int ADC2_value;
-int ADC3_value;
+
+
+extern int _49A_in_value;
+extern int R_ch_in_value_value;
+extern int L_ch_in_value_value;
+extern int Reverse_in_value;
+
 
 
 
 void StartBip(void);
 void StopBip(void);
 void InitADC(unsigned char);
+
+int GetADCValue(unsigned char);
+int GetCurrentValue(void);
+
+
+
+
+_Bool AddRightBlinks(void);
+_Bool AddLeftBlinks(void);
+void ReversOn(void);
+_Bool Turn_49A(void);
+_Bool GetDirection(void);
 # 21 "user.c" 2
 
 
@@ -3209,11 +3228,15 @@ void InitApp(void)
 
 
 
+    int R_ch_in_value = 0;
+    int L_ch_in_value = 0;
 
 
 
 
-void InitADC(Channel)
+
+
+void InitADC(unsigned char Channel)
 {
 
 
@@ -3223,11 +3246,11 @@ void InitADC(Channel)
 
     ADCON0 = 0b00000000;
     ADCON0 |= Channel;
-# 73 "user.c"
+# 77 "user.c"
     ADCON2 = 0b00000111;
-# 82 "user.c"
+# 86 "user.c"
  }
-# 117 "user.c"
+# 121 "user.c"
 int GetADCValue(unsigned char Channel)
 {
     int temp_1 =0;
@@ -3274,91 +3297,63 @@ int GetCurrentValue(void)
 
 
 
-   unsigned char TurnRight(void)
-  {
-
-        PORTAbits.RA4 = 1;
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-        int Current_value = GetCurrentValue();
-
-        if (Current_value < 5)
-                {
-                PORTAbits.RA4 = 1;
-                StartBip();
-                _delay((unsigned long)((50)*(4000000/4000.0)));
-                StopBip();
-                PORTAbits.RA4 = 0;
-                _delay((unsigned long)((200)*(4000000/4000.0)));
-                Current_value = 0;
-                return wasTurningRight = 1;
-                }
-        else
-                {
-                PORTAbits.RA4 = 1;
-                StartBip();
-                _delay((unsigned long)((100)*(4000000/4000.0)));
-                StopBip();
-                PORTAbits.RA4 = 0;
-                _delay((unsigned long)((400)*(4000000/4000.0)));
-                Current_value = 0;
-                return wasTurningRight = 1;
-                }
-    }
-
-
-
-unsigned char TurnLeft(void)
+_Bool GetDirection(void)
     {
+    InitADC(1<<2|3<<3);
+    R_ch_in_value = GetADCValue(1<<2);
+    L_ch_in_value = GetADCValue(3<<3);
 
-        PORTBbits.RB0 = 1;
+    if (R_ch_in_value > 10 && R_ch_in_value < 10)
+        {return wasTurningRight = 1;}
+    else if (R_ch_in_value < 10 && R_ch_in_value > 10)
+        {return wasTurningLeft = 1;}
+    else
+    {wasTurningRight = 0;
+    wasTurningLeft = 0;
+    return (wasTurningRight, wasTurningLeft);
+    }
+    }
 
+
+
+_Bool Turn_49A()
+{
+
+        PORTAbits.RA7 = 1;
         _delay((unsigned long)((100)*(4000000/4000.0)));
 
         int Current_value = GetCurrentValue();
 
         if (Current_value < 5)
                 {
-                PORTBbits.RB0 = 1;
-                StartBip();
+                PORTAbits.RA7 = 1;
+
+                GetDirection();
                 _delay((unsigned long)((50)*(4000000/4000.0)));
-                StopBip();
-                PORTBbits.RB0 = 0;
+
+                PORTAbits.RA7 = 0;
                 _delay((unsigned long)((200)*(4000000/4000.0)));
-                return wasTurningLeft = 1;
-                }
+                Current_value = 0;
+                return (wasTurningLeft & wasTurningRight);
+               }
+
         else
                 {
-                PORTBbits.RB0 = 1;
-                StartBip();
+                PORTAbits.RA7 = 1;
+
+                GetDirection();
                 _delay((unsigned long)((100)*(4000000/4000.0)));
-                StopBip();
-                PORTBbits.RB0 = 0;
+
+                PORTAbits.RA7 = 0;
                 _delay((unsigned long)((400)*(4000000/4000.0)));
-                return wasTurningLeft = 1;
+                Current_value = 0;
+                return (wasTurningLeft & wasTurningRight);
                 }
     }
 
 
 
-
-   unsigned char Turn_Hazard(void)
-            {
-
-
-            _delay((unsigned long)((200)*(4000000/4000.0)));
-            StartBip();
-            PORTBbits.RB0 = 1;
-            PORTAbits.RA4 = 1;
-            _delay((unsigned long)((100)*(4000000/4000.0)));
-            StopBip();
-
-            _delay((unsigned long)((500)*(4000000/4000.0)));
-            return hazardIsOn = 1;
-            }
-
-
-   unsigned char AddRightBlinks(void)
+   _Bool AddRightBlinks(void)
             {
 
 
@@ -3379,21 +3374,21 @@ unsigned char TurnLeft(void)
 
 
 
-    unsigned char AddLeftBlinks(void)
+    _Bool AddLeftBlinks(void)
             {
 
 
-            PORTBbits.RB0 = 1;
+            PORTBbits.RB3 = 1;
             _delay((unsigned long)((300)*(4000000/4000.0)));
-            PORTBbits.RB0 = 0;
+            PORTBbits.RB3 = 0;
             _delay((unsigned long)((500)*(4000000/4000.0)));
-            PORTBbits.RB0 = 1;
+            PORTBbits.RB3 = 1;
             _delay((unsigned long)((300)*(4000000/4000.0)));
-            PORTBbits.RB0 = 0;
+            PORTBbits.RB3 = 0;
             _delay((unsigned long)((500)*(4000000/4000.0)));
-            PORTBbits.RB0 = 1;
+            PORTBbits.RB3 = 1;
             _delay((unsigned long)((300)*(4000000/4000.0)));
-            PORTBbits.RB0 = 0;
+            PORTBbits.RB3 = 0;
             _delay((unsigned long)((100)*(4000000/4000.0)));
             return wasTurningLeft = 0;
             }
@@ -3403,10 +3398,10 @@ unsigned char TurnLeft(void)
    void ReversOn(void)
             {
 
-                StartBip();
+
 
             _delay((unsigned long)((120)*(4000000/4000.0)));
-                StopBip();
+
 
             _delay((unsigned long)((500)*(4000000/4000.0)));
             }

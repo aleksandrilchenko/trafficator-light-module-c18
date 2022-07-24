@@ -1,0 +1,266 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F1320 ]
+[d frameptr 4065 ]
+"7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"27 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\interrupts.c
+[v _high_isr high_isr `IIH(v  1 e 1 0 ]
+"67
+[v _low_isr low_isr `IIL(v  1 e 1 0 ]
+"85 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"51 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+[v _InitADC InitADC `(v  1 e 1 0 ]
+"121
+[v _GetADCValue GetADCValue `(i  1 e 2 0 ]
+"157
+[v _GetCurrentValue GetCurrentValue `(i  1 e 2 0 ]
+"167
+[v _GetDirection GetDirection `(a  1 e 1 0 ]
+"186
+[v _Turn_49A Turn_49A `(a  1 e 1 0 ]
+"223
+[v _AddRightBlinks AddRightBlinks `(a  1 e 1 0 ]
+"244
+[v _AddLeftBlinks AddLeftBlinks `(a  1 e 1 0 ]
+"265
+[v _ReversOn ReversOn `(v  1 e 1 0 ]
+[s S34 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"105 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h
+[s S43 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 AN3 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 MCLR 1 0 :1:5 
+`uc 1 CLKO 1 0 :1:6 
+`uc 1 CLKI 1 0 :1:7 
+]
+[s S52 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LVDIN 1 0 :1:1 
+`uc 1 VREFM 1 0 :1:2 
+`uc 1 VREFP 1 0 :1:3 
+`uc 1 T0CKI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 OSC2 1 0 :1:6 
+`uc 1 OSC1 1 0 :1:7 
+]
+[s S61 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_MCLR 1 0 :1:5 
+]
+[s S64 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 nMCLR 1 0 :1:5 
+`uc 1 CLKOUT 1 0 :1:6 
+`uc 1 CLKIN 1 0 :1:7 
+]
+[s S69 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+`uc 1 . 1 0 :6:1 
+`uc 1 RJPU 1 0 :1:7 
+]
+[u S73 . 1 `S34 1 . 1 0 `S43 1 . 1 0 `S52 1 . 1 0 `S61 1 . 1 0 `S64 1 . 1 0 `S69 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES73  1 e 1 @3968 ]
+[s S120 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"313
+[s S129 . 1 `uc 1 AN4 1 0 :1:0 
+`uc 1 AN5 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 CCP1 1 0 :1:3 
+`uc 1 AN6 1 0 :1:4 
+`uc 1 PGM 1 0 :1:5 
+`uc 1 PGC 1 0 :1:6 
+`uc 1 PGD 1 0 :1:7 
+]
+[s S138 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 KBI0 1 0 :1:4 
+`uc 1 KBI1 1 0 :1:5 
+`uc 1 KBI2 1 0 :1:6 
+`uc 1 KBI3 1 0 :1:7 
+]
+[s S147 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 CK 1 0 :1:1 
+`uc 1 P1B 1 0 :1:2 
+`uc 1 P1A 1 0 :1:3 
+`uc 1 DT 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 P1C 1 0 :1:6 
+`uc 1 P1D 1 0 :1:7 
+]
+[s S156 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 TX 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 RX 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 T1OSO 1 0 :1:6 
+`uc 1 T1OSI 1 0 :1:7 
+]
+[s S164 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 T13CKI 1 0 :1:6 
+]
+[s S167 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 T1CKI 1 0 :1:6 
+]
+[s S170 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S173 . 1 `S120 1 . 1 0 `S129 1 . 1 0 `S138 1 . 1 0 `S147 1 . 1 0 `S156 1 . 1 0 `S164 1 . 1 0 `S167 1 . 1 0 `S170 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES173  1 e 1 @3969 ]
+"2573
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+"2644
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"2729
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+"2876
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"2883
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"4634
+[v _GO_nDONE GO_nDONE `VEb  1 e 0 @32273 ]
+"80 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
+[v _wasTurningRight wasTurningRight `a  1 e 1 0 ]
+"81
+[v _wasTurningLeft wasTurningLeft `a  1 e 1 0 ]
+"43 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+[v _R_ch_in_value R_ch_in_value `i  1 e 2 0 ]
+"44
+[v _L_ch_in_value L_ch_in_value `i  1 e 2 0 ]
+"85 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"88
+[v main@Reverse_in_value Reverse_in_value `i  1 a 2 34 ]
+"87
+[v main@_49A_in_value _49A_in_value `i  1 a 2 32 ]
+"90
+[v main@L_ch_in_value L_ch_in_value `i  1 a 2 30 ]
+"89
+[v main@R_ch_in_value R_ch_in_value `i  1 a 2 28 ]
+"143
+} 0
+"186 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+[v _Turn_49A Turn_49A `(a  1 e 1 0 ]
+{
+"192
+[v Turn_49A@Current_value Current_value `i  1 a 2 26 ]
+"219
+} 0
+"167
+[v _GetDirection GetDirection `(a  1 e 1 0 ]
+{
+"182
+} 0
+"157
+[v _GetCurrentValue GetCurrentValue `(i  1 e 2 0 ]
+{
+"161
+[v GetCurrentValue@ADC1_value ADC1_value `i  1 a 2 22 ]
+"160
+[v GetCurrentValue@ADC0_value ADC0_value `i  1 a 2 20 ]
+"163
+} 0
+"51
+[v _InitADC InitADC `(v  1 e 1 0 ]
+{
+[v InitADC@Channel Channel `uc  1 a 1 wreg ]
+[v InitADC@Channel Channel `uc  1 a 1 wreg ]
+"55
+[v InitADC@Channel Channel `uc  1 a 1 1 ]
+"86
+} 0
+"121
+[v _GetADCValue GetADCValue `(i  1 e 2 0 ]
+{
+[v GetADCValue@Channel Channel `uc  1 a 1 wreg ]
+"124
+[v GetADCValue@temp_2 temp_2 `i  1 a 2 16 ]
+"123
+[v GetADCValue@temp_1 temp_1 `i  1 a 2 14 ]
+"121
+[v GetADCValue@Channel Channel `uc  1 a 1 wreg ]
+"124
+[v GetADCValue@Channel Channel `uc  1 a 1 13 ]
+"151
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 1 ]
+[v ___awdiv@divisor divisor `i  1 p 2 3 ]
+"41
+} 0
+"265 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+[v _ReversOn ReversOn `(v  1 e 1 0 ]
+{
+"274
+} 0
+"223
+[v _AddRightBlinks AddRightBlinks `(a  1 e 1 0 ]
+{
+"240
+} 0
+"244
+[v _AddLeftBlinks AddLeftBlinks `(a  1 e 1 0 ]
+{
+"261
+} 0
+"67 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\interrupts.c
+[v _low_isr low_isr `IIL(v  1 e 1 0 ]
+{
+"102
+} 0
+"27
+[v _high_isr high_isr `IIH(v  1 e 1 0 ]
+{
+"63
+} 0

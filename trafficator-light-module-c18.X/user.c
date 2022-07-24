@@ -40,11 +40,15 @@ void InitApp(void)
 
 
 #define _XTAL_FREQ 4000000  // 4MHZ internal crystal
+    int R_ch_in_value = 0; 
+    int L_ch_in_value = 0;
 
 //unsigned char wasTurningRight;
 //unsigned char wasTurningLeft; 
+//void StartBip(void);
+//void StopBip(void);
 
-void InitADC(Channel)
+void InitADC(unsigned char Channel)
 {
     /* ADC Initialisation*/
     
@@ -148,7 +152,7 @@ int GetADCValue(unsigned char Channel)
 
 
 
-/*Get the current value using using AN0 and AN1 (GetADCValue(AN0) - GetADCValue (AN1))*/
+/*Get the current value using AN0 and AN1 (GetADCValue(AN0) - GetADCValue (AN1))*/
 
 int GetCurrentValue(void)  // the value is in ADC code
     {               
@@ -158,93 +162,65 @@ int GetCurrentValue(void)  // the value is in ADC code
     return (ADC0_value - ADC1_value);    //reverse this logic  
     }
 
+/*Get the direction using AN2 and AN3*/
+
+bool GetDirection(void)  // the value is in ADC code
+    {
+    InitADC(AN2|AN3);               //--Set up AN2 and AN3 --//
+    R_ch_in_value = GetADCValue(AN2);
+    L_ch_in_value = GetADCValue(AN3);
     
- /*========  Turn On Right lamps  ==========*/ 
-   TurnRight()
-  {
+    if (R_ch_in_value > 10 && R_ch_in_value < 10)
+        {return wasTurningRight = 1;}
+    else if (R_ch_in_value < 10 && R_ch_in_value > 10)
+        {return wasTurningLeft = 1;}
+    else
+    {wasTurningRight = 0;
+    wasTurningLeft = 0;
+    return (wasTurningRight, wasTurningLeft);
+    }
+    }
+
+
+  /*========  Turn On 49A  ==========*/    
+bool Turn_49A()
+{
         //TRISIO = 0b00001011;
-        R_ch_out = 1; 
+        _49A_out = 1; 
         __delay_ms(100);
         
         int Current_value = GetCurrentValue();
  
         if (Current_value < 5)                        
                 {
-                R_ch_out = 1; 
-                StartBip();
+                _49A_out = 1; 
+                //StartBip();
+                GetDirection();
                 __delay_ms(50);
-                StopBip();
-                R_ch_out = 0;                         // Increase the frequency if one lamp is broken
+                //StopBip();
+                _49A_out = 0;                         // Increase the frequency if one lamp is broken
                 __delay_ms(200);
                 Current_value = 0;
-                return wasTurningRight = 1;
-                }
+                return (wasTurningLeft & wasTurningRight);
+               }
+                
         else 
                 {
-                R_ch_out = 1;
-                StartBip();
+                _49A_out = 1;
+                //StartBip();
+                GetDirection();
                 __delay_ms(100);
-                StopBip();
-                R_ch_out = 0;
+                //StopBip();
+                _49A_out = 0;
                 __delay_ms(400);
                 Current_value = 0;
-                return wasTurningRight = 1;
+                return (wasTurningLeft & wasTurningRight);           
                 }
     } 
-  
-    
-/*========  Turn On Left lamps  ==========*/ 
-unsigned char TurnLeft(void)
-    {
-        //TRISIO = 0b00001011;
-        L_ch_out = 1; 
-        //R_ch = 0;
-        __delay_ms(100);
-        
-        int Current_value = GetCurrentValue();
-     
-        if (Current_value < 5)                     
-                {
-                L_ch_out = 1;
-                StartBip();
-                __delay_ms(50);
-                StopBip();
-                L_ch_out = 0;                          // Increase the frequency if one lamp is broken
-                __delay_ms(200);
-                return wasTurningLeft = 1;
-                }
-        else 
-                {        
-                L_ch_out = 1;
-                StartBip();
-                __delay_ms(100);
-                StopBip();
-                L_ch_out = 0;
-                __delay_ms(400);
-                return wasTurningLeft = 1;
-                }
-    } 
-    
-    
-    
-    /*========  Turn On Rellay  ==========*/ 
-   unsigned char Turn_Hazard(void)
-            {
-            //TRISIO = 0b00001011;
-            //GPIO = 0b00010100;
-            __delay_ms(200);
-            StartBip();
-            L_ch_out = 1; 
-            R_ch_out = 1;
-            __delay_ms(100);
-            StopBip();
-            //GPIO = 0b00000000; // L_ch = 0; R_ch = 0;
-            __delay_ms(500);
-            return hazardIsOn = 1;
-            }
+
     
     /*========  Turn On Right lamps 3 times  ==========*/
-   unsigned char AddRightBlinks(void)
+   bool AddRightBlinks(void)
             {
             //TRISIO = 0b00001011;
             //L_ch = 0;    // latch the Left out to off state
@@ -265,7 +241,7 @@ unsigned char TurnLeft(void)
     
     
      /*========  Turn On Left lamps 3 times  ==========*/
-    unsigned char AddLeftBlinks(void)
+    bool AddLeftBlinks(void)
             {
             //TRISIO = 0b00001011;
             //R_ch = 0;    // latch the Right out to off state
@@ -289,10 +265,10 @@ unsigned char TurnLeft(void)
    void ReversOn(void)
             {
             //TRISIO = 0b00001011;                    // Gp0, Gp1, Gp3 are always as inputs; Gp5 is always output; Gp2, Gp4 are as outputs for now 
-                StartBip();
+                //StartBip();
                 //GPIO = 0b00010100; // L_ch = 1; R_ch = 1;
             __delay_ms(120);
-                StopBip();
+                //StopBip();
                 //GPIO = 0b00000000; // L_ch = 0; R_ch = 0;
             __delay_ms(500);        
             }
