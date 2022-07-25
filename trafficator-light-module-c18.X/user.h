@@ -20,8 +20,8 @@ void InitApp(void);         /* I/O and Peripheral Initialization */
 #define AN1 1<<1 // 0b00000010
 #define AN2 1<<2 // 0b00000100
 #define AN3 3<<3 // 0b00011000
-#define AN4 4<<3 // chnge its value!
-#define AN5 5<<3 // chnge its value!
+#define AN4 4<<3 // chnge its value!!!
+#define AN5 5<<3 // chnge its value!!!
 
 
     #define V_in        PORTAbits.AN0
