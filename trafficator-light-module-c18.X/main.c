@@ -79,7 +79,7 @@
 /******************************************************************************/
 bool wasTurningRight;
 bool wasTurningLeft;  
-bool hazardIsOn;
+
 
 
 void main()
@@ -137,7 +137,6 @@ void main()
             
             wasTurningLeft = 0;
             wasTurningRight = 0;
-            //StopBip();
             }
 }
 }

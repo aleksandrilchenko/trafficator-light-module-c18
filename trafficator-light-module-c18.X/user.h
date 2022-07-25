@@ -20,15 +20,21 @@ void InitApp(void);         /* I/O and Peripheral Initialization */
 #define AN1 1<<1 // 0b00000010
 #define AN2 1<<2 // 0b00000100
 #define AN3 3<<3 // 0b00011000
+#define AN4 4<<3 // chnge its value!
+#define AN5 5<<3 // chnge its value!
 
 
-   #define R_ch_in PORTAbits.AN0
-   #define L_ch_in PORTAbits.AN1
-   #define R_ch_out PORTAbits.RA4
-   #define L_ch_out PORTBbits.RB0
-   //#define _49A RA_bit
-   #define Reverse PORTBbits.RB1
-   #define PWM_Pin PORTBbits.RB2
+    #define V_in        PORTAbits.AN0
+    #define V_out       PORTAbits.AN1
+    #define R_ch_in     PORTAbits.AN2
+    #define L_ch_in     PORTAbits.AN3
+    #define _49A_in     PORTBbits.AN4
+    #define Reverse_in  PORTBbits.AN5
+
+    #define R_ch_out    PORTAbits.RA4
+    #define L_ch_out    PORTBbits.RB4
+    #define _49A_out        PORTAbits.RA6
+    #define PWM_Pin     PORTAbits.RA7
 
 
 /* TODO User level functions prototypes (i.e. InitApp) go here */
@@ -36,28 +42,23 @@ void InitApp(void);         /* I/O and Peripheral Initialization */
 
 extern bool wasTurningRight; // extern
 extern bool wasTurningLeft; // extern
-extern bool hazardIsOn; // extern
 //unsigned char PWM; // extern
 //extern unsigned char Channel;
 
-extern int ADC2_value; // extern
-extern int ADC3_value; // extern
+extern int V_in_value;
+extern int V_out_value;
 
 // Function declarations
 //void InitPWM(void);
-void StartBip(void);
-void StopBip(void);
+//void Bip(void);
 void InitADC(unsigned char);         /* I/O and Peripheral Initialization */
-
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
+bool GetDirection(void);
+bool AddRightBlinks(void);
+bool AddLeftBlinks(void);
+bool Turn_49A(void);
+void ReversOn(void);
 
 //void InitInterrupt (void);
 //void interrupt ISR(void);
-
-bool TurnRight(void);
-bool TurnLeft(void);
-bool AddRightBlinks(void);
-bool AddLeftBlinks(void);
-void ReversOn(void);
-bool Turn_Hazard(void);

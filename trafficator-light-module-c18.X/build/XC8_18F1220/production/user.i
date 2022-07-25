@@ -3190,29 +3190,20 @@ extern _Bool wasTurningLeft;
 
 
 
-extern int _49A_in_value;
-extern int R_ch_in_value_value;
-extern int L_ch_in_value_value;
-extern int Reverse_in_value;
+extern int V_in_value;
+extern int V_out_value;
 
 
 
 
-void StartBip(void);
-void StopBip(void);
 void InitADC(unsigned char);
-
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
-
-
-
-
+_Bool GetDirection(void);
 _Bool AddRightBlinks(void);
 _Bool AddLeftBlinks(void);
-void ReversOn(void);
 _Bool Turn_49A(void);
-_Bool GetDirection(void);
+void ReversOn(void);
 # 21 "user.c" 2
 
 
@@ -3230,6 +3221,8 @@ void InitApp(void)
 
     int R_ch_in_value = 0;
     int L_ch_in_value = 0;
+    int V_in_value = 0;
+    int V_out_value = 0;
 
 
 
@@ -3246,11 +3239,11 @@ void InitADC(unsigned char Channel)
 
     ADCON0 = 0b00000000;
     ADCON0 |= Channel;
-# 77 "user.c"
+# 79 "user.c"
     ADCON2 = 0b00000111;
-# 86 "user.c"
+# 88 "user.c"
  }
-# 121 "user.c"
+# 123 "user.c"
 int GetADCValue(unsigned char Channel)
 {
     int temp_1 =0;
@@ -3290,9 +3283,9 @@ int GetADCValue(unsigned char Channel)
 int GetCurrentValue(void)
     {
     InitADC(1<<0|1<<1);
-    int ADC0_value = GetADCValue(1<<0);
-    int ADC1_value = GetADCValue(1<<1);
-    return (ADC0_value - ADC1_value);
+    int V_in_value = GetADCValue(1<<0);
+    int V_out_value = GetADCValue(1<<1);
+    return (V_in_value - V_out_value);
     }
 
 
@@ -3319,19 +3312,18 @@ _Bool GetDirection(void)
 _Bool Turn_49A()
 {
 
-        PORTAbits.RA7 = 1;
+        PORTAbits.RA6 = 1;
         _delay((unsigned long)((100)*(4000000/4000.0)));
 
         int Current_value = GetCurrentValue();
 
         if (Current_value < 5)
                 {
-                PORTAbits.RA7 = 1;
+                PORTAbits.RA6 = 1;
 
                 GetDirection();
                 _delay((unsigned long)((50)*(4000000/4000.0)));
-
-                PORTAbits.RA7 = 0;
+                PORTAbits.RA6 = 0;
                 _delay((unsigned long)((200)*(4000000/4000.0)));
                 Current_value = 0;
                 return (wasTurningLeft & wasTurningRight);
@@ -3339,12 +3331,11 @@ _Bool Turn_49A()
 
         else
                 {
-                PORTAbits.RA7 = 1;
+                PORTAbits.RA6 = 1;
 
                 GetDirection();
                 _delay((unsigned long)((100)*(4000000/4000.0)));
-
-                PORTAbits.RA7 = 0;
+                PORTAbits.RA6 = 0;
                 _delay((unsigned long)((400)*(4000000/4000.0)));
                 Current_value = 0;
                 return (wasTurningLeft & wasTurningRight);
@@ -3358,14 +3349,17 @@ _Bool Turn_49A()
 
 
             PORTAbits.RA4 = 1;
+
             _delay((unsigned long)((300)*(4000000/4000.0)));
             PORTAbits.RA4 = 0;
             _delay((unsigned long)((500)*(4000000/4000.0)));
             PORTAbits.RA4 = 1;
+
             _delay((unsigned long)((300)*(4000000/4000.0)));
             PORTAbits.RA4 = 0;
             _delay((unsigned long)((500)*(4000000/4000.0)));
             PORTAbits.RA4 = 1;
+
             _delay((unsigned long)((300)*(4000000/4000.0)));
             PORTAbits.RA4 = 0;
             _delay((unsigned long)((100)*(4000000/4000.0)));
@@ -3378,17 +3372,20 @@ _Bool Turn_49A()
             {
 
 
-            PORTBbits.RB3 = 1;
+            PORTBbits.RB4 = 1;
+
             _delay((unsigned long)((300)*(4000000/4000.0)));
-            PORTBbits.RB3 = 0;
+            PORTBbits.RB4 = 0;
             _delay((unsigned long)((500)*(4000000/4000.0)));
-            PORTBbits.RB3 = 1;
+            PORTBbits.RB4 = 1;
+
             _delay((unsigned long)((300)*(4000000/4000.0)));
-            PORTBbits.RB3 = 0;
+            PORTBbits.RB4 = 0;
             _delay((unsigned long)((500)*(4000000/4000.0)));
-            PORTBbits.RB3 = 1;
+            PORTBbits.RB4 = 1;
+
             _delay((unsigned long)((300)*(4000000/4000.0)));
-            PORTBbits.RB3 = 0;
+            PORTBbits.RB4 = 0;
             _delay((unsigned long)((100)*(4000000/4000.0)));
             return wasTurningLeft = 0;
             }
@@ -3401,7 +3398,6 @@ _Bool Turn_49A()
 
 
             _delay((unsigned long)((120)*(4000000/4000.0)));
-
 
             _delay((unsigned long)((500)*(4000000/4000.0)));
             }

@@ -35,21 +35,21 @@
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]
 "85 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"51 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"53 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _InitADC InitADC `(v  1 e 1 0 ]
-"121
+"123
 [v _GetADCValue GetADCValue `(i  1 e 2 0 ]
-"157
+"159
 [v _GetCurrentValue GetCurrentValue `(i  1 e 2 0 ]
-"167
+"169
 [v _GetDirection GetDirection `(a  1 e 1 0 ]
-"186
+"188
 [v _Turn_49A Turn_49A `(a  1 e 1 0 ]
 "223
 [v _AddRightBlinks AddRightBlinks `(a  1 e 1 0 ]
-"244
+"247
 [v _AddLeftBlinks AddLeftBlinks `(a  1 e 1 0 ]
-"265
+"271
 [v _ReversOn ReversOn `(v  1 e 1 0 ]
 [s S34 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -180,51 +180,51 @@
 [v main@L_ch_in_value L_ch_in_value `i  1 a 2 30 ]
 "89
 [v main@R_ch_in_value R_ch_in_value `i  1 a 2 28 ]
-"143
+"142
 } 0
-"186 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"188 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _Turn_49A Turn_49A `(a  1 e 1 0 ]
 {
-"192
+"194
 [v Turn_49A@Current_value Current_value `i  1 a 2 26 ]
 "219
 } 0
-"167
+"169
 [v _GetDirection GetDirection `(a  1 e 1 0 ]
 {
-"182
+"184
 } 0
-"157
+"159
 [v _GetCurrentValue GetCurrentValue `(i  1 e 2 0 ]
 {
-"161
-[v GetCurrentValue@ADC1_value ADC1_value `i  1 a 2 22 ]
-"160
-[v GetCurrentValue@ADC0_value ADC0_value `i  1 a 2 20 ]
 "163
+[v GetCurrentValue@V_out_value V_out_value `i  1 a 2 22 ]
+"162
+[v GetCurrentValue@V_in_value V_in_value `i  1 a 2 20 ]
+"165
 } 0
-"51
+"53
 [v _InitADC InitADC `(v  1 e 1 0 ]
 {
 [v InitADC@Channel Channel `uc  1 a 1 wreg ]
 [v InitADC@Channel Channel `uc  1 a 1 wreg ]
-"55
+"57
 [v InitADC@Channel Channel `uc  1 a 1 1 ]
-"86
+"88
 } 0
-"121
+"123
 [v _GetADCValue GetADCValue `(i  1 e 2 0 ]
 {
 [v GetADCValue@Channel Channel `uc  1 a 1 wreg ]
-"124
+"126
 [v GetADCValue@temp_2 temp_2 `i  1 a 2 16 ]
-"123
+"125
 [v GetADCValue@temp_1 temp_1 `i  1 a 2 14 ]
-"121
+"123
 [v GetADCValue@Channel Channel `uc  1 a 1 wreg ]
-"124
+"126
 [v GetADCValue@Channel Channel `uc  1 a 1 13 ]
-"151
+"153
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -239,20 +239,20 @@
 [v ___awdiv@divisor divisor `i  1 p 2 3 ]
 "41
 } 0
-"265 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"271 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _ReversOn ReversOn `(v  1 e 1 0 ]
 {
-"274
+"279
 } 0
 "223
 [v _AddRightBlinks AddRightBlinks `(a  1 e 1 0 ]
 {
-"240
+"243
 } 0
-"244
+"247
 [v _AddLeftBlinks AddLeftBlinks `(a  1 e 1 0 ]
 {
-"261
+"267
 } 0
 "67 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\interrupts.c
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]

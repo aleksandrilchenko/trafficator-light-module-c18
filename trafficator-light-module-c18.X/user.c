@@ -42,6 +42,8 @@ void InitApp(void)
 #define _XTAL_FREQ 4000000  // 4MHZ internal crystal
     int R_ch_in_value = 0; 
     int L_ch_in_value = 0;
+    int V_in_value = 0;
+    int V_out_value = 0;
 
 //unsigned char wasTurningRight;
 //unsigned char wasTurningLeft; 
@@ -157,9 +159,9 @@ int GetADCValue(unsigned char Channel)
 int GetCurrentValue(void)  // the value is in ADC code
     {               
     InitADC(AN0|AN1);
-    int ADC0_value = GetADCValue(AN0);
-    int ADC1_value = GetADCValue(AN1);
-    return (ADC0_value - ADC1_value);    //reverse this logic  
+    int V_in_value = GetADCValue(AN0);
+    int V_out_value = GetADCValue(AN1);
+    return (V_in_value - V_out_value);    //reverse this logic  
     }
 
 /*Get the direction using AN2 and AN3*/
@@ -194,10 +196,9 @@ bool Turn_49A()
         if (Current_value < 5)                        
                 {
                 _49A_out = 1; 
-                //StartBip();
+                //Bip();
                 GetDirection();
                 __delay_ms(50);
-                //StopBip();
                 _49A_out = 0;                         // Increase the frequency if one lamp is broken
                 __delay_ms(200);
                 Current_value = 0;
@@ -207,10 +208,9 @@ bool Turn_49A()
         else 
                 {
                 _49A_out = 1;
-                //StartBip();
+                //Bip();
                 GetDirection();
                 __delay_ms(100);
-                //StopBip();
                 _49A_out = 0;
                 __delay_ms(400);
                 Current_value = 0;
@@ -224,15 +224,18 @@ bool Turn_49A()
             {
             //TRISIO = 0b00001011;
             //L_ch = 0;    // latch the Left out to off state
-            R_ch_out = 1; 
+            R_ch_out = 1;
+            //Bip();
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(500);
-            R_ch_out = 1; 
+            R_ch_out = 1;
+            //Bip();
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(500);
-            R_ch_out = 1; 
+            R_ch_out = 1;
+            //Bip();
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(100);
@@ -246,14 +249,17 @@ bool Turn_49A()
             //TRISIO = 0b00001011;
             //R_ch = 0;    // latch the Right out to off state
             L_ch_out = 1; 
+            //Bip();
+            __delay_ms(300);
+            L_ch_out = 0; 
+            __delay_ms(500);
+            L_ch_out = 1;
+            //Bip();
             __delay_ms(300);
             L_ch_out = 0; 
             __delay_ms(500);
             L_ch_out = 1; 
-            __delay_ms(300);
-            L_ch_out = 0; 
-            __delay_ms(500);
-            L_ch_out = 1; 
+            //Bip();
             __delay_ms(300);
             L_ch_out = 0; 
             __delay_ms(100);
@@ -265,10 +271,9 @@ bool Turn_49A()
    void ReversOn(void)
             {
             //TRISIO = 0b00001011;                    // Gp0, Gp1, Gp3 are always as inputs; Gp5 is always output; Gp2, Gp4 are as outputs for now 
-                //StartBip();
+                //Bip();
                 //GPIO = 0b00010100; // L_ch = 1; R_ch = 1;
             __delay_ms(120);
-                //StopBip();
                 //GPIO = 0b00000000; // L_ch = 0; R_ch = 0;
             __delay_ms(500);        
             }

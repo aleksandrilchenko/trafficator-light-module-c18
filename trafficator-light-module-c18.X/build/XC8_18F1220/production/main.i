@@ -3194,29 +3194,20 @@ extern _Bool wasTurningLeft;
 
 
 
-extern int _49A_in_value;
-extern int R_ch_in_value_value;
-extern int L_ch_in_value_value;
-extern int Reverse_in_value;
+extern int V_in_value;
+extern int V_out_value;
 
 
 
 
-void StartBip(void);
-void StopBip(void);
 void InitADC(unsigned char);
-
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
-
-
-
-
+_Bool GetDirection(void);
 _Bool AddRightBlinks(void);
 _Bool AddLeftBlinks(void);
-void ReversOn(void);
 _Bool Turn_49A(void);
-_Bool GetDirection(void);
+void ReversOn(void);
 # 22 "main.c" 2
 
 
@@ -3266,7 +3257,7 @@ _Bool GetDirection(void);
 # 80 "main.c"
 _Bool wasTurningRight;
 _Bool wasTurningLeft;
-_Bool hazardIsOn;
+
 
 
 void main()
@@ -3284,14 +3275,14 @@ void main()
 
 
     PORTAbits.RA4 = 0;
-    PORTBbits.RB3 = 0;
-    PORTAbits.RA7 = 0;
+    PORTBbits.RB4 = 0;
+    PORTAbits.RA6 = 0;
 
-    InitADC(3<<4|3<<5);
-    _49A_in_value = GetADCValue(3<<4);
+    InitADC(4<<3|5<<3);
+    _49A_in_value = GetADCValue(4<<3);
 
 
-    Reverse_in_value = GetADCValue(3<<5);
+    Reverse_in_value = GetADCValue(5<<3);
 
 
     if (Reverse_in_value > 155)
@@ -3324,7 +3315,6 @@ void main()
 
             wasTurningLeft = 0;
             wasTurningRight = 0;
-
             }
 }
 }
