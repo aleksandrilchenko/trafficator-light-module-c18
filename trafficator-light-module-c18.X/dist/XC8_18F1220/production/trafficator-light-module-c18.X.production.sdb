@@ -33,23 +33,23 @@
 [v _high_isr high_isr `IIH(v  1 e 1 0 ]
 "67
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]
-"85 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
+"83 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"53 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"47 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _InitADC InitADC `(v  1 e 1 0 ]
-"123
+"119
 [v _GetADCValue GetADCValue `(i  1 e 2 0 ]
 "159
 [v _GetCurrentValue GetCurrentValue `(i  1 e 2 0 ]
 "169
 [v _GetDirection GetDirection `(a  1 e 1 0 ]
-"188
+"192
 [v _Turn_49A Turn_49A `(a  1 e 1 0 ]
-"223
+"227
 [v _AddRightBlinks AddRightBlinks `(a  1 e 1 0 ]
-"247
+"251
 [v _AddLeftBlinks AddLeftBlinks `(a  1 e 1 0 ]
-"271
+"275
 [v _ReversOn ReversOn `(v  1 e 1 0 ]
 [s S34 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -161,38 +161,38 @@
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
 "4634
 [v _GO_nDONE GO_nDONE `VEb  1 e 0 @32273 ]
-"80 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
+"30 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
 [v _wasTurningRight wasTurningRight `a  1 e 1 0 ]
-"81
+"31
 [v _wasTurningLeft wasTurningLeft `a  1 e 1 0 ]
-"43 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"27 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _R_ch_in_value R_ch_in_value `i  1 e 2 0 ]
-"44
+"28
 [v _L_ch_in_value L_ch_in_value `i  1 e 2 0 ]
-"85 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
+"83 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"88
+"86
 [v main@Reverse_in_value Reverse_in_value `i  1 a 2 34 ]
-"87
+"85
 [v main@_49A_in_value _49A_in_value `i  1 a 2 32 ]
-"90
+"88
 [v main@L_ch_in_value L_ch_in_value `i  1 a 2 30 ]
-"89
+"87
 [v main@R_ch_in_value R_ch_in_value `i  1 a 2 28 ]
-"142
+"138
 } 0
-"188 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"192 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _Turn_49A Turn_49A `(a  1 e 1 0 ]
 {
-"194
+"198
 [v Turn_49A@Current_value Current_value `i  1 a 2 26 ]
-"219
+"223
 } 0
 "169
 [v _GetDirection GetDirection `(a  1 e 1 0 ]
 {
-"184
+"188
 } 0
 "159
 [v _GetCurrentValue GetCurrentValue `(i  1 e 2 0 ]
@@ -203,26 +203,26 @@
 [v GetCurrentValue@V_in_value V_in_value `i  1 a 2 20 ]
 "165
 } 0
-"53
+"47
 [v _InitADC InitADC `(v  1 e 1 0 ]
 {
 [v InitADC@Channel Channel `uc  1 a 1 wreg ]
 [v InitADC@Channel Channel `uc  1 a 1 wreg ]
-"57
+"51
 [v InitADC@Channel Channel `uc  1 a 1 1 ]
-"88
+"84
 } 0
-"123
+"119
 [v _GetADCValue GetADCValue `(i  1 e 2 0 ]
 {
 [v GetADCValue@Channel Channel `uc  1 a 1 wreg ]
-"126
+"122
 [v GetADCValue@temp_2 temp_2 `i  1 a 2 16 ]
-"125
+"121
 [v GetADCValue@temp_1 temp_1 `i  1 a 2 14 ]
-"123
+"119
 [v GetADCValue@Channel Channel `uc  1 a 1 wreg ]
-"126
+"122
 [v GetADCValue@Channel Channel `uc  1 a 1 13 ]
 "153
 } 0
@@ -239,20 +239,20 @@
 [v ___awdiv@divisor divisor `i  1 p 2 3 ]
 "41
 } 0
-"271 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"275 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _ReversOn ReversOn `(v  1 e 1 0 ]
 {
-"279
+"283
 } 0
-"223
+"227
 [v _AddRightBlinks AddRightBlinks `(a  1 e 1 0 ]
 {
-"243
-} 0
 "247
+} 0
+"251
 [v _AddLeftBlinks AddLeftBlinks `(a  1 e 1 0 ]
 {
-"267
+"271
 } 0
 "67 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\interrupts.c
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]

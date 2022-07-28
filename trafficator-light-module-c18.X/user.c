@@ -23,7 +23,13 @@
 /* User Functions                                                             */
 /******************************************************************************/
 
-/* <Initialize variables in user.h and insert code for user algorithms.> */
+#define _XTAL_FREQ 4000000  // 4MHZ internal crystal
+    int R_ch_in_value = 0; 
+    int L_ch_in_value = 0;
+    int V_in_value = 0;
+    int V_out_value = 0;
+    
+    
 
 void InitApp(void)
 {
@@ -38,27 +44,17 @@ void InitApp(void)
     /* Enable interrupts */
 }
 
-
-#define _XTAL_FREQ 4000000  // 4MHZ internal crystal
-    int R_ch_in_value = 0; 
-    int L_ch_in_value = 0;
-    int V_in_value = 0;
-    int V_out_value = 0;
-
-//unsigned char wasTurningRight;
-//unsigned char wasTurningLeft; 
-//void StartBip(void);
-//void StopBip(void);
-
 void InitADC(unsigned char Channel)
 {
     /* ADC Initialisation*/
     
     ADCON1 = 0b00000000;        // all inputs are analog inputs
+                                // bit 7 unimplemented, read as 0
                                 /*1= Pin configured as a digital port
-                                  0= Pin configured as an analog channel ? digital input disabled and reads ?0'*/
+                                  0= Pin configured as an analog channel - digital input disabled and reads ?0'*/
     
-    ADCON0 = 0b00000000;       //set Ref voltages as Vdd/Vss 
+    ADCON0 = 0b00000000;        //set Ref voltages as Vdd/Vss  (bit 7-6 as 00)
+                                // bit 5 unimplemented, read as 0
     ADCON0 |= Channel;          /*bit 4-2 CHS<2:0>:Analog Channel Select bits
                                     000= Channel 0 (AN0) 
                                     001= Channel 1 (AN1) 
@@ -118,19 +114,23 @@ void InitADC(unsigned char Channel)
 
 
   /* GetADCValue:
- * Gets the ADC value from AN0-AN3 , returns it as unsigned int 0-1023
+ * Gets the ADC value from AN0-AN5 , returns it as unsigned int 0-1023
  */
 int GetADCValue(unsigned char Channel)
 {
     int temp_1 =0;
     int temp_2 =0;
-    ADCON0 &= 0b11110011;      // Clear Channel selection bits
+    
+    ADCON0 &= 0b11100011;      // Clear Channel selection bits
     switch(Channel)
     {
-        case AN0:   ADCON0 |= 0b00000000; break; // 0x00 // Select GP0 pin as ADC input CHS1:CHS0: to 00
-        case AN1:   ADCON0 |= 0b00000100; break; // 0x04 // Select GP1 pin as ADC input CHS1:CHS0: to 01
-        case AN2:   ADCON0 |= 0b00001000; break; // 0x08 // Select GP2 pin as ADC input CHS1:CHS0: to 10
-        case AN3:   ADCON0 |= 0b00001100; break; // 0x0c // Select GP4 pin as ADC input CHS1:CHS0: to 11
+        case AN0:   ADCON0 |= 0b00000000; break; // set bit 4-2 to 000
+        case AN1:   ADCON0 |= 0b00000100; break; // set bit 4-2 to 001
+        case AN2:   ADCON0 |= 0b00001000; break; // set bit 4-2 to 010
+        case AN3:   ADCON0 |= 0b00001100; break; // set bit 4-2 to 011
+        case AN4:   ADCON0 |= 0b00010000; break; // set bit 4-2 to 100
+        case AN5:   ADCON0 |= 0b00010100; break; // set bit 4-2 to 101
+        case AN6:   ADCON0 |= 0b00011000; break; // set bit 4-2 to 110
 
         default: return 0;
     }
@@ -173,13 +173,17 @@ bool GetDirection(void)  // the value is in ADC code
     L_ch_in_value = GetADCValue(AN3);
     
     if (R_ch_in_value > 10 && R_ch_in_value < 10)
-        {return wasTurningRight = 1;}
+        {return 
+                wasTurningRight = 1;
+                wasTurningLeft = 0;}
     else if (R_ch_in_value < 10 && R_ch_in_value > 10)
-        {return wasTurningLeft = 1;}
+        {return 
+                wasTurningLeft = 1;
+                wasTurningRight = 0;}
     else
-    {wasTurningRight = 0;
-    wasTurningLeft = 0;
-    return (wasTurningRight, wasTurningLeft);
+    {return 
+                wasTurningLeft = 0;
+                wasTurningRight = 0;
     }
     }
 
@@ -193,13 +197,13 @@ bool Turn_49A()
         
         int Current_value = GetCurrentValue();
  
-        if (Current_value < 5)                        
+        if (Current_value < 5)       // Increase the frequency if one lamp is broken                 
                 {
                 _49A_out = 1; 
                 //Bip();
                 GetDirection();
                 __delay_ms(50);
-                _49A_out = 0;                         // Increase the frequency if one lamp is broken
+                _49A_out = 0;                         
                 __delay_ms(200);
                 Current_value = 0;
                 return (wasTurningLeft & wasTurningRight);

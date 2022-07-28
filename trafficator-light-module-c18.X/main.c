@@ -20,6 +20,16 @@
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
 
+// #pragma config statements should precede project file includes.
+// Use project enums instead of #define for ON and OFF.
+
+/******************************************************************************/
+/* User Global Variable Declaration                                           */
+/******************************************************************************/
+
+bool wasTurningRight;
+bool wasTurningLeft;  
+
 // CONFIG1H
 #pragma config OSC = INTIO2     // Oscillator Selection bits (Internal RC oscillator, port function on RA6 and port function on RA7)
 #pragma config FSCM = ON        // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor enabled)
@@ -65,22 +75,10 @@
 // CONFIG7H
 #pragma config EBTRB = OFF      // Boot Block Table Read Protection bit (Boot Block (000000-0001FFh) not protected from table reads executed in other blocks)
 
-// #pragma config statements should precede project file includes.
-// Use project enums instead of #define for ON and OFF.
-
-/******************************************************************************/
-/* User Global Variable Declaration                                           */
-/******************************************************************************/
-
-/* i.e. uint8_t <variable_name>; */
 
 /******************************************************************************/
 /* Main Program                                                               */
 /******************************************************************************/
-bool wasTurningRight;
-bool wasTurningLeft;  
-
-
 
 void main()
 {
@@ -102,8 +100,6 @@ void main()
     
     InitADC(AN4|AN5);               //--Set up AN2 and AN3 --//
     _49A_in_value = GetADCValue(AN4);
-    //R_ch_in_value = GetADCValue(AN2);
-    //L_ch_in_value = GetADCValue(AN3);
     Reverse_in_value = GetADCValue(AN5);
     
     

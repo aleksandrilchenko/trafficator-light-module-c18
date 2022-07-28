@@ -3188,15 +3188,6 @@ void ConfigureOscillator(void);
 # 1 "./user.h" 1
 # 13 "./user.h"
 void InitApp(void);
-# 43 "./user.h"
-extern _Bool wasTurningRight;
-extern _Bool wasTurningLeft;
-
-
-
-extern int V_in_value;
-extern int V_out_value;
-
 
 
 
@@ -3208,7 +3199,28 @@ _Bool AddRightBlinks(void);
 _Bool AddLeftBlinks(void);
 _Bool Turn_49A(void);
 void ReversOn(void);
+# 75 "./user.h"
+extern _Bool wasTurningRight;
+extern _Bool wasTurningLeft;
+
+
+extern int V_in_value;
+extern int V_out_value;
+extern int _49A_in_value;
+extern int Reverse_in_value;
+extern int R_ch_in_value0;
+extern int L_ch_in_value;
 # 22 "main.c" 2
+
+
+
+
+
+
+
+
+_Bool wasTurningRight;
+_Bool wasTurningLeft;
 
 
 #pragma config OSC = INTIO2
@@ -3254,9 +3266,9 @@ void ReversOn(void);
 
 
 #pragma config EBTRB = OFF
-# 80 "main.c"
-_Bool wasTurningRight;
-_Bool wasTurningLeft;
+
+
+
 
 
 
@@ -3278,11 +3290,9 @@ void main()
     PORTBbits.RB4 = 0;
     PORTAbits.RA6 = 0;
 
-    InitADC(4<<3|5<<3);
-    _49A_in_value = GetADCValue(4<<3);
-
-
-    Reverse_in_value = GetADCValue(5<<3);
+    InitADC(0b00101000|0b00110000);
+    _49A_in_value = GetADCValue(0b00101000);
+    Reverse_in_value = GetADCValue(0b00110000);
 
 
     if (Reverse_in_value > 155)
