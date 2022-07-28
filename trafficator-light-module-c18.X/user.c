@@ -51,11 +51,15 @@ void InitADC(unsigned char Channel)
     ADCON1 = 0b00000000;        // all inputs are analog inputs
                                 // bit 7 unimplemented, read as 0
                                 /*1= Pin configured as a digital port
-                                  0= Pin configured as an analog channel - digital input disabled and reads ?0'*/
+                                  0= Pin configured as an analog channel - digital input disabled and reads - 0*/
+    ADCON1 |= Channel;         // 0b0[xxxxxxx] Select Pin as AN0-AN6 depends on algorithm
     
-    ADCON0 = 0b00000000;        //set Ref voltages as Vdd/Vss  (bit 7-6 as 00)
+    TRISA = 0b00001011;      // CHANGE IT!!!Gp0, Gp1, Gp3 are always as inputs; Gp5 is always output; Gp2, Gp4 are as outputs for now
+    TRISA |= Channel;        // CHANGE IT!!!0b000[x]1[x]11 Select Pin as AN0-AN3 depends on algorithm
+   
+    ADCON0 = 0b00000001;        //set Ref voltages as Vdd/Vss  (bit 7-6 as 00)
                                 // bit 5 unimplemented, read as 0
-    ADCON0 |= Channel;          /*bit 4-2 CHS<2:0>:Analog Channel Select bits
+                                /*bit 4-2 CHS<2:0>:Analog Channel Select bits
                                     000= Channel 0 (AN0) 
                                     001= Channel 1 (AN1) 
                                     010= Channel 2 (AN2) 
@@ -81,7 +85,16 @@ void InitADC(unsigned char Channel)
                                   bit 2-0 ADCS<2:0>:A/D Conversion Clock Select bits
                                         111= FRC(clock derived from A/D RC oscillator)*/
     
- }
+/*
+    ANSEL = 0b00010000;       // 0x10 Clear Pin selection bits - AN2-AN3 are digital I/O for now
+    ANSEL |= Channel;         // 0b0001[xxxx] Select Pin as AN0-AN3 depends on algorithm
+    TRISIO = 0b00001011;      // Gp0, Gp1, Gp3 are always as inputs; Gp5 is always output; Gp2, Gp4 are as outputs for now
+    TRISIO |= Channel;        // 0b000[x]1[x]11 Select Pin as AN0-AN3 depends on algorithm
+    ADCON0 = 0b10000001;      //0x81 // Turn on the A/D Converter ADFM and ADON
+ */ 
+
+
+}
  
   
 
