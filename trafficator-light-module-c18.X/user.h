@@ -30,34 +30,13 @@ void ReversOn(void);
 /* User Function Prototypes                                                   */
 /******************************************************************************/
 
-#define AN0 0b00000000
+#define AN0 0b00000001
 #define AN1 0b00000010
 #define AN2 0b00000100
 #define AN3 0b00011000
 #define AN4 0b00101000 // chnge its value!!!!
 #define AN5 0b00110000 // chnge its value!!!!
 #define AN6 0b00111000 // chnge its value!!!!
-
-
-/*bit 4-2 CHS<2:0>:Analog Channel Select bits
-                                    000= Channel 0 (AN0) 
-                                    001= Channel 1 (AN1) 
-                                    010= Channel 2 (AN2) 
-                                    011= Channel 3 (AN3) 
-                                    100= Channel 4 (AN4) 
-                                    101= Channel 5 (AN5) 
-                                    110= Channel 6 (AN6)
-                                    111= Unimplemented  
- 
-        case AN0:   ADCON0 |= 0b00000000; break; // set bit 4-2 to 000
-        case AN1:   ADCON0 |= 0b00000100; break; // set bit 4-2 to 001
-        case AN2:   ADCON0 |= 0b00001000; break; // set bit 4-2 to 010
-        case AN3:   ADCON0 |= 0b00001100; break; // set bit 4-2 to 011
-        case AN4:   ADCON0 |= 0b00010000; break; // set bit 4-2 to 100
-        case AN5:   ADCON0 |= 0b00010100; break; // set bit 4-2 to 101
-        case AN6:   ADCON0 |= 0b00011000; break; // set bit 4-2 to 110
- */
-
 
     #define V_in        PORTAbits.AN0
     #define V_out       PORTAbits.AN1

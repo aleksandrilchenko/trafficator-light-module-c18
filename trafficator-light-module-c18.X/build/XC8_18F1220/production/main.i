@@ -3199,7 +3199,7 @@ _Bool AddRightBlinks(void);
 _Bool AddLeftBlinks(void);
 _Bool Turn_49A(void);
 void ReversOn(void);
-# 75 "./user.h"
+# 54 "./user.h"
 extern _Bool wasTurningRight;
 extern _Bool wasTurningLeft;
 
@@ -3274,6 +3274,8 @@ _Bool wasTurningLeft;
 
 void main()
 {
+    InitApp();
+
     int _49A_in_value = 0;
     int Reverse_in_value = 0;
     int R_ch_in_value = 0;
@@ -3290,7 +3292,6 @@ void main()
     PORTBbits.RB4 = 0;
     PORTAbits.RA6 = 0;
 
-    InitADC(0b00101000|0b00110000);
     _49A_in_value = GetADCValue(0b00101000);
     Reverse_in_value = GetADCValue(0b00110000);
 

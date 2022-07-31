@@ -34,68 +34,28 @@
 void InitApp(void)
 {
     /* TODO Initialize User Ports/Peripherals/Project here */
-
     /* Setup analog functionality and port direction */
-
+    ADCON1 = 0b00000000;        // all inputs are analog inputs
+                                // bit 7 unimplemented, read as 0
+                                /*1= Pin configured as a digital port
+                                  0= Pin configured as an analog channel - digital input disabled and reads - 0*/
+    TRISA = 0b00000000;
+    TRISB = 0b00000000;
+    ADCON2 = 0b00001111;        /*bit 7 ADFM:A/D Result Format Select bit
+                                        1= Right justified 
+                                        0= Left justified 
+                                  bit 6 Unimplemented: Read as ?0?
+                                  bit 5-3 ACQT<2:0>: A/D Acquisition Time Select bits
+                                        001= 2 TAD
+                                  bit 2-0 ADCS<2:0>:A/D Conversion Clock Select bits
+                                        111= FRC(clock derived from A/D RC oscillator)*/
+    
     /* Initialize peripherals */
 
     /* Configure the IPEN bit (1=on) in RCON to turn on/off int priorities */
 
     /* Enable interrupts */
 }
-
-void InitADC(unsigned char Channel)
-{
-    /* ADC Initialisation*/
-    
-    ADCON1 = 0b00000000;        // all inputs are analog inputs
-                                // bit 7 unimplemented, read as 0
-                                /*1= Pin configured as a digital port
-                                  0= Pin configured as an analog channel - digital input disabled and reads - 0*/
-    ADCON1 |= Channel;         // 0b0[xxxxxxx] Select Pin as AN0-AN6 depends on algorithm
-    
-    TRISA = 0b00001011;      // CHANGE IT!!!Gp0, Gp1, Gp3 are always as inputs; Gp5 is always output; Gp2, Gp4 are as outputs for now
-    TRISA |= Channel;        // CHANGE IT!!!0b000[x]1[x]11 Select Pin as AN0-AN3 depends on algorithm
-   
-    ADCON0 = 0b00000001;        //set Ref voltages as Vdd/Vss  (bit 7-6 as 00)
-                                // bit 5 unimplemented, read as 0
-                                /*bit 4-2 CHS<2:0>:Analog Channel Select bits
-                                    000= Channel 0 (AN0) 
-                                    001= Channel 1 (AN1) 
-                                    010= Channel 2 (AN2) 
-                                    011= Channel 3 (AN3) 
-                                    100= Channel 4 (AN4) 
-                                    101= Channel 5 (AN5) 
-                                    110= Channel 6 (AN6)
-                                    111= Unimplemented  
-                                 bit 1 GO/DONE: A/D Conversion Status bit
-                                    When ADON = 1:
-                                    1= A/D conversion in progress
-                                    0= A/D Idle 
-                                 bit 0 ADON:A/D On bit
-                                    1= A/D converter module is enabled 
-                                    0= A/D converter module is disabled*/
-    
-    ADCON2 = 0b00000111;        /*bit 7 ADFM:A/D Result Format Select bit
-                                        1= Right justified 
-                                        0= Left justified 
-                                  bit 6 Unimplemented: Read as ?0?
-                                  bit 5-3 ACQT<2:0>: A/D Acquisition Time Select bits
-                                        000= 0 TAD
-                                  bit 2-0 ADCS<2:0>:A/D Conversion Clock Select bits
-                                        111= FRC(clock derived from A/D RC oscillator)*/
-    
-/*
-    ANSEL = 0b00010000;       // 0x10 Clear Pin selection bits - AN2-AN3 are digital I/O for now
-    ANSEL |= Channel;         // 0b0001[xxxx] Select Pin as AN0-AN3 depends on algorithm
-    TRISIO = 0b00001011;      // Gp0, Gp1, Gp3 are always as inputs; Gp5 is always output; Gp2, Gp4 are as outputs for now
-    TRISIO |= Channel;        // 0b000[x]1[x]11 Select Pin as AN0-AN3 depends on algorithm
-    ADCON0 = 0b10000001;      //0x81 // Turn on the A/D Converter ADFM and ADON
- */ 
-
-
-}
- 
   
 
 /*void InitInterrupt (void)    // is not using now
@@ -134,7 +94,7 @@ int GetADCValue(unsigned char Channel)
     int temp_1 =0;
     int temp_2 =0;
     
-    ADCON0 &= 0b11100011;      // Clear Channel selection bits
+    ADCON0 = 0b11100011;      // Clear Channel selection bits
     switch(Channel)
     {
         case AN0:   ADCON0 |= 0b00000000; break; // set bit 4-2 to 000
@@ -171,7 +131,6 @@ int GetADCValue(unsigned char Channel)
 
 int GetCurrentValue(void)  // the value is in ADC code
     {               
-    InitADC(AN0|AN1);
     int V_in_value = GetADCValue(AN0);
     int V_out_value = GetADCValue(AN1);
     return (V_in_value - V_out_value);    //reverse this logic  
@@ -181,7 +140,6 @@ int GetCurrentValue(void)  // the value is in ADC code
 
 bool GetDirection(void)  // the value is in ADC code
     {
-    InitADC(AN2|AN3);               //--Set up AN2 and AN3 --//
     R_ch_in_value = GetADCValue(AN2);
     L_ch_in_value = GetADCValue(AN3);
     

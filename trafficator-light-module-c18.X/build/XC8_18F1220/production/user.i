@@ -3195,7 +3195,7 @@ _Bool AddRightBlinks(void);
 _Bool AddLeftBlinks(void);
 _Bool Turn_49A(void);
 void ReversOn(void);
-# 75 "./user.h"
+# 54 "./user.h"
 extern _Bool wasTurningRight;
 extern _Bool wasTurningLeft;
 
@@ -3222,35 +3222,27 @@ extern int L_ch_in_value;
 
 void InitApp(void)
 {
-# 45 "user.c"
-}
-
-void InitADC(unsigned char Channel)
-{
 
 
     ADCON1 = 0b00000000;
 
 
 
-
-    ADCON0 = 0b00000000;
-
-    ADCON0 |= Channel;
-# 75 "user.c"
-    ADCON2 = 0b00000111;
-# 84 "user.c"
- }
-# 119 "user.c"
+    TRISA = 0b00000000;
+    TRISB = 0b00000000;
+    ADCON2 = 0b00001111;
+# 58 "user.c"
+}
+# 92 "user.c"
 int GetADCValue(unsigned char Channel)
 {
     int temp_1 =0;
     int temp_2 =0;
 
-    ADCON0 &= 0b11100011;
+    ADCON0 = 0b11100011;
     switch(Channel)
     {
-        case 0b00000000: ADCON0 |= 0b00000000; break;
+        case 0b00000001: ADCON0 |= 0b00000000; break;
         case 0b00000010: ADCON0 |= 0b00000100; break;
         case 0b00000100: ADCON0 |= 0b00001000; break;
         case 0b00011000: ADCON0 |= 0b00001100; break;
@@ -3284,8 +3276,7 @@ int GetADCValue(unsigned char Channel)
 
 int GetCurrentValue(void)
     {
-    InitADC(0b00000000|0b00000010);
-    int V_in_value = GetADCValue(0b00000000);
+    int V_in_value = GetADCValue(0b00000001);
     int V_out_value = GetADCValue(0b00000010);
     return (V_in_value - V_out_value);
     }
@@ -3294,7 +3285,6 @@ int GetCurrentValue(void)
 
 _Bool GetDirection(void)
     {
-    InitADC(0b00000100|0b00011000);
     R_ch_in_value = GetADCValue(0b00000100);
     L_ch_in_value = GetADCValue(0b00011000);
 

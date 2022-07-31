@@ -12,7 +12,9 @@
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <asminc-extensions/>
             <make-dep-projects/>
-            <sourceRootList/>
+            <sourceRootList>
+                <sourceRootElem>../../../../../../Program Files/Microchip/xc8/v2.40/include</sourceRootElem>
+            </sourceRootList>
             <confList>
                 <confElem>
                     <name>XC8_18F1220</name>

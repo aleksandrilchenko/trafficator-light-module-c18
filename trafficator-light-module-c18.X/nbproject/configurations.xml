@@ -29,6 +29,9 @@
     <itemPath>legal_disclaimer.txt</itemPath>
     <itemPath>project_information.txt</itemPath>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>../../../../../../Program Files/Microchip/xc8/v2.40/include</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="XC8_18F1220" type="2">

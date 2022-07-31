@@ -82,6 +82,8 @@ bool wasTurningLeft;
 
 void main()
 {
+    InitApp();
+    
     int _49A_in_value = 0;
     int Reverse_in_value = 0;
     int R_ch_in_value = 0; 
@@ -98,7 +100,6 @@ void main()
     L_ch_out = 0;
     _49A_out = 0;
     
-    InitADC(AN4|AN5);               //--Set up AN2 and AN3 --//
     _49A_in_value = GetADCValue(AN4);
     Reverse_in_value = GetADCValue(AN5);
     
