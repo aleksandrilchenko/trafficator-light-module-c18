@@ -1,93 +1,22 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
+"5339 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 5339: extern volatile __bit TMR2IF __attribute__((address(0x7CF1)));
+[v _TMR2IF `Vb ~T0 @X0 0 e@31985 ]
+"28 ./user.h
+[; ;./user.h: 28: extern volatile int wait;
+[v _wait `Vi ~T0 @X0 0 e ]
+"2559 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 2559: extern volatile unsigned char CCPR1L __attribute__((address(0xFBE)));
+[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
+"4562
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 4562: extern volatile __bit DC1B1 __attribute__((address(0x7DED)));
+[v _DC1B1 `Vb ~T0 @X0 0 e@32237 ]
+"4559
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 4559: extern volatile __bit DC1B0 __attribute__((address(0x7DEC)));
+[v _DC1B0 `Vb ~T0 @X0 0 e@32236 ]
 "13 ./user.h
 [; ;./user.h: 13: void InitApp(void);
 [v _InitApp `(v ~T0 @X0 0 ef ]
-"59 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 59:     struct {
-[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S7 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"69
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 69:     struct {
-[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S8 . AN0 AN1 AN2 AN3 . MCLR CLKO CLKI ]
-"79
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 79:     struct {
-[s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S9 . . LVDIN VREFM VREFP T0CKI . OSC2 OSC1 ]
-"89
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 89:     struct {
-[s S10 :5 `uc 1 :1 `uc 1 ]
-[n S10 . . NOT_MCLR ]
-"93
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 93:     struct {
-[s S11 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S11 . . nMCLR CLKOUT CLKIN ]
-"99
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 99:     struct {
-[s S12 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
-[n S12 . ULPWUIN . RJPU ]
-"58
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 58: typedef union {
-[u S6 `S7 1 `S8 1 `S9 1 `S10 1 `S11 1 `S12 1 ]
-[n S6 . . . . . . . ]
-"105
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 105: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
-[v _PORTAbits `VS6 ~T0 @X0 0 e@3968 ]
-"251
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 251:     struct {
-[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S14 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"261
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 261:     struct {
-[s S15 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S15 . AN4 AN5 . CCP1 AN6 PGM PGC PGD ]
-"271
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 271:     struct {
-[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S16 . INT0 INT1 INT2 . KBI0 KBI1 KBI2 KBI3 ]
-"281
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 281:     struct {
-[s S17 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S17 . . CK P1B P1A DT . P1C P1D ]
-"291
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 291:     struct {
-[s S18 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S18 . . TX . RX . T1OSO T1OSI ]
-"300
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 300:     struct {
-[s S19 :6 `uc 1 :1 `uc 1 ]
-[n S19 . . T13CKI ]
-"304
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 304:     struct {
-[s S20 :6 `uc 1 :1 `uc 1 ]
-[n S20 . . T1CKI ]
-"308
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 308:     struct {
-[s S21 :3 `uc 1 :1 `uc 1 ]
-[n S21 . . CCP2_PA2 ]
-"250
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 250: typedef union {
-[u S13 `S14 1 `S15 1 `S16 1 `S17 1 `S18 1 `S19 1 `S20 1 `S21 1 ]
-[n S13 . . . . . . . . . ]
-"313
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 313: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
-[v _PORTBbits `VS13 ~T0 @X0 0 e@3969 ]
-"18 ./user.h
-[; ;./user.h: 18: int GetADCValue(unsigned char);
-[v _GetADCValue `(i ~T0 @X0 0 ef1`uc ]
-"24
-[; ;./user.h: 24: void ReversOn(void);
-[v _ReversOn `(v ~T0 @X0 0 ef ]
-"23
-[; ;./user.h: 23: _Bool Turn_49A(void);
-[v _Turn_49A `(a ~T0 @X0 0 ef ]
-"21
-[; ;./user.h: 21: _Bool AddRightBlinks(void);
-[v _AddRightBlinks `(a ~T0 @X0 0 ef ]
-"22
-[; ;./user.h: 22: _Bool AddLeftBlinks(void);
-[v _AddLeftBlinks `(a ~T0 @X0 0 ef ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -5827,169 +5756,186 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 121 `i `uc
 ..
 ]
-"32 main.c
-[; ;main.c: 32: _Bool wasTurningRight;
-[v _wasTurningRight `a ~T0 @X0 1 e ]
-"33
-[; ;main.c: 33: _Bool wasTurningLeft;
-[v _wasTurningLeft `a ~T0 @X0 1 e ]
-"84
-[; ;main.c: 84: __asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
-[; <" GLOBAL nosup@@$_$_CONFIG ;# ">
-[; <" nosup@@$_$_CONFIG SET 0 ;# ">
-"85
-[; ;main.c: 85: __asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
-[; <" GLOBAL nosup@@$_$_CONFIG ;# ">
-[; <" nosup@@$_$_CONFIG SET 0 ;# ">
-"86
-[; ;main.c: 86: __asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
-[; <" GLOBAL nosup@@$_$_CONFIG ;# ">
-[; <" nosup@@$_$_CONFIG SET 0 ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"93
-[; ;main.c: 93: void main()
-[v _main `(v ~T0 @X0 1 ef ]
-"94
-[; ;main.c: 94: {
+"80 pwm_sound.c
+[; ;pwm_sound.c: 80: void hi_isr(void)
+[v _hi_isr `(v ~T0 @X0 1 ef ]
+"81
+[; ;pwm_sound.c: 81: {
 {
-[e :U _main ]
+[e :U _hi_isr ]
 [f ]
-"95
-[; ;main.c: 95:     InitApp();
-[e ( _InitApp ..  ]
-"97
-[; ;main.c: 97:     int _49A_in_value = 0;
-[v __49A_in_value `i ~T0 @X0 1 a ]
-[e = __49A_in_value -> 0 `i ]
-"98
-[; ;main.c: 98:     int Reverse_in_value = 0;
-[v _Reverse_in_value `i ~T0 @X0 1 a ]
-[e = _Reverse_in_value -> 0 `i ]
-"99
-[; ;main.c: 99:     int R_ch_in_value = 0;
-[v _R_ch_in_value `i ~T0 @X0 1 a ]
-[e = _R_ch_in_value -> 0 `i ]
-"100
-[; ;main.c: 100:     int L_ch_in_value = 0;
-[v _L_ch_in_value `i ~T0 @X0 1 a ]
-[e = _L_ch_in_value -> 0 `i ]
-"105
-[; ;main.c: 105:     while(1)
+"84
+[; ;pwm_sound.c: 84:  if(TMR2IF)
+[e $ ! _TMR2IF 181  ]
+"85
+[; ;pwm_sound.c: 85:  {
+{
+"86
+[; ;pwm_sound.c: 86:   if(wait) wait--;
+[e $ ! != _wait -> 0 `i 182  ]
+[e -- _wait -> -> 1 `i `Vi ]
 [e :U 182 ]
-"106
-[; ;main.c: 106:     {
-{
-"109
-[; ;main.c: 109:     PORTAbits.RA4 = 0;
-[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-"110
-[; ;main.c: 110:     PORTBbits.RB4 = 0;
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
-"111
-[; ;main.c: 111:     PORTAbits.RA6 = 0;
-[e = . . _PORTAbits 0 6 -> -> 0 `i `uc ]
-"113
-[; ;main.c: 113:     _49A_in_value = GetADCValue(0b00101000);
-[e = __49A_in_value ( _GetADCValue (1 -> -> 40 `i `uc ]
-"114
-[; ;main.c: 114:     Reverse_in_value = GetADCValue(0b00110000);
-[e = _Reverse_in_value ( _GetADCValue (1 -> -> 48 `i `uc ]
-"117
-[; ;main.c: 117:     if (Reverse_in_value > 155)
-[e $ ! > _Reverse_in_value -> 155 `i 184  ]
-"118
-[; ;main.c: 118:     {
-{
-"119
-[; ;main.c: 119:      ReversOn();
-[e ( _ReversOn ..  ]
-"120
-[; ;main.c: 120:     return;
-[e $UE 180  ]
-"121
-[; ;main.c: 121:     }
-}
-[e $U 185  ]
-"122
-[; ;main.c: 122:     else
-[e :U 184 ]
-"125
-[; ;main.c: 125:           if (_49A_in_value < 10)
-[e $ ! < __49A_in_value -> 10 `i 186  ]
-"126
-[; ;main.c: 126:             {
-{
-"127
-[; ;main.c: 127:             Turn_49A();
-[e ( _Turn_49A ..  ]
-"128
-[; ;main.c: 128:             }
-}
-[e $U 187  ]
-"129
-[; ;main.c: 129:     else if (wasTurningRight == 1 )
-[e :U 186 ]
-[e $ ! == -> _wasTurningRight `i -> 1 `i 188  ]
-"130
-[; ;main.c: 130:             {
-{
-"131
-[; ;main.c: 131:             AddRightBlinks();
-[e ( _AddRightBlinks ..  ]
-"132
-[; ;main.c: 132:             }
-}
-[e $U 189  ]
-"133
-[; ;main.c: 133:     else if (wasTurningLeft == 1 )
-[e :U 188 ]
-[e $ ! == -> _wasTurningLeft `i -> 1 `i 190  ]
-"134
-[; ;main.c: 134:             {
-{
-"135
-[; ;main.c: 135:             AddLeftBlinks();
-[e ( _AddLeftBlinks ..  ]
-"136
-[; ;main.c: 136:             }
-}
-[e $U 191  ]
-"137
-[; ;main.c: 137:     else {
-[e :U 190 ]
-{
-"140
-[; ;main.c: 140:             L_ch_in_value = 0;
-[e = _L_ch_in_value -> 0 `i ]
-"141
-[; ;main.c: 141:             R_ch_in_value = 0;
-[e = _R_ch_in_value -> 0 `i ]
-"142
-[; ;main.c: 142:             Reverse_in_value = 0;
-[e = _Reverse_in_value -> 0 `i ]
-"143
-[; ;main.c: 143:             _49A_in_value = 0;
-[e = __49A_in_value -> 0 `i ]
-"145
-[; ;main.c: 145:             wasTurningLeft = 0;
-[e = _wasTurningLeft -> -> 0 `i `a ]
-"146
-[; ;main.c: 146:             wasTurningRight = 0;
-[e = _wasTurningRight -> -> 0 `i `a ]
-"147
-[; ;main.c: 147:             }
-}
-[e :U 191 ]
-[e :U 189 ]
-[e :U 187 ]
-[e :U 185 ]
-"148
-[; ;main.c: 148: }
+"88
+[; ;pwm_sound.c: 88:   TMR2IF = 0;
+[e = _TMR2IF -> -> 0 `i `b ]
+"89
+[; ;pwm_sound.c: 89:  }
 }
 [e :U 181 ]
-[e $U 182  ]
-[e :U 183 ]
-"149
-[; ;main.c: 149: }
+"90
+[; ;pwm_sound.c: 90: }
 [e :UE 180 ]
+}
+"92
+[; ;pwm_sound.c: 92: void setPWM(unsigned char sample)
+[v _setPWM `(v ~T0 @X0 1 ef1`uc ]
+"93
+[; ;pwm_sound.c: 93: {
+{
+[e :U _setPWM ]
+"92
+[; ;pwm_sound.c: 92: void setPWM(unsigned char sample)
+[v _sample `uc ~T0 @X0 1 r1 ]
+"93
+[; ;pwm_sound.c: 93: {
+[f ]
+"95
+[; ;pwm_sound.c: 95:  CCPR1L = sample >> 2;
+[e = _CCPR1L -> >> -> _sample `i -> 2 `i `uc ]
+"96
+[; ;pwm_sound.c: 96:  DC1B1 = (sample&0x02)>>1;
+[e = _DC1B1 -> >> & -> _sample `i -> 2 `i -> 1 `i `b ]
+"97
+[; ;pwm_sound.c: 97:  DC1B0 = (sample&0x01);
+[e = _DC1B0 -> & -> _sample `i -> 1 `i `b ]
+"98
+[; ;pwm_sound.c: 98: }
+[e :UE 183 ]
+}
+"99
+[; ;pwm_sound.c: 99: void play(const char *sound, int size)
+[v _play `(v ~T0 @X0 1 ef2`*Cuc`i ]
+"100
+[; ;pwm_sound.c: 100: {
+{
+[e :U _play ]
+"99
+[; ;pwm_sound.c: 99: void play(const char *sound, int size)
+[v _sound `*Cuc ~T0 @X0 1 r1 ]
+[v _size `i ~T0 @X0 1 r2 ]
+"100
+[; ;pwm_sound.c: 100: {
+[f ]
+"101
+[; ;pwm_sound.c: 101:  int i;
+[v _i `i ~T0 @X0 1 a ]
+"102
+[; ;pwm_sound.c: 102:  for(i=0; i<size; i++)
+{
+[e = _i -> 0 `i ]
+[e $U 188  ]
+[e :U 185 ]
+"103
+[; ;pwm_sound.c: 103:  {
+{
+"105
+[; ;pwm_sound.c: 105:   setPWM(sound[i]);
+[e ( _setPWM (1 -> *U + _sound * -> _i `x -> -> # *U _sound `i `x `uc ]
+"108
+[; ;pwm_sound.c: 108:         wait=1;
+[e = _wait -> 1 `i ]
+"109
+[; ;pwm_sound.c: 109:   while(wait);
+[e $U 189  ]
+[e :U 190 ]
+[e :U 189 ]
+[e $ != _wait -> 0 `i 190  ]
+[e :U 191 ]
+"110
+[; ;pwm_sound.c: 110:  }
+}
+[e ++ _i -> 1 `i ]
+[e :U 188 ]
+[e $ < _i _size 185  ]
+[e :U 186 ]
+}
+"111
+[; ;pwm_sound.c: 111: }
+[e :UE 184 ]
+}
+"113
+[; ;pwm_sound.c: 113: void pause(int cycles)
+[v _pause `(v ~T0 @X0 1 ef1`i ]
+"114
+[; ;pwm_sound.c: 114: {
+{
+[e :U _pause ]
+"113
+[; ;pwm_sound.c: 113: void pause(int cycles)
+[v _cycles `i ~T0 @X0 1 r1 ]
+"114
+[; ;pwm_sound.c: 114: {
+[f ]
+"115
+[; ;pwm_sound.c: 115:  setPWM(0);
+[e ( _setPWM (1 -> -> 0 `i `uc ]
+"116
+[; ;pwm_sound.c: 116:  wait=cycles;
+[e = _wait _cycles ]
+"117
+[; ;pwm_sound.c: 117:  while(wait);
+[e $U 193  ]
+[e :U 194 ]
+[e :U 193 ]
+[e $ != _wait -> 0 `i 194  ]
+[e :U 195 ]
+"118
+[; ;pwm_sound.c: 118: }
+[e :UE 192 ]
+}
+"123
+[; ;pwm_sound.c: 123: void Bip(void)
+[v _Bip `(v ~T0 @X0 1 ef ]
+"124
+[; ;pwm_sound.c: 124: {
+{
+[e :U _Bip ]
+[f ]
+"126
+[; ;pwm_sound.c: 126:  InitApp();
+[e ( _InitApp ..  ]
+"128
+[; ;pwm_sound.c: 128:  while(1)
+[e :U 198 ]
+"129
+[; ;pwm_sound.c: 129:  {
+{
+"131
+[; ;pwm_sound.c: 131:   wait=1;
+[e = _wait -> 1 `i ]
+"132
+[; ;pwm_sound.c: 132:   while(wait);
+[e $U 200  ]
+[e :U 201 ]
+[e :U 200 ]
+[e $ != _wait -> 0 `i 201  ]
+[e :U 202 ]
+"135
+[; ;pwm_sound.c: 135:   play(okay, 5399);
+[e ( _play (2 , &U _okay -> 5399 `i ]
+"139
+[; ;pwm_sound.c: 139:  }
+}
+[e :U 197 ]
+[e $U 198  ]
+[e :U 199 ]
+"141
+[; ;pwm_sound.c: 141:  while(1);
+[e :U 204 ]
+[e :U 203 ]
+[e $U 204  ]
+[e :U 205 ]
+"142
+[; ;pwm_sound.c: 142: }
+[e :UE 196 ]
 }

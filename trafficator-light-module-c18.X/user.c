@@ -18,12 +18,15 @@
 #endif
 
 #include "user.h"
-
+#include "ok-sound.h"
+#include    <pic18.h>
 /******************************************************************************/
 /* User Functions                                                             */
 /******************************************************************************/
 
-#define _XTAL_FREQ 4000000  // 4MHZ internal crystal
+#define _XTAL_FREQ 8000000  // 8MHZ internal crystal
+#define K_TMR2	 (FOSC/4)/(T2_FREQ) 
+
     int R_ch_in_value = 0; 
     int L_ch_in_value = 0;
     int V_in_value = 0;
@@ -55,6 +58,62 @@ void InitApp(void)
     /* Configure the IPEN bit (1=on) in RCON to turn on/off int priorities */
 
     /* Enable interrupts */
+    
+    GIE = 0;			// No INTs
+	OSCCON = 0xF2;		// Master OSC at 8MHz RC INT with IDLE MODE
+
+	/* RB7=1 
+	 * RB6=1
+	 * RB5=1
+	 * RB4=1
+	 * RB3=0 speaker e 470R
+	 * RB2=1 
+	 * RB1=1
+	 * RB0=1
+	 * 0xF7
+	 */
+	TRISB = 0xF7;
+
+	/* PCFG7=0	NO SUCH BIT
+	 * PCFG6=1 RB4
+	 * PCFG5=1 RB1
+	 * PCFG4=1 RB0
+	 * PCFG3=1 RA3
+	 * PCFG2=1 RA2
+	 * PCFG1=1 RA1
+	 * PCFG0=1 RA0	
+	 * 0x7F
+	 */
+	ADCON1 = 0x7F;
+
+	
+	// Timer 2: no interrupt (base period for the PWM on CCP)
+	T2CON = 0x00;	// Timer 2 off, FOSC/4, pre 1:1, post 1:1
+	PR2  = K_TMR2;	// Load comparator value (PWM period)
+	TMR2IF = 0;		// Clear the interrupt flag
+	TMR2IE = 1;		// Enable timer 2 interrupt (not necessary for the PWM)
+	TMR2ON = 1;		// Start the timer and the PWM modulation!
+
+	/* CCP to turn off the sound
+	 * P1M1=  0
+	 * P1M0=  0  single output P1A for PWM mode
+	 * DC1B1= 0
+	 * DC1B0= 0  lsb of pwm duty cycle
+	 * CCP1M3=1
+	 * CCP1M2=1
+	 * CCP1M1=0
+	 * CCP1M0=0  PWM mode all active high
+	 *
+	 */
+	CCP1CON = 0x0C;
+
+	// Initial PWM value (no sound)
+	CCPR1L=0;	// 8 higher bits
+	DC1B1=0;
+	DC1B0=0;	// 2 lower bits
+	
+	PEIE = 1;			// Enable Low Priority Interrupts
+	GIE=1;				// Enable High Priority Interrupts
 }
   
 

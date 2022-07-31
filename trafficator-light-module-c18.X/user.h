@@ -12,8 +12,8 @@
 
 void InitApp(void);         /* I/O and Peripheral Initialization */
 
-//void InitPWM(void);
-//void Bip(void);
+void hi_isr(void);
+void Bip(void);
 void InitADC(unsigned char);         /* I/O and Peripheral Initialization */
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
@@ -23,8 +23,10 @@ bool AddLeftBlinks(void);
 bool Turn_49A(void);
 void ReversOn(void);
 
-//void InitInterrupt (void);
-//void interrupt ISR(void);
+
+extern unsigned char sample;
+extern volatile int wait;
+
 
 /******************************************************************************/
 /* User Function Prototypes                                                   */
