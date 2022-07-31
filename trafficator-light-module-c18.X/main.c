@@ -32,7 +32,7 @@
 bool wasTurningRight;
 bool wasTurningLeft;  
 
-/*// CONFIG1H
+// CONFIG1H
 #pragma config OSC = INTIO2     // Oscillator Selection bits (Internal RC oscillator, port function on RA6 and port function on RA7)
 #pragma config FSCM = ON        // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor enabled)
 #pragma config IESO = ON        // Internal External Switchover bit (Internal External Switchover mode enabled)
@@ -76,7 +76,7 @@ bool wasTurningLeft;
 
 // CONFIG7H
 #pragma config EBTRB = OFF      // Boot Block Table Read Protection bit (Boot Block (000000-0001FFh) not protected from table reads executed in other blocks)
-*/
+
 
 // --------------------------------------------------------------------------
 // Fuses and configuration bits
@@ -84,7 +84,7 @@ bool wasTurningLeft;
 __CONFIG(1, IESODIS & FCMDIS & RCIO);
 __CONFIG(2, PWRTEN & BORDIS & WDTDIS);
 __CONFIG(4, STVREN & DEBUGDIS & LVPDIS);
-//__CONFIG(5, CPA & CPB);
+__CONFIG(5, CPA & CPB);
 
 /******************************************************************************/
 /* Main Program                                                               */

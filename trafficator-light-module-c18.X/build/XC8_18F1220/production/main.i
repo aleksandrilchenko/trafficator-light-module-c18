@@ -3191,7 +3191,7 @@ void ConfigureOscillator(void);
 void InitApp(void);
 
 void hi_isr(void);
-void Bip(void);
+void Bip(const char *sound, int size);
 void InitADC(unsigned char);
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
@@ -3207,7 +3207,6 @@ extern volatile int wait;
 # 56 "./user.h"
 extern _Bool wasTurningRight;
 extern _Bool wasTurningLeft;
-
 
 extern int V_in_value;
 extern int V_out_value;
@@ -3548,11 +3547,60 @@ const char okay[5399]={0x39, 0x26, 0x26, 0x26, 0x26, 0x51, 0x77, 0x8C, 0x7C,
 
 _Bool wasTurningRight;
 _Bool wasTurningLeft;
-# 84 "main.c"
-__asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
-__asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
-__asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
 
+
+#pragma config OSC = INTIO2
+#pragma config FSCM = ON
+#pragma config IESO = ON
+
+
+#pragma config PWRT = OFF
+#pragma config BOR = ON
+
+
+
+#pragma config WDT = OFF
+#pragma config WDTPS = 32768
+
+
+#pragma config MCLRE = OFF
+
+
+#pragma config STVR = ON
+#pragma config LVP = ON
+
+
+#pragma config CP0 = OFF
+#pragma config CP1 = OFF
+
+
+#pragma config CPB = OFF
+#pragma config CPD = OFF
+
+
+#pragma config WRT0 = OFF
+#pragma config WRT1 = OFF
+
+
+#pragma config WRTC = OFF
+#pragma config WRTB = OFF
+#pragma config WRTD = OFF
+
+
+#pragma config EBTR0 = OFF
+#pragma config EBTR1 = OFF
+
+
+#pragma config EBTRB = OFF
+
+
+
+
+
+__asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
+__asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
+__asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
+__asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
 
 
 

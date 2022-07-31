@@ -25,6 +25,8 @@
 /******************************************************************************/
 
 #define _XTAL_FREQ 8000000  // 8MHZ internal crystal
+#define FOSC	8000000UL
+#define T2_FREQ	(11000)		// Between 8000Hz and 11025Hz (same as the WAV file)
 #define K_TMR2	 (FOSC/4)/(T2_FREQ) 
 
     int R_ch_in_value = 0; 
@@ -223,6 +225,8 @@ bool Turn_49A()
 {
         //TRISIO = 0b00001011;
         _49A_out = 1; 
+        Bip(okay, 5399);
+        //pause(32000);
         __delay_ms(100);
         
         int Current_value = GetCurrentValue();
@@ -230,7 +234,7 @@ bool Turn_49A()
         if (Current_value < 5)       // Increase the frequency if one lamp is broken                 
                 {
                 _49A_out = 1; 
-                //Bip();
+                Bip(okay, 5399);
                 GetDirection();
                 __delay_ms(50);
                 _49A_out = 0;                         
@@ -242,7 +246,7 @@ bool Turn_49A()
         else 
                 {
                 _49A_out = 1;
-                //Bip();
+                Bip(okay, 5399);
                 GetDirection();
                 __delay_ms(100);
                 _49A_out = 0;
@@ -259,17 +263,17 @@ bool Turn_49A()
             //TRISIO = 0b00001011;
             //L_ch = 0;    // latch the Left out to off state
             R_ch_out = 1;
-            //Bip();
+            Bip(okay, 5399);
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(500);
             R_ch_out = 1;
-            //Bip();
+            Bip(okay, 5399);
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(500);
             R_ch_out = 1;
-            //Bip();
+            Bip(okay, 5399);
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(100);
@@ -283,17 +287,17 @@ bool Turn_49A()
             //TRISIO = 0b00001011;
             //R_ch = 0;    // latch the Right out to off state
             L_ch_out = 1; 
-            //Bip();
+            Bip(okay, 5399);
             __delay_ms(300);
             L_ch_out = 0; 
             __delay_ms(500);
             L_ch_out = 1;
-            //Bip();
+            Bip(okay, 5399);
             __delay_ms(300);
             L_ch_out = 0; 
             __delay_ms(500);
             L_ch_out = 1; 
-            //Bip();
+            Bip(okay, 5399);
             __delay_ms(300);
             L_ch_out = 0; 
             __delay_ms(100);
@@ -304,63 +308,11 @@ bool Turn_49A()
     
    void ReversOn(void)
             {
-            //TRISIO = 0b00001011;                    // Gp0, Gp1, Gp3 are always as inputs; Gp5 is always output; Gp2, Gp4 are as outputs for now 
-                //Bip();
-                //GPIO = 0b00010100; // L_ch = 1; R_ch = 1;
+            L_ch_out = 1; 
+            R_ch_out = 1;
+            Bip(okay, 5399);
             __delay_ms(120);
-                //GPIO = 0b00000000; // L_ch = 0; R_ch = 0;
+            L_ch_out = 0; R_ch_out = 0;
             __delay_ms(500);        
             }
-   
-
-/*void interrupt ISR(void)
-{
-	if(T0IF)  //If Timer0 Interrupt
-	{
-		if(PWM_Pin)	// if PWM_Pin is high
-		{
-			PWM_Pin = 0;
-			TMR0 = PWM;
-		}
-		else	     // if PWM_Pin is low
-		{
-			PWM_Pin = 1;
-			TMR0 = 255 - PWM;
-		}
-
-		T0IF = 0;   // Clear the interrupt
-	}
-}
-
-unsigned char PWM = 0;
-
-void InitPWM(void)
-{
-	// Use timer0 for generatung PWM
-    
-    //OPTION_REG	=	0b10000111;	//set timer pre-scaler to 64/pre-scaler assigned to timer module 
-		//	nGPPU = 1;		// internal pull-ups disabled
-		//	INTEDG = 0;		// falling edge trigger the interrupt__don't care
-		//	T0CS = 0;		// timer transition on cycle clock
-		//	T0SE = 0		// increment on low to high transition of GP2
-		//	PSA = 0			// pre-scaler is set to the TIMER0 module
-		//  ps>>101, or 64 / 111, or 256; 110, or 128
-	OPTION_REG &= 0xC0;     // or 0b11000000 Intialize timer0
-	
-	T0IE = 1;				// Enable Timer0 interrupt
-	GIE = 1;				// Enable global interrupts
-}
-
-void StartBip(void)
-{
-    InitPWM();			 // Initialize PWM
-    PWM = 250;
-}
-
-void StopBip(void)
-{
-    T0IE = 0;				// Disable Timer0 interrupt
-    GIE = 0;				// Disable global interrupts
-    PWM_Pin = 0;
-}
-*/
+ 

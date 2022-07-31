@@ -13,7 +13,7 @@
 void InitApp(void);         /* I/O and Peripheral Initialization */
 
 void hi_isr(void);
-void Bip(void);
+void Bip(const char *sound, int size);
 void InitADC(unsigned char);         /* I/O and Peripheral Initialization */
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
@@ -55,7 +55,6 @@ extern volatile int wait;
 
 extern bool wasTurningRight;
 extern bool wasTurningLeft;
-// extern unsigned char PWM;
 
 extern int V_in_value;
 extern int V_out_value;
