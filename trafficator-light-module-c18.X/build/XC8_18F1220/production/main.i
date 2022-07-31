@@ -3549,13 +3549,13 @@ _Bool wasTurningRight;
 _Bool wasTurningLeft;
 
 
-#pragma config OSC = INTIO2
-#pragma config FSCM = ON
-#pragma config IESO = ON
+#pragma config OSC = ECIO
+#pragma config FSCM = OFF
+#pragma config IESO = OFF
 
 
-#pragma config PWRT = OFF
-#pragma config BOR = ON
+#pragma config PWRT = ON
+#pragma config BOR = OFF
 
 
 
@@ -3567,7 +3567,7 @@ _Bool wasTurningLeft;
 
 
 #pragma config STVR = ON
-#pragma config LVP = ON
+#pragma config LVP = OFF
 
 
 #pragma config CP0 = OFF
@@ -3592,20 +3592,7 @@ _Bool wasTurningLeft;
 
 
 #pragma config EBTRB = OFF
-
-
-
-
-
-__asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
-__asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
-__asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
-__asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
-
-
-
-
-
+# 91 "main.c"
 void main()
 {
     InitApp();

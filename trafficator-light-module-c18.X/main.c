@@ -33,13 +33,13 @@ bool wasTurningRight;
 bool wasTurningLeft;  
 
 // CONFIG1H
-#pragma config OSC = INTIO2     // Oscillator Selection bits (Internal RC oscillator, port function on RA6 and port function on RA7)
-#pragma config FSCM = ON        // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor enabled)
-#pragma config IESO = ON        // Internal External Switchover bit (Internal External Switchover mode enabled)
+#pragma config OSC = ECIO       // Oscillator Selection bits (EC oscillator, port function on RA6)
+#pragma config FSCM = OFF       // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor disabled)
+#pragma config IESO = OFF       // Internal External Switchover bit (Internal External Switchover mode disabled)
 
 // CONFIG2L
-#pragma config PWRT = OFF       // Power-up Timer Enable bit (PWRT disabled)
-#pragma config BOR = ON         // Brown-out Reset Enable bit (Brown-out Reset enabled)
+#pragma config PWRT = ON        // Power-up Timer Enable bit (PWRT enabled)
+#pragma config BOR = OFF        // Brown-out Reset Enable bit (Brown-out Reset disabled)
 // BORV = No Setting
 
 // CONFIG2H
@@ -51,7 +51,7 @@ bool wasTurningLeft;
 
 // CONFIG4L
 #pragma config STVR = ON        // Stack Full/Underflow Reset Enable bit (Stack full/underflow will cause Reset)
-#pragma config LVP = ON         // Low-Voltage ICSP Enable bit (Low-Voltage ICSP enabled)
+#pragma config LVP = OFF        // Low-Voltage ICSP Enable bit (Low-Voltage ICSP disabled)
 
 // CONFIG5L
 #pragma config CP0 = OFF        // Code Protection bit (Block 0 (00200-000FFFh) not code-protected)
@@ -76,15 +76,6 @@ bool wasTurningLeft;
 
 // CONFIG7H
 #pragma config EBTRB = OFF      // Boot Block Table Read Protection bit (Boot Block (000000-0001FFh) not protected from table reads executed in other blocks)
-
-
-// --------------------------------------------------------------------------
-// Fuses and configuration bits
-//
-__CONFIG(1, IESODIS & FCMDIS & RCIO);
-__CONFIG(2, PWRTEN & BORDIS & WDTDIS);
-__CONFIG(4, STVREN & DEBUGDIS & LVPDIS);
-__CONFIG(5, CPA & CPB);
 
 /******************************************************************************/
 /* Main Program                                                               */
