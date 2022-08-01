@@ -40,17 +40,17 @@ extern volatile int wait;
 #define AN5 0b00110000 // chnge its value!!!!
 #define AN6 0b00111000 // chnge its value!!!!
 
-    #define V_in        PORTAbits.AN0
-    #define V_out       PORTAbits.AN1
-    #define R_ch_in     PORTAbits.AN2
-    #define L_ch_in     PORTAbits.AN3
-    #define _49A_in     PORTBbits.AN4
-    #define Reverse_in  PORTBbits.AN5
+    #define V_in        PORTAbits.AN1
+    #define V_out       PORTAbits.AN0
+    #define R_ch_in     PORTAbits.AN3
+    #define L_ch_in     PORTAbits.AN5
+    #define Reverse_in  PORTBbits.AN6
 
-    #define R_ch_out    PORTAbits.RA4
-    #define L_ch_out    PORTBbits.RB4
-    #define _49A_out    PORTAbits.RA6
-    #define PWM_Pin     PORTAbits.RA7
+    #define R_ch_out    PORTAbits.RA2
+    #define L_ch_out    PORTBbits.RB0
+    #define _49A_out    PORTBbits.RB3
+    #define PWM_Pin     PORTBbits.RB6 //PWM P1C channel // RB5 must be input in Z-state
+    #define _49A_in     PORTAbits.RA4 //discrete input
 
 
 extern bool wasTurningRight;

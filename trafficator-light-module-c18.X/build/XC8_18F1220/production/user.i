@@ -3652,7 +3652,7 @@ _Bool GetDirection(void)
 _Bool Turn_49A()
 {
 
-        PORTAbits.RA6 = 1;
+        PORTBbits.RB3 = 1;
         Bip(okay, 5399);
 
         _delay((unsigned long)((100)*(8000000/4000.0)));
@@ -3661,11 +3661,11 @@ _Bool Turn_49A()
 
         if (Current_value < 5)
                 {
-                PORTAbits.RA6 = 1;
+                PORTBbits.RB3 = 1;
                 Bip(okay, 5399);
                 GetDirection();
                 _delay((unsigned long)((50)*(8000000/4000.0)));
-                PORTAbits.RA6 = 0;
+                PORTBbits.RB3 = 0;
                 _delay((unsigned long)((200)*(8000000/4000.0)));
                 Current_value = 0;
                 return (wasTurningLeft & wasTurningRight);
@@ -3673,11 +3673,11 @@ _Bool Turn_49A()
 
         else
                 {
-                PORTAbits.RA6 = 1;
+                PORTBbits.RB3 = 1;
                 Bip(okay, 5399);
                 GetDirection();
                 _delay((unsigned long)((100)*(8000000/4000.0)));
-                PORTAbits.RA6 = 0;
+                PORTBbits.RB3 = 0;
                 _delay((unsigned long)((400)*(8000000/4000.0)));
                 Current_value = 0;
                 return (wasTurningLeft & wasTurningRight);
@@ -3690,20 +3690,20 @@ _Bool Turn_49A()
             {
 
 
-            PORTAbits.RA4 = 1;
+            PORTAbits.RA2 = 1;
             Bip(okay, 5399);
             _delay((unsigned long)((300)*(8000000/4000.0)));
-            PORTAbits.RA4 = 0;
+            PORTAbits.RA2 = 0;
             _delay((unsigned long)((500)*(8000000/4000.0)));
-            PORTAbits.RA4 = 1;
+            PORTAbits.RA2 = 1;
             Bip(okay, 5399);
             _delay((unsigned long)((300)*(8000000/4000.0)));
-            PORTAbits.RA4 = 0;
+            PORTAbits.RA2 = 0;
             _delay((unsigned long)((500)*(8000000/4000.0)));
-            PORTAbits.RA4 = 1;
+            PORTAbits.RA2 = 1;
             Bip(okay, 5399);
             _delay((unsigned long)((300)*(8000000/4000.0)));
-            PORTAbits.RA4 = 0;
+            PORTAbits.RA2 = 0;
             _delay((unsigned long)((100)*(8000000/4000.0)));
             return wasTurningRight = 0;
             }
@@ -3714,20 +3714,20 @@ _Bool Turn_49A()
             {
 
 
-            PORTBbits.RB4 = 1;
+            PORTBbits.RB0 = 1;
             Bip(okay, 5399);
             _delay((unsigned long)((300)*(8000000/4000.0)));
-            PORTBbits.RB4 = 0;
+            PORTBbits.RB0 = 0;
             _delay((unsigned long)((500)*(8000000/4000.0)));
-            PORTBbits.RB4 = 1;
+            PORTBbits.RB0 = 1;
             Bip(okay, 5399);
             _delay((unsigned long)((300)*(8000000/4000.0)));
-            PORTBbits.RB4 = 0;
+            PORTBbits.RB0 = 0;
             _delay((unsigned long)((500)*(8000000/4000.0)));
-            PORTBbits.RB4 = 1;
+            PORTBbits.RB0 = 1;
             Bip(okay, 5399);
             _delay((unsigned long)((300)*(8000000/4000.0)));
-            PORTBbits.RB4 = 0;
+            PORTBbits.RB0 = 0;
             _delay((unsigned long)((100)*(8000000/4000.0)));
             return wasTurningLeft = 0;
             }
@@ -3736,10 +3736,10 @@ _Bool Turn_49A()
 
    void ReversOn(void)
             {
-            PORTBbits.RB4 = 1;
-            PORTAbits.RA4 = 1;
+            PORTBbits.RB0 = 1;
+            PORTAbits.RA2 = 1;
             Bip(okay, 5399);
             _delay((unsigned long)((120)*(8000000/4000.0)));
-            PORTBbits.RB4 = 0; PORTAbits.RA4 = 0;
+            PORTBbits.RB0 = 0; PORTAbits.RA2 = 0;
             _delay((unsigned long)((500)*(8000000/4000.0)));
             }

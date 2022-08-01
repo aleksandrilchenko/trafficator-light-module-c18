@@ -5829,29 +5829,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "32 main.c
 [; ;main.c: 32: _Bool wasTurningRight;
+[; ;main.c: 32: 
 [v _wasTurningRight `a ~T0 @X0 1 e ]
 "33
 [; ;main.c: 33: _Bool wasTurningLeft;
+[; ;main.c: 33: 
 [v _wasTurningLeft `a ~T0 @X0 1 e ]
 "36
+[; ;main.c: 36:             Turn_49A();
 [p x OSC  =  ECIO        ]
 "37
+[; ;main.c: 37:             }
 [p x FSCM  =  OFF        ]
 "38
+[; ;main.c: 38:     else if (wasTurningRight == 1 )
 [p x IESO  =  OFF        ]
 "41
+[; ;main.c: 41:             }
 [p x PWRT  =  ON         ]
 "42
+[; ;main.c: 42:     else if (wasTurningLeft == 1 )
 [p x BOR  =  OFF         ]
 "46
+[; ;main.c: 46:     else {
 [p x WDT  =  OFF         ]
 "47
+[; ;main.c: 47:             L_ch_in_value = 0;
 [p x WDTPS  =  32768     ]
 "50
+[; ;main.c: 50:             _49A_in_value = 0;
 [p x MCLRE  =  OFF       ]
 "53
+[; ;main.c: 53:             wasTurningRight = 0;
 [p x STVR  =  ON         ]
 "54
+[; ;main.c: 54:             }
 [p x LVP  =  OFF         ]
 "57
 [p x CP0  =  OFF         ]
@@ -5878,150 +5890,108 @@ Version 4.0 HI-TECH Software Intermediate Code
 "78
 [p x EBTRB  =  OFF       ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"91
-[; ;main.c: 91: void main()
+"84
 [v _main `(v ~T0 @X0 1 ef ]
-"92
-[; ;main.c: 92: {
+"85
 {
 [e :U _main ]
 [f ]
-"93
-[; ;main.c: 93:     InitApp();
+"86
 [e ( _InitApp ..  ]
-"95
-[; ;main.c: 95:     int _49A_in_value = 0;
+"88
 [v __49A_in_value `i ~T0 @X0 1 a ]
 [e = __49A_in_value -> 0 `i ]
-"96
-[; ;main.c: 96:     int Reverse_in_value = 0;
+"89
 [v _Reverse_in_value `i ~T0 @X0 1 a ]
 [e = _Reverse_in_value -> 0 `i ]
-"97
-[; ;main.c: 97:     int R_ch_in_value = 0;
+"90
 [v _R_ch_in_value `i ~T0 @X0 1 a ]
 [e = _R_ch_in_value -> 0 `i ]
-"98
-[; ;main.c: 98:     int L_ch_in_value = 0;
+"91
 [v _L_ch_in_value `i ~T0 @X0 1 a ]
 [e = _L_ch_in_value -> 0 `i ]
-"103
-[; ;main.c: 103:     while(1)
+"96
 [e :U 182 ]
-"104
-[; ;main.c: 104:     {
+"97
 {
-"107
-[; ;main.c: 107:     PORTAbits.RA4 = 0;
-[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-"108
-[; ;main.c: 108:     PORTBbits.RB4 = 0;
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
-"109
-[; ;main.c: 109:     PORTAbits.RA6 = 0;
-[e = . . _PORTAbits 0 6 -> -> 0 `i `uc ]
-"111
-[; ;main.c: 111:     _49A_in_value = GetADCValue(0b00101000);
+"98
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+"99
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+"100
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+"102
 [e = __49A_in_value ( _GetADCValue (1 -> -> 40 `i `uc ]
-"112
-[; ;main.c: 112:     Reverse_in_value = GetADCValue(0b00110000);
+"103
 [e = _Reverse_in_value ( _GetADCValue (1 -> -> 48 `i `uc ]
-"115
-[; ;main.c: 115:     if (Reverse_in_value > 155)
+"106
 [e $ ! > _Reverse_in_value -> 155 `i 184  ]
-"116
-[; ;main.c: 116:     {
+"107
 {
-"117
-[; ;main.c: 117:      ReversOn();
+"108
 [e ( _ReversOn ..  ]
-"118
-[; ;main.c: 118:     return;
+"109
 [e $UE 180  ]
-"119
-[; ;main.c: 119:     }
+"110
 }
 [e $U 185  ]
-"120
-[; ;main.c: 120:     else
+"111
 [e :U 184 ]
-"123
-[; ;main.c: 123:           if (_49A_in_value < 10)
+"114
 [e $ ! < __49A_in_value -> 10 `i 186  ]
-"124
-[; ;main.c: 124:             {
+"115
 {
-"125
-[; ;main.c: 125:             Turn_49A();
+"116
 [e ( _Turn_49A ..  ]
-"126
-[; ;main.c: 126:             }
+"117
 }
 [e $U 187  ]
-"127
-[; ;main.c: 127:     else if (wasTurningRight == 1 )
+"118
 [e :U 186 ]
 [e $ ! == -> _wasTurningRight `i -> 1 `i 188  ]
-"128
-[; ;main.c: 128:             {
+"119
 {
-"129
-[; ;main.c: 129:             AddRightBlinks();
+"120
 [e ( _AddRightBlinks ..  ]
-"130
-[; ;main.c: 130:             }
+"121
 }
 [e $U 189  ]
-"131
-[; ;main.c: 131:     else if (wasTurningLeft == 1 )
+"122
 [e :U 188 ]
 [e $ ! == -> _wasTurningLeft `i -> 1 `i 190  ]
-"132
-[; ;main.c: 132:             {
+"123
 {
-"133
-[; ;main.c: 133:             AddLeftBlinks();
+"124
 [e ( _AddLeftBlinks ..  ]
-"134
-[; ;main.c: 134:             }
+"125
 }
 [e $U 191  ]
-"135
-[; ;main.c: 135:     else {
+"126
 [e :U 190 ]
 {
-"138
-[; ;main.c: 138:             L_ch_in_value = 0;
+"127
 [e = _L_ch_in_value -> 0 `i ]
-"139
-[; ;main.c: 139:             R_ch_in_value = 0;
+"128
 [e = _R_ch_in_value -> 0 `i ]
-"140
-[; ;main.c: 140:             Reverse_in_value = 0;
+"129
 [e = _Reverse_in_value -> 0 `i ]
-"141
-[; ;main.c: 141:             _49A_in_value = 0;
+"130
 [e = __49A_in_value -> 0 `i ]
-"143
-[; ;main.c: 143:             wasTurningLeft = 0;
+"132
 [e = _wasTurningLeft -> -> 0 `i `a ]
-"144
-[; ;main.c: 144:             wasTurningRight = 0;
+"133
 [e = _wasTurningRight -> -> 0 `i `a ]
-"145
-[; ;main.c: 145:             }
+"134
 }
 [e :U 191 ]
 [e :U 189 ]
 [e :U 187 ]
 [e :U 185 ]
-"146
-[; ;main.c: 146: }
+"135
 }
 [e :U 181 ]
 [e $U 182  ]
 [e :U 183 ]
-"147
-[; ;main.c: 147: }
+"136
 [e :UE 180 ]
 }

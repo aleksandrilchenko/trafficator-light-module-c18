@@ -69,40 +69,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "57
 [; ;./user.h: 57: extern _Bool wasTurningLeft;
 [v _wasTurningLeft `a ~T0 @X0 0 e ]
-"59 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 59:     struct {
-[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S7 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"69
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 69:     struct {
-[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S8 . AN0 AN1 AN2 AN3 . MCLR CLKO CLKI ]
-"79
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 79:     struct {
-[s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S9 . . LVDIN VREFM VREFP T0CKI . OSC2 OSC1 ]
-"89
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 89:     struct {
-[s S10 :5 `uc 1 :1 `uc 1 ]
-[n S10 . . NOT_MCLR ]
-"93
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 93:     struct {
-[s S11 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S11 . . nMCLR CLKOUT CLKIN ]
-"99
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 99:     struct {
-[s S12 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
-[n S12 . ULPWUIN . RJPU ]
-"58
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 58: typedef union {
-[u S6 `S7 1 `S8 1 `S9 1 `S10 1 `S11 1 `S12 1 ]
-[n S6 . . . . . . . ]
-"105
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 105: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
-[v _PORTAbits `VS6 ~T0 @X0 0 e@3968 ]
-"16 ./user.h
-[; ;./user.h: 16: void Bip(const char *sound, int size);
-[v _Bip `(v ~T0 @X0 0 ef2`*Cuc`i ]
 "251 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 251:     struct {
 [s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -142,6 +108,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 "313
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 313: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
 [v _PORTBbits `VS13 ~T0 @X0 0 e@3969 ]
+"16 ./user.h
+[; ;./user.h: 16: void Bip(const char *sound, int size);
+[v _Bip `(v ~T0 @X0 0 ef2`*Cuc`i ]
+"59 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 59:     struct {
+[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S7 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"69
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 69:     struct {
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . AN0 AN1 AN2 AN3 . MCLR CLKO CLKI ]
+"79
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 79:     struct {
+[s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S9 . . LVDIN VREFM VREFP T0CKI . OSC2 OSC1 ]
+"89
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 89:     struct {
+[s S10 :5 `uc 1 :1 `uc 1 ]
+[n S10 . . NOT_MCLR ]
+"93
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 93:     struct {
+[s S11 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S11 . . nMCLR CLKOUT CLKIN ]
+"99
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 99:     struct {
+[s S12 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
+[n S12 . ULPWUIN . RJPU ]
+"58
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 58: typedef union {
+[u S6 `S7 1 `S8 1 `S9 1 `S10 1 `S11 1 `S12 1 ]
+[n S6 . . . . . . . ]
+"105
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 105: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
+[v _PORTAbits `VS6 ~T0 @X0 0 e@3968 ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -6200,8 +6200,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _Turn_49A ]
 [f ]
 "227
-[; ;user.c: 227:         PORTAbits.RA6 = 1;
-[e = . . _PORTAbits 0 6 -> -> 1 `i `uc ]
+[; ;user.c: 227:         PORTBbits.RB3 = 1;
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
 "228
 [; ;user.c: 228:         Bip(okay, 5399);
 [e ( _Bip (2 , &U _okay -> 5399 `i ]
@@ -6219,8 +6219,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 235:                 {
 {
 "236
-[; ;user.c: 236:                 PORTAbits.RA6 = 1;
-[e = . . _PORTAbits 0 6 -> -> 1 `i `uc ]
+[; ;user.c: 236:                 PORTBbits.RB3 = 1;
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
 "237
 [; ;user.c: 237:                 Bip(okay, 5399);
 [e ( _Bip (2 , &U _okay -> 5399 `i ]
@@ -6231,8 +6231,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 239:                 _delay((unsigned long)((50)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "240
-[; ;user.c: 240:                 PORTAbits.RA6 = 0;
-[e = . . _PORTAbits 0 6 -> -> 0 `i `uc ]
+[; ;user.c: 240:                 PORTBbits.RB3 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
 "241
 [; ;user.c: 241:                 _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -6254,8 +6254,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 247:                 {
 {
 "248
-[; ;user.c: 248:                 PORTAbits.RA6 = 1;
-[e = . . _PORTAbits 0 6 -> -> 1 `i `uc ]
+[; ;user.c: 248:                 PORTBbits.RB3 = 1;
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
 "249
 [; ;user.c: 249:                 Bip(okay, 5399);
 [e ( _Bip (2 , &U _okay -> 5399 `i ]
@@ -6266,8 +6266,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 251:                 _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "252
-[; ;user.c: 252:                 PORTAbits.RA6 = 0;
-[e = . . _PORTAbits 0 6 -> -> 0 `i `uc ]
+[; ;user.c: 252:                 PORTBbits.RB3 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
 "253
 [; ;user.c: 253:                 _delay((unsigned long)((400)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 400 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -6295,8 +6295,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _AddRightBlinks ]
 [f ]
 "265
-[; ;user.c: 265:             PORTAbits.RA4 = 1;
-[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 265:             PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
 "266
 [; ;user.c: 266:             Bip(okay, 5399);
 [e ( _Bip (2 , &U _okay -> 5399 `i ]
@@ -6304,14 +6304,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 267:             _delay((unsigned long)((300)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "268
-[; ;user.c: 268:             PORTAbits.RA4 = 0;
-[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+[; ;user.c: 268:             PORTAbits.RA2 = 0;
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
 "269
 [; ;user.c: 269:             _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "270
-[; ;user.c: 270:             PORTAbits.RA4 = 1;
-[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 270:             PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
 "271
 [; ;user.c: 271:             Bip(okay, 5399);
 [e ( _Bip (2 , &U _okay -> 5399 `i ]
@@ -6319,14 +6319,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 272:             _delay((unsigned long)((300)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "273
-[; ;user.c: 273:             PORTAbits.RA4 = 0;
-[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+[; ;user.c: 273:             PORTAbits.RA2 = 0;
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
 "274
 [; ;user.c: 274:             _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "275
-[; ;user.c: 275:             PORTAbits.RA4 = 1;
-[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 275:             PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
 "276
 [; ;user.c: 276:             Bip(okay, 5399);
 [e ( _Bip (2 , &U _okay -> 5399 `i ]
@@ -6334,8 +6334,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 277:             _delay((unsigned long)((300)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "278
-[; ;user.c: 278:             PORTAbits.RA4 = 0;
-[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+[; ;user.c: 278:             PORTAbits.RA2 = 0;
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
 "279
 [; ;user.c: 279:             _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -6356,8 +6356,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _AddLeftBlinks ]
 [f ]
 "289
-[; ;user.c: 289:             PORTBbits.RB4 = 1;
-[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 289:             PORTBbits.RB0 = 1;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
 "290
 [; ;user.c: 290:             Bip(okay, 5399);
 [e ( _Bip (2 , &U _okay -> 5399 `i ]
@@ -6365,14 +6365,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 291:             _delay((unsigned long)((300)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "292
-[; ;user.c: 292:             PORTBbits.RB4 = 0;
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+[; ;user.c: 292:             PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
 "293
 [; ;user.c: 293:             _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "294
-[; ;user.c: 294:             PORTBbits.RB4 = 1;
-[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 294:             PORTBbits.RB0 = 1;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
 "295
 [; ;user.c: 295:             Bip(okay, 5399);
 [e ( _Bip (2 , &U _okay -> 5399 `i ]
@@ -6380,14 +6380,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 296:             _delay((unsigned long)((300)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "297
-[; ;user.c: 297:             PORTBbits.RB4 = 0;
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+[; ;user.c: 297:             PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
 "298
 [; ;user.c: 298:             _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "299
-[; ;user.c: 299:             PORTBbits.RB4 = 1;
-[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 299:             PORTBbits.RB0 = 1;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
 "300
 [; ;user.c: 300:             Bip(okay, 5399);
 [e ( _Bip (2 , &U _okay -> 5399 `i ]
@@ -6395,8 +6395,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 301:             _delay((unsigned long)((300)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "302
-[; ;user.c: 302:             PORTBbits.RB4 = 0;
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+[; ;user.c: 302:             PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
 "303
 [; ;user.c: 303:             _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -6417,11 +6417,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ReversOn ]
 [f ]
 "311
-[; ;user.c: 311:             PORTBbits.RB4 = 1;
-[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 311:             PORTBbits.RB0 = 1;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
 "312
-[; ;user.c: 312:             PORTAbits.RA4 = 1;
-[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 312:             PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
 "313
 [; ;user.c: 313:             Bip(okay, 5399);
 [e ( _Bip (2 , &U _okay -> 5399 `i ]
@@ -6429,9 +6429,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 314:             _delay((unsigned long)((120)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 120 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "315
-[; ;user.c: 315:             PORTBbits.RB4 = 0; PORTAbits.RA4 = 0;
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
-[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+[; ;user.c: 315:             PORTBbits.RB0 = 0; PORTAbits.RA2 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
 "316
 [; ;user.c: 316:             _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]

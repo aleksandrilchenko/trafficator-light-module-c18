@@ -3592,7 +3592,11 @@ _Bool wasTurningLeft;
 
 
 #pragma config EBTRB = OFF
-# 91 "main.c"
+
+
+
+
+
 void main()
 {
     InitApp();
@@ -3607,11 +3611,9 @@ void main()
 
     while(1)
     {
-
-
-    PORTAbits.RA4 = 0;
-    PORTBbits.RB4 = 0;
-    PORTAbits.RA6 = 0;
+    PORTAbits.RA2 = 0;
+    PORTBbits.RB0 = 0;
+    PORTBbits.RB3 = 0;
 
     _49A_in_value = GetADCValue(0b00101000);
     Reverse_in_value = GetADCValue(0b00110000);
@@ -3638,8 +3640,6 @@ void main()
             AddLeftBlinks();
             }
     else {
-
-
             L_ch_in_value = 0;
             R_ch_in_value = 0;
             Reverse_in_value = 0;

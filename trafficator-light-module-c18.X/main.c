@@ -95,8 +95,6 @@ void main()
     
     while(1)
     {  
-    //ANSEL = 0b00010011;                     // 0b00010000 Clear Pin selection bits - AN0-AN3 are digital I/O for now
-    //TRISIO = 0b00001011;                    // Gp0, Gp1, Gp3 are always as inputs; Gp5 is always output; Gp2, Gp4 are as outputs for now     
     R_ch_out = 0;
     L_ch_out = 0;
     _49A_out = 0;
@@ -126,8 +124,6 @@ void main()
             AddLeftBlinks();                       // Add 3 blinks to the left channel if right switch has been off//
             }
     else    {
-            //TRISIO2 = 0; R_ch = 0;
-            //TRISIO4 = 0; L_ch = 0;
             L_ch_in_value = 0; 
             R_ch_in_value = 0;
             Reverse_in_value = 0;
