@@ -7,10 +7,10 @@ Linker command line:
   -cn \
   -h+dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.sym \
   --cmf=dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.cmf \
-  -z -Q18F1320 -oC:\Users\LENOVO\AppData\Local\Temp\xcAsrto.4 \
+  -z -Q18F1320 -oC:\Users\LENOVO\AppData\Local\Temp\xcAs6nc.4 \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/XC8_18F1220/production/trafficator-light-module-c18.X.production.map \
-  --md=C:\Users\LENOVO\AppData\Local\Temp\xcAsrto.dat -E1 -ver=XC8 Compiler \
+  --md=C:\Users\LENOVO\AppData\Local\Temp\xcAs6nc.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-01FFFh -ACONST=00h-01FFFh \
   -ASMALLCONST=0100h-01FFhx31 -AMEDIUMCONST=0100h-01FFFh -ACOMRAM=01h-07Fh \
   -AABS1=00h-0FFh -ABIGRAM=01h-0FFh -ARAM=080h-0FFh -ABANK0=080h-0FFh \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\LENOVO\AppData\Local\Temp\xcAsrto.o \
+  C:\Users\LENOVO\AppData\Local\Temp\xcAs6nc.o \
   dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.o 
 
 Object code version is 3.11
@@ -33,7 +33,7 @@ Machine type is 18F1320
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\LENOVO\AppData\Local\Temp\xcAsrto.o
+C:\Users\LENOVO\AppData\Local\Temp\xcAs6nc.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 26       26        4        C       0
