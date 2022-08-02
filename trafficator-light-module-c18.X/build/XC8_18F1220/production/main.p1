@@ -5829,41 +5829,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "32 main.c
 [; ;main.c: 32: _Bool wasTurningRight;
-[; ;main.c: 32: 
+[; ;main.c: 32:         if (PORTAbits.RA4 == 0)
 [v _wasTurningRight `a ~T0 @X0 1 e ]
 "33
 [; ;main.c: 33: _Bool wasTurningLeft;
-[; ;main.c: 33: 
+[; ;main.c: 33:         Turn_49A();
 [v _wasTurningLeft `a ~T0 @X0 1 e ]
 "36
-[; ;main.c: 36:             Turn_49A();
+[; ;main.c: 36:             AddRightBlinks();
 [p x OSC  =  ECIO        ]
 "37
 [; ;main.c: 37:             }
 [p x FSCM  =  OFF        ]
 "38
-[; ;main.c: 38:     else if (wasTurningRight == 1 )
+[; ;main.c: 38:     else if (wasTurningLeft == 1 )
 [p x IESO  =  OFF        ]
 "41
 [; ;main.c: 41:             }
 [p x PWRT  =  ON         ]
 "42
-[; ;main.c: 42:     else if (wasTurningLeft == 1 )
+[; ;main.c: 42:     else {
 [p x BOR  =  OFF         ]
 "46
-[; ;main.c: 46:     else {
+[; ;main.c: 46:             _49A_in_value = 0;
 [p x WDT  =  OFF         ]
 "47
-[; ;main.c: 47:             L_ch_in_value = 0;
+[; ;main.c: 47: 
 [p x WDTPS  =  32768     ]
 "50
-[; ;main.c: 50:             _49A_in_value = 0;
+[; ;main.c: 50:             }
 [p x MCLRE  =  OFF       ]
 "53
-[; ;main.c: 53:             wasTurningRight = 0;
 [p x STVR  =  ON         ]
 "54
-[; ;main.c: 54:             }
 [p x LVP  =  OFF         ]
 "57
 [p x CP0  =  OFF         ]
@@ -5920,12 +5918,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
 "100
 [e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
-"102
-[e = __49A_in_value ( _GetADCValue (1 -> -> 40 `i `uc ]
 "103
-[e = _Reverse_in_value ( _GetADCValue (1 -> -> 48 `i `uc ]
+[e = _Reverse_in_value ( _GetADCValue (1 -> -> 56 `i `uc ]
 "106
-[e $ ! > _Reverse_in_value -> 155 `i 184  ]
+[e $ ! < _Reverse_in_value -> 100 `i 184  ]
 "107
 {
 "108
@@ -5937,61 +5933,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 185  ]
 "111
 [e :U 184 ]
+"112
+[e $ ! == -> . . _PORTAbits 0 4 `i -> 0 `i 186  ]
+"113
+[e ( _Turn_49A ..  ]
+[e $U 187  ]
 "114
-[e $ ! < __49A_in_value -> 10 `i 186  ]
+[e :U 186 ]
+[e $ ! == -> _wasTurningRight `i -> 1 `i 188  ]
 "115
 {
 "116
-[e ( _Turn_49A ..  ]
+[e ( _AddRightBlinks ..  ]
 "117
 }
-[e $U 187  ]
+[e $U 189  ]
 "118
-[e :U 186 ]
-[e $ ! == -> _wasTurningRight `i -> 1 `i 188  ]
+[e :U 188 ]
+[e $ ! == -> _wasTurningLeft `i -> 1 `i 190  ]
 "119
 {
 "120
-[e ( _AddRightBlinks ..  ]
+[e ( _AddLeftBlinks ..  ]
 "121
 }
-[e $U 189  ]
-"122
-[e :U 188 ]
-[e $ ! == -> _wasTurningLeft `i -> 1 `i 190  ]
-"123
-{
-"124
-[e ( _AddLeftBlinks ..  ]
-"125
-}
 [e $U 191  ]
-"126
+"122
 [e :U 190 ]
 {
-"127
+"123
 [e = _L_ch_in_value -> 0 `i ]
-"128
+"124
 [e = _R_ch_in_value -> 0 `i ]
-"129
+"125
 [e = _Reverse_in_value -> 0 `i ]
-"130
+"126
 [e = __49A_in_value -> 0 `i ]
-"132
+"128
 [e = _wasTurningLeft -> -> 0 `i `a ]
-"133
+"129
 [e = _wasTurningRight -> -> 0 `i `a ]
-"134
+"130
 }
 [e :U 191 ]
 [e :U 189 ]
 [e :U 187 ]
 [e :U 185 ]
-"135
+"131
 }
 [e :U 181 ]
 [e $U 182  ]
 [e :U 183 ]
-"136
+"132
 [e :UE 180 ]
 }

@@ -3196,7 +3196,7 @@ void ReversOn(void);
 
 extern unsigned char sample;
 extern volatile int wait;
-# 56 "./user.h"
+# 59 "./user.h"
 extern _Bool wasTurningRight;
 extern _Bool wasTurningLeft;
 

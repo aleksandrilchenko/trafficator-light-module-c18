@@ -24,7 +24,7 @@
 /* User Functions                                                             */
 /******************************************************************************/
 
-#define _XTAL_FREQ 8000000  // 8MHZ internal crystal
+
 #define FOSC	8000000UL
 #define T2_FREQ	(11000)		// Between 8000Hz and 11025Hz (same as the WAV file)
 #define K_TMR2	 (FOSC/4)/(T2_FREQ) 
@@ -40,12 +40,12 @@ void InitApp(void)
 {
     /* TODO Initialize User Ports/Peripherals/Project here */
     /* Setup analog functionality and port direction */
-    ADCON1 = 0b00000000;        // all inputs are analog inputs
+    ADCON1 = 0b00010100;        // AN0,AN1,AN3,AN5,AN6 are analog inputs
                                 // bit 7 unimplemented, read as 0
                                 /*1= Pin configured as a digital port
                                   0= Pin configured as an analog channel - digital input disabled and reads - 0*/
-    TRISA = 0b00000000;
-    TRISB = 0b00000000;
+    TRISA = 0b11111011;
+    TRISB = 0b10110110;
     ADCON2 = 0b00001111;        /*bit 7 ADFM:A/D Result Format Select bit
                                         1= Right justified 
                                         0= Left justified 
@@ -61,8 +61,8 @@ void InitApp(void)
 
     /* Enable interrupts */
     
-    GIE = 0;			// No INTs
-	OSCCON = 0xF2;		// Master OSC at 8MHz RC INT with IDLE MODE
+   // GIE = 0;			// No INTs
+	//OSCCON = 0xF2;		// Master OSC at 8MHz RC INT with IDLE MODE
 
 	/* RB7=1 
 	 * RB6=1
@@ -74,7 +74,7 @@ void InitApp(void)
 	 * RB0=1
 	 * 0xF7
 	 */
-	TRISB = 0xF7;
+	//TRISB = 0xF7;
 
 	/* PCFG7=0	NO SUCH BIT
 	 * PCFG6=1 RB4
@@ -86,16 +86,16 @@ void InitApp(void)
 	 * PCFG0=1 RA0	
 	 * 0x7F
 	 */
-	ADCON1 = 0x7F;
+	//ADCON1 = 0x7F;
 
 	
 	// Timer 2: no interrupt (base period for the PWM on CCP)
-	T2CON = 0x00;	// Timer 2 off, FOSC/4, pre 1:1, post 1:1
+	/*T2CON = 0x00;	// Timer 2 off, FOSC/4, pre 1:1, post 1:1
 	PR2  = K_TMR2;	// Load comparator value (PWM period)
 	TMR2IF = 0;		// Clear the interrupt flag
 	TMR2IE = 1;		// Enable timer 2 interrupt (not necessary for the PWM)
 	TMR2ON = 1;		// Start the timer and the PWM modulation!
-
+*/
 	/* CCP to turn off the sound
 	 * P1M1=  0
 	 * P1M0=  0  single output P1A for PWM mode
@@ -107,7 +107,7 @@ void InitApp(void)
 	 * CCP1M0=0  PWM mode all active high
 	 *
 	 */
-	CCP1CON = 0x0C;
+	/*CCP1CON = 0x0C;
 
 	// Initial PWM value (no sound)
 	CCPR1L=0;	// 8 higher bits
@@ -116,6 +116,7 @@ void InitApp(void)
 	
 	PEIE = 1;			// Enable Low Priority Interrupts
 	GIE=1;				// Enable High Priority Interrupts
+     */
 }
   
 
@@ -225,7 +226,7 @@ bool Turn_49A()
 {
         //TRISIO = 0b00001011;
         _49A_out = 1; 
-        Bip(okay, 5399);
+        //Bip(okay, 5399);
         //pause(32000);
         __delay_ms(100);
         
@@ -234,7 +235,7 @@ bool Turn_49A()
         if (Current_value < 5)       // Increase the frequency if one lamp is broken                 
                 {
                 _49A_out = 1; 
-                Bip(okay, 5399);
+                //Bip(okay, 5399);
                 GetDirection();
                 __delay_ms(50);
                 _49A_out = 0;                         
@@ -246,7 +247,7 @@ bool Turn_49A()
         else 
                 {
                 _49A_out = 1;
-                Bip(okay, 5399);
+                //Bip(okay, 5399);
                 GetDirection();
                 __delay_ms(100);
                 _49A_out = 0;
@@ -310,7 +311,7 @@ bool Turn_49A()
             {
             L_ch_out = 1; 
             R_ch_out = 1;
-            Bip(okay, 5399);
+            //Bip(okay, 5399);
             __delay_ms(120);
             L_ch_out = 0; R_ch_out = 0;
             __delay_ms(500);        

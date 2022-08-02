@@ -11,14 +11,14 @@
  Intel Hex-file ranges:
   0h - 5h		(dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.hex)
   8h - Dh		(dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.hex)
-  18h - 769h		(dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.hex)
+  18h - 6D1h		(dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.hex)
   AE6h - 1FFEh		(dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.hex)
   200000h - 200007h		(dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.hex)
   300000h - 30000Dh		(dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.hex)
  Unused ranges:
   6h - 7h
   Eh - 17h
-  76Ah - AE5h
+  6D2h - AE5h
   1FFFh - 1FFFFFh
   200008h - 2FFFFFh
 
@@ -138,16 +138,7 @@
 000006A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000006B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000006C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000006D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000006E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000006F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000700 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000710 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000720 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000730 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000740 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000750 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000760 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
+000006D0 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00000AE0 | -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000AF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

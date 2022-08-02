@@ -85,7 +85,7 @@ void main()
 {
     InitApp();
     
-    int _49A_in_value = 0;
+    //int _49A_in_value = 0;
     int Reverse_in_value = 0;
     int R_ch_in_value = 0; 
     int L_ch_in_value = 0;
@@ -99,22 +99,18 @@ void main()
     L_ch_out = 0;
     _49A_out = 0;
     
-    _49A_in_value = GetADCValue(AN4);
-    Reverse_in_value = GetADCValue(AN5);
+    //_49A_in_value = GetADCValue(AN4);
+    Reverse_in_value = GetADCValue(AN6);
+   
     
-    
-    if (Reverse_in_value > 155)
+    if (Reverse_in_value > 100)
     {
      ReversOn();                                 //--Turn reverse lights on--//
     return;
     }
     else 
-
-        
-          if (_49A_in_value < 10)    //--Turn hazard on--//
-            {
-            Turn_49A();    
-            }
+        if (_49A_in == 0)   
+        Turn_49A();
     else  if (wasTurningRight == 1 )
             {
             AddRightBlinks();                     // Add 3 blinks to the right channel if left switch has been off//
@@ -127,7 +123,7 @@ void main()
             L_ch_in_value = 0; 
             R_ch_in_value = 0;
             Reverse_in_value = 0;
-            _49A_in_value = 0;
+            //_49A_in_value = 0;
             
             wasTurningLeft = 0;
             wasTurningRight = 0;

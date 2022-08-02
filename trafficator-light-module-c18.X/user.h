@@ -32,6 +32,7 @@ extern volatile int wait;
 /* User Function Prototypes                                                   */
 /******************************************************************************/
 
+#define _XTAL_FREQ 8000000  // 8MHZ internal crystal
 #define AN0 0b00000001
 #define AN1 0b00000010
 #define AN2 0b00000100
@@ -40,11 +41,13 @@ extern volatile int wait;
 #define AN5 0b00110000 // chnge its value!!!!
 #define AN6 0b00111000 // chnge its value!!!!
 
-    #define V_in        PORTAbits.AN1
-    #define V_out       PORTAbits.AN0
-    #define R_ch_in     PORTAbits.AN3
-    #define L_ch_in     PORTAbits.AN5
-    #define Reverse_in  PORTBbits.AN6
+    #define V_in        PORTAbits.AN1 // RA1
+    #define V_out       PORTAbits.AN0 // RA0
+    #define R_ch_in     PORTAbits.AN3 // RA3
+    #define L_ch_in     PORTAbits.AN5 // RB1
+    #define Reverse_in  PORTBbits.AN6 // RB4
+                     // PORTAbits.AN2 // RA2
+                     // PORTBbits.AN4 // RB0
 
     #define R_ch_out    PORTAbits.RA2
     #define L_ch_out    PORTBbits.RB0

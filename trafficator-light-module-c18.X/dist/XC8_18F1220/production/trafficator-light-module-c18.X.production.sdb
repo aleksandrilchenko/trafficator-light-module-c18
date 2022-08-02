@@ -29,33 +29,33 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"27 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\interrupts.c
+"27 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\interrupts.c
 [v _high_isr high_isr `IIH(v  1 e 1 0 ]
 "67
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]
-"84 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
+"84 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"93 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\pwm_sound.c
+"93 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\pwm_sound.c
 [v _setPWM setPWM `(v  1 e 1 0 ]
 "100
 [v _Bip Bip `(v  1 e 1 0 ]
-"39 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"39 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _InitApp InitApp `(v  1 e 1 0 ]
-"153
+"154
 [v _GetADCValue GetADCValue `(i  1 e 2 0 ]
-"193
+"194
 [v _GetCurrentValue GetCurrentValue `(i  1 e 2 0 ]
-"202
+"203
 [v _GetDirection GetDirection `(a  1 e 1 0 ]
-"224
+"225
 [v _Turn_49A Turn_49A `(a  1 e 1 0 ]
-"261
+"262
 [v _AddRightBlinks AddRightBlinks `(a  1 e 1 0 ]
-"285
+"286
 [v _AddLeftBlinks AddLeftBlinks `(a  1 e 1 0 ]
-"309
+"310
 [v _ReversOn ReversOn `(v  1 e 1 0 ]
-"4 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X/ok-sound.h
+"4 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X/ok-sound.h
 [v _okay okay `C[5399]uc  1 e 5399 0 ]
 [s S38 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -159,8 +159,6 @@
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "909
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
-"2455
-[v _CCP1CON CCP1CON `VEuc  1 e 1 @4029 ]
 "2559
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @4030 ]
 "2573
@@ -173,81 +171,65 @@
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "2883
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-"2890
-[v _T2CON T2CON `VEuc  1 e 1 @4042 ]
-"2961
-[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
-"3424
-[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 "4559
 [v _DC1B0 DC1B0 `VEb  1 e 0 @32236 ]
 "4562
 [v _DC1B1 DC1B1 `VEb  1 e 0 @32237 ]
-"4610
-[v _GIE GIE `VEb  1 e 0 @32663 ]
 "4634
 [v _GO_nDONE GO_nDONE `VEb  1 e 0 @32273 ]
-"4988
-[v _PEIE PEIE `VEb  1 e 0 @32662 ]
-"5336
-[v _TMR2IE TMR2IE `VEb  1 e 0 @31977 ]
 "5339
 [v _TMR2IF TMR2IF `VEb  1 e 0 @31985 ]
-"5345
-[v _TMR2ON TMR2ON `VEb  1 e 0 @32338 ]
-"32 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
+"32 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
 [v _wasTurningRight wasTurningRight `a  1 e 1 0 ]
 "33
 [v _wasTurningLeft wasTurningLeft `a  1 e 1 0 ]
-"76 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\pwm_sound.c
+"76 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\pwm_sound.c
 [v _wait wait `VEi  1 e 2 0 ]
-"32 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"32 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _R_ch_in_value R_ch_in_value `i  1 e 2 0 ]
 "33
 [v _L_ch_in_value L_ch_in_value `i  1 e 2 0 ]
-"84 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
+"84 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "89
-[v main@Reverse_in_value Reverse_in_value `i  1 a 2 30 ]
-"88
-[v main@_49A_in_value _49A_in_value `i  1 a 2 28 ]
-"136
+[v main@Reverse_in_value Reverse_in_value `i  1 a 2 28 ]
+"132
 } 0
-"224 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"225 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _Turn_49A Turn_49A `(a  1 e 1 0 ]
 {
-"232
+"233
 [v Turn_49A@Current_value Current_value `i  1 a 2 26 ]
-"257
+"258
 } 0
-"202
+"203
 [v _GetDirection GetDirection `(a  1 e 1 0 ]
 {
-"220
+"221
 } 0
-"193
+"194
 [v _GetCurrentValue GetCurrentValue `(i  1 e 2 0 ]
 {
-"196
+"197
 [v GetCurrentValue@V_out_value V_out_value `i  1 a 2 22 ]
-"195
+"196
 [v GetCurrentValue@V_in_value V_in_value `i  1 a 2 20 ]
-"198
+"199
 } 0
-"153
+"154
 [v _GetADCValue GetADCValue `(i  1 e 2 0 ]
 {
 [v GetADCValue@Channel Channel `uc  1 a 1 wreg ]
-"156
+"157
 [v GetADCValue@temp_2 temp_2 `i  1 a 2 16 ]
-"155
-[v GetADCValue@temp_1 temp_1 `i  1 a 2 14 ]
-"153
-[v GetADCValue@Channel Channel `uc  1 a 1 wreg ]
 "156
+[v GetADCValue@temp_1 temp_1 `i  1 a 2 14 ]
+"154
+[v GetADCValue@Channel Channel `uc  1 a 1 wreg ]
+"157
 [v GetADCValue@Channel Channel `uc  1 a 1 13 ]
-"187
+"188
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -262,27 +244,27 @@
 [v ___awdiv@divisor divisor `i  1 p 2 3 ]
 "41
 } 0
-"309 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"310 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _ReversOn ReversOn `(v  1 e 1 0 ]
 {
-"317
+"318
 } 0
 "39
 [v _InitApp InitApp `(v  1 e 1 0 ]
 {
-"119
+"120
 } 0
-"261
+"262
 [v _AddRightBlinks AddRightBlinks `(a  1 e 1 0 ]
 {
-"281
+"282
 } 0
-"285
+"286
 [v _AddLeftBlinks AddLeftBlinks `(a  1 e 1 0 ]
 {
-"305
+"306
 } 0
-"100 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\pwm_sound.c
+"100 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\pwm_sound.c
 [v _Bip Bip `(v  1 e 1 0 ]
 {
 "102
@@ -301,7 +283,7 @@
 [v setPWM@sample sample `uc  1 a 1 2 ]
 "99
 } 0
-"67 C:\Users\LENOVO\Documents\My Projects\trafficator-light-module-c18\trafficator-light-module-c18.X\interrupts.c
+"67 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\interrupts.c
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]
 {
 "102
