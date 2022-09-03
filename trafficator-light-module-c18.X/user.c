@@ -54,6 +54,9 @@ void InitApp(void)
                                         001= 2 TAD
                                   bit 2-0 ADCS<2:0>:A/D Conversion Clock Select bits
                                         111= FRC(clock derived from A/D RC oscillator)*/
+    /*ADIF = 0;
+    ADIE = 1;
+    GIE = 0;*/
     
     /* Initialize peripherals */
 
@@ -61,7 +64,7 @@ void InitApp(void)
 
     /* Enable interrupts */
     
-   // GIE = 0;			// No INTs
+    //GIE = 0;			// No INTs
 	//OSCCON = 0xF2;		// Master OSC at 8MHz RC INT with IDLE MODE
 
 	/* RB7=1 
@@ -156,16 +159,16 @@ int GetADCValue(unsigned char Channel)
     int temp_1 =0;
     int temp_2 =0;
     
-    ADCON0 = 0b11100011;      // Clear Channel selection bits
+    ADCON0 = 0b00000000;      // Clear Channel selection bits
     switch(Channel)
     {
-        case AN0:   ADCON0 |= 0b00000000; break; // set bit 4-2 to 000
-        case AN1:   ADCON0 |= 0b00000100; break; // set bit 4-2 to 001
-        case AN2:   ADCON0 |= 0b00001000; break; // set bit 4-2 to 010
-        case AN3:   ADCON0 |= 0b00001100; break; // set bit 4-2 to 011
-        case AN4:   ADCON0 |= 0b00010000; break; // set bit 4-2 to 100
-        case AN5:   ADCON0 |= 0b00010100; break; // set bit 4-2 to 101
-        case AN6:   ADCON0 |= 0b00011000; break; // set bit 4-2 to 110
+        case AN0:   ADCON0 |= 0b00000001; break; // set bit 4-2 to 000
+        case AN1:   ADCON0 |= 0b00000101; break; // set bit 4-2 to 001
+        case AN2:   ADCON0 |= 0b00001001; break; // set bit 4-2 to 010
+        case AN3:   ADCON0 |= 0b00001101; break; // set bit 4-2 to 011
+        case AN4:   ADCON0 |= 0b00010001; break; // set bit 4-2 to 100
+        case AN5:   ADCON0 |= 0b00010101; break; // set bit 4-2 to 101
+        case AN6:   ADCON0 |= 0b00011001; break; // set bit 4-2 to 110
 
         default: return 0;
     }
@@ -193,38 +196,40 @@ int GetADCValue(unsigned char Channel)
 
 int GetCurrentValue(void)  // the value is in ADC code
     {               
-    int V_in_value = GetADCValue(AN0);
-    int V_out_value = GetADCValue(AN1);
+    int V_in_value = GetADCValue(AN1);
+    int V_out_value = GetADCValue(AN0);
     return (V_in_value - V_out_value);    //reverse this logic  
     }
 
 /*Get the direction using AN2 and AN3*/
 
-bool GetDirection(void)  // the value is in ADC code
+int GetDirection(void)  // the value is in ADC code
     {
-    R_ch_in_value = GetADCValue(AN2);
-    L_ch_in_value = GetADCValue(AN3);
+    R_ch_in_value = 0;
+    L_ch_in_value = 0;
     
-    if (R_ch_in_value > 10 && R_ch_in_value < 10)
-        {return 
-                wasTurningRight = 1;
-                wasTurningLeft = 0;}
-    else if (R_ch_in_value < 10 && R_ch_in_value > 10)
-        {return 
-                wasTurningLeft = 1;
-                wasTurningRight = 0;}
+    R_ch_in_value = GetADCValue(AN3);
+    L_ch_in_value = GetADCValue(AN5);
+    
+    if (R_ch_in_value > 100 && L_ch_in_value < 5)
+        {
+        AddRightBlinks(); 
+        return 
+                _direction = 1;} //1 - right; 2 - left; 0 - else
+    else if (L_ch_in_value > 100 && R_ch_in_value < 5)
+        {
+        AddLeftBlinks(); 
+        return 
+                _direction = 2;} //1 - right; 2 - left; 0 - else}
     else
     {return 
-                wasTurningLeft = 0;
-                wasTurningRight = 0;
-    }
+                _direction = 0;} //1 - right; 2 - left; 0 - else;
     }
 
 
   /*========  Turn On 49A  ==========*/    
-bool Turn_49A()
+ int Turn_49A()
 {
-        //TRISIO = 0b00001011;
         _49A_out = 1; 
         //Bip(okay, 5399);
         //pause(32000);
@@ -232,77 +237,80 @@ bool Turn_49A()
         
         int Current_value = GetCurrentValue();
  
-        if (Current_value < 5)       // Increase the frequency if one lamp is broken                 
+        if (Current_value < 400)       // Increase the frequency if one lamp is broken                 
                 {
                 _49A_out = 1; 
+                __delay_ms(10);
                 //Bip(okay, 5399);
                 GetDirection();
                 __delay_ms(50);
                 _49A_out = 0;                         
                 __delay_ms(200);
                 Current_value = 0;
-                return (wasTurningLeft & wasTurningRight);
-               }
-                
+                return (_direction);
+               }       
         else 
                 {
                 _49A_out = 1;
+                __delay_ms(10);
                 //Bip(okay, 5399);
                 GetDirection();
                 __delay_ms(100);
                 _49A_out = 0;
-                __delay_ms(400);
+                __delay_ms(300);
                 Current_value = 0;
-                return (wasTurningLeft & wasTurningRight);           
+                return (_direction); 
                 }
     } 
 
     
     /*========  Turn On Right lamps 3 times  ==========*/
-   bool AddRightBlinks(void)
+   void AddRightBlinks(void)
             {
-            //TRISIO = 0b00001011;
-            //L_ch = 0;    // latch the Left out to off state
+            _49A_out = 0;
+            L_ch_out = 0;    // latch the Left out to off state
             R_ch_out = 1;
-            Bip(okay, 5399);
+            //Bip(okay, 5399);
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(500);
             R_ch_out = 1;
-            Bip(okay, 5399);
+            //Bip(okay, 5399);
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(500);
             R_ch_out = 1;
-            Bip(okay, 5399);
+            //Bip(okay, 5399);
             __delay_ms(300);
-            R_ch_out = 0; 
+            R_ch_out = 0;
+            L_ch_out = 0;
             __delay_ms(100);
-            return wasTurningRight = 0;
+            _direction = 0;
             }
     
     
      /*========  Turn On Left lamps 3 times  ==========*/
-    bool AddLeftBlinks(void)
+    void AddLeftBlinks(void)
             {
-            //TRISIO = 0b00001011;
-            //R_ch = 0;    // latch the Right out to off state
+            _49A_out = 0;
+            R_ch_out = 0;    // latch the Right out to off state
             L_ch_out = 1; 
-            Bip(okay, 5399);
+            //Bip(okay, 5399);
             __delay_ms(300);
             L_ch_out = 0; 
             __delay_ms(500);
             L_ch_out = 1;
-            Bip(okay, 5399);
+            //Bip(okay, 5399);
             __delay_ms(300);
             L_ch_out = 0; 
             __delay_ms(500);
             L_ch_out = 1; 
-            Bip(okay, 5399);
+            //Bip(okay, 5399);
             __delay_ms(300);
             L_ch_out = 0; 
+            R_ch_out = 0;    
             __delay_ms(100);
-            return wasTurningLeft = 0;
+            _direction = 0;
             }
     
      /*========  Turn On Reverse (Left and Right channels blink simultaneously)  ==========*/ 
