@@ -17,10 +17,10 @@ void Bip(const char *sound, int size);
 void InitADC(unsigned char);         /* I/O and Peripheral Initialization */
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
-bool GetDirection(void);
-bool AddRightBlinks(void);
-bool AddLeftBlinks(void);
-bool Turn_49A(void);
+int GetDirection(void);
+void AddRightBlinks(void);
+void AddLeftBlinks(void);
+int Turn_49A(void);
 void ReversOn(void);
 
 
@@ -56,8 +56,7 @@ extern volatile int wait;
     #define _49A_in     PORTAbits.RA4 //discrete input
 
 
-extern bool wasTurningRight;
-extern bool wasTurningLeft;
+extern int _direction;
 
 extern int V_in_value;
 extern int V_out_value;
