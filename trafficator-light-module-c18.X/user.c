@@ -213,17 +213,15 @@ int GetDirection(void)  // the value is in ADC code
     
     if (R_ch_in_value > 100 && L_ch_in_value < 5)
         {
-        AddRightBlinks(); 
-        return 
-                _direction = 1;} //1 - right; 2 - left; 0 - else
+        return _direction = 1; //1 - right; 2 - left; 0 - else
+        } 
     else if (L_ch_in_value > 100 && R_ch_in_value < 5)
         {
-        AddLeftBlinks(); 
-        return 
-                _direction = 2;} //1 - right; 2 - left; 0 - else}
+        return _direction = 2; //1 - right; 2 - left; 0 - else
+        }
     else
-    {return 
-                _direction = 0;} //1 - right; 2 - left; 0 - else;
+    {return _direction = 0; //1 - right; 2 - left; 0 - else;
+    } 
     }
 
 
@@ -246,7 +244,6 @@ int GetDirection(void)  // the value is in ADC code
                 __delay_ms(50);
                 _49A_out = 0;                         
                 __delay_ms(200);
-                Current_value = 0;
                 return (_direction);
                }       
         else 
@@ -258,7 +255,6 @@ int GetDirection(void)  // the value is in ADC code
                 __delay_ms(100);
                 _49A_out = 0;
                 __delay_ms(300);
-                Current_value = 0;
                 return (_direction); 
                 }
     } 
