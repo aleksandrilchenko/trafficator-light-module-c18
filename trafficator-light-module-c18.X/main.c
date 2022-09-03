@@ -29,8 +29,7 @@
 /* User Global Variable Declaration                                           */
 /******************************************************************************/
 
-bool wasTurningRight;
-bool wasTurningLeft;  
+
 
 // CONFIG1H
 #pragma config OSC = ECIO       // Oscillator Selection bits (EC oscillator, port function on RA6)
@@ -80,6 +79,8 @@ bool wasTurningLeft;
 /******************************************************************************/
 /* Main Program                                                               */
 /******************************************************************************/
+    int _direction;
+
 
 void main()
 {
@@ -95,9 +96,9 @@ void main()
     
     while(1)
     {  
-    R_ch_out = 0;
-    L_ch_out = 0;
-    _49A_out = 0;
+    //R_ch_out = 0;
+    //L_ch_out = 0;
+    //_49A_out = 0;
     
     //_49A_in_value = GetADCValue(AN4);
     Reverse_in_value = GetADCValue(AN6);
@@ -105,17 +106,22 @@ void main()
     
     if (Reverse_in_value > 100)
     {
-     ReversOn();                                 //--Turn reverse lights on--//
+    ReversOn();                                 //--Turn reverse lights on--//
     return;
     }
     else 
         if (_49A_in == 0)   
-        Turn_49A();
-    else  if (wasTurningRight == 1 )
+        {
+            Turn_49A();
+            _49A_out = 0;
+            __delay_ms(50);
+            return;
+        }
+    else    if (_49A_in == 1 && _direction == 1)
             {
             AddRightBlinks();                     // Add 3 blinks to the right channel if left switch has been off//
             }
-    else  if (wasTurningLeft == 1 )
+    else    if (_49A_in == 1 && _direction == 2)
             {
             AddLeftBlinks();                       // Add 3 blinks to the left channel if right switch has been off//
             }
@@ -123,10 +129,7 @@ void main()
             L_ch_in_value = 0; 
             R_ch_in_value = 0;
             Reverse_in_value = 0;
-            //_49A_in_value = 0;
-            
-            wasTurningLeft = 0;
-            wasTurningRight = 0;
+            _direction = 0;
             }
 }
 }
