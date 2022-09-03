@@ -3191,18 +3191,17 @@ void Bip(const char *sound, int size);
 void InitADC(unsigned char);
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
-_Bool GetDirection(void);
-_Bool AddRightBlinks(void);
-_Bool AddLeftBlinks(void);
-_Bool Turn_49A(void);
+int GetDirection(void);
+void AddRightBlinks(void);
+void AddLeftBlinks(void);
+int Turn_49A(void);
 void ReversOn(void);
 
 
 extern unsigned char sample;
 extern volatile int wait;
 # 59 "./user.h"
-extern _Bool wasTurningRight;
-extern _Bool wasTurningLeft;
+extern int _direction;
 
 extern int V_in_value;
 extern int V_out_value;
@@ -3553,24 +3552,24 @@ void InitApp(void)
     TRISA = 0b11111011;
     TRISB = 0b10110110;
     ADCON2 = 0b00001111;
-# 120 "user.c"
+# 123 "user.c"
 }
-# 154 "user.c"
+# 157 "user.c"
 int GetADCValue(unsigned char Channel)
 {
     int temp_1 =0;
     int temp_2 =0;
 
-    ADCON0 = 0b11100011;
+    ADCON0 = 0b00000000;
     switch(Channel)
     {
-        case 0b00000001: ADCON0 |= 0b00000000; break;
-        case 0b00000010: ADCON0 |= 0b00000100; break;
-        case 0b00000100: ADCON0 |= 0b00001000; break;
-        case 0b00011000: ADCON0 |= 0b00001100; break;
-        case 0b00101000: ADCON0 |= 0b00010000; break;
-        case 0b00110000: ADCON0 |= 0b00010100; break;
-        case 0b00111000: ADCON0 |= 0b00011000; break;
+        case 0b00000001: ADCON0 |= 0b00000001; break;
+        case 0b00000010: ADCON0 |= 0b00000101; break;
+        case 0b00000100: ADCON0 |= 0b00001001; break;
+        case 0b00011000: ADCON0 |= 0b00001101; break;
+        case 0b00101000: ADCON0 |= 0b00010001; break;
+        case 0b00110000: ADCON0 |= 0b00010101; break;
+        case 0b00111000: ADCON0 |= 0b00011001; break;
 
         default: return 0;
     }
@@ -3598,38 +3597,38 @@ int GetADCValue(unsigned char Channel)
 
 int GetCurrentValue(void)
     {
-    int V_in_value = GetADCValue(0b00000001);
-    int V_out_value = GetADCValue(0b00000010);
+    int V_in_value = GetADCValue(0b00000010);
+    int V_out_value = GetADCValue(0b00000001);
     return (V_in_value - V_out_value);
     }
 
 
 
-_Bool GetDirection(void)
+int GetDirection(void)
     {
-    R_ch_in_value = GetADCValue(0b00000100);
-    L_ch_in_value = GetADCValue(0b00011000);
+    R_ch_in_value = 0;
+    L_ch_in_value = 0;
 
-    if (R_ch_in_value > 10 && R_ch_in_value < 10)
-        {return
-                wasTurningRight = 1;
-                wasTurningLeft = 0;}
-    else if (R_ch_in_value < 10 && R_ch_in_value > 10)
-        {return
-                wasTurningLeft = 1;
-                wasTurningRight = 0;}
+    R_ch_in_value = GetADCValue(0b00011000);
+    L_ch_in_value = GetADCValue(0b00110000);
+
+    if (R_ch_in_value > 100 && L_ch_in_value < 5)
+        {
+        return _direction = 1;
+        }
+    else if (L_ch_in_value > 100 && R_ch_in_value < 5)
+        {
+        return _direction = 2;
+        }
     else
-    {return
-                wasTurningLeft = 0;
-                wasTurningRight = 0;
+    {return _direction = 0;
     }
     }
 
 
 
-_Bool Turn_49A()
+ int Turn_49A()
 {
-
         PORTBbits.RB3 = 1;
 
 
@@ -3637,77 +3636,86 @@ _Bool Turn_49A()
 
         int Current_value = GetCurrentValue();
 
-        if (Current_value < 5)
+        if (Current_value < 400)
                 {
                 PORTBbits.RB3 = 1;
+                _delay((unsigned long)((10)*(8000000/4000.0)));
 
                 GetDirection();
-                _delay((unsigned long)((50)*(8000000/4000.0)));
+                _delay((unsigned long)((10)*(8000000/4000.0)));
                 PORTBbits.RB3 = 0;
-                _delay((unsigned long)((200)*(8000000/4000.0)));
-                Current_value = 0;
-                return (wasTurningLeft & wasTurningRight);
+                _delay((unsigned long)((100)*(8000000/4000.0)));
+                return (_direction);
                }
-
         else
                 {
                 PORTBbits.RB3 = 1;
+                _delay((unsigned long)((100)*(8000000/4000.0)));
 
                 GetDirection();
                 _delay((unsigned long)((100)*(8000000/4000.0)));
                 PORTBbits.RB3 = 0;
                 _delay((unsigned long)((400)*(8000000/4000.0)));
-                Current_value = 0;
-                return (wasTurningLeft & wasTurningRight);
+                return (_direction);
                 }
     }
 
 
 
-   _Bool AddRightBlinks(void)
+   void AddRightBlinks(void)
             {
-
-
+            PORTBbits.RB3 = 0;
+            PORTBbits.RB0 = 0;
             PORTAbits.RA2 = 1;
-            Bip(okay, 5399);
+
             _delay((unsigned long)((300)*(8000000/4000.0)));
             PORTAbits.RA2 = 0;
             _delay((unsigned long)((500)*(8000000/4000.0)));
+            if (PORTAbits.RA4 == 0)
+            return;
             PORTAbits.RA2 = 1;
-            Bip(okay, 5399);
+
             _delay((unsigned long)((300)*(8000000/4000.0)));
             PORTAbits.RA2 = 0;
             _delay((unsigned long)((500)*(8000000/4000.0)));
+            if (PORTAbits.RA4 == 0)
+            return;
             PORTAbits.RA2 = 1;
-            Bip(okay, 5399);
+
             _delay((unsigned long)((300)*(8000000/4000.0)));
             PORTAbits.RA2 = 0;
+            PORTBbits.RB0 = 0;
             _delay((unsigned long)((100)*(8000000/4000.0)));
-            return wasTurningRight = 0;
+            _direction = 0;
             }
 
 
 
-    _Bool AddLeftBlinks(void)
+    void AddLeftBlinks(void)
             {
-
-
+            PORTBbits.RB3 = 0;
+            PORTAbits.RA2 = 0;
             PORTBbits.RB0 = 1;
-            Bip(okay, 5399);
+
             _delay((unsigned long)((300)*(8000000/4000.0)));
             PORTBbits.RB0 = 0;
             _delay((unsigned long)((500)*(8000000/4000.0)));
+            if (PORTAbits.RA4 == 0)
+            return;
             PORTBbits.RB0 = 1;
-            Bip(okay, 5399);
+
             _delay((unsigned long)((300)*(8000000/4000.0)));
             PORTBbits.RB0 = 0;
             _delay((unsigned long)((500)*(8000000/4000.0)));
+            if (PORTAbits.RA4 == 0)
+            return;
             PORTBbits.RB0 = 1;
-            Bip(okay, 5399);
+
             _delay((unsigned long)((300)*(8000000/4000.0)));
             PORTBbits.RB0 = 0;
+            PORTAbits.RA2 = 0;
             _delay((unsigned long)((100)*(8000000/4000.0)));
-            return wasTurningLeft = 0;
+            _direction = 0;
             }
 
 

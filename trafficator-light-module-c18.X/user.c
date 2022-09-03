@@ -241,20 +241,20 @@ int GetDirection(void)  // the value is in ADC code
                 __delay_ms(10);
                 //Bip(okay, 5399);
                 GetDirection();
-                __delay_ms(50);
+                __delay_ms(10);
                 _49A_out = 0;                         
-                __delay_ms(200);
+                __delay_ms(100);
                 return (_direction);
                }       
         else 
                 {
                 _49A_out = 1;
-                __delay_ms(10);
+                __delay_ms(100);
                 //Bip(okay, 5399);
                 GetDirection();
                 __delay_ms(100);
                 _49A_out = 0;
-                __delay_ms(300);
+                __delay_ms(400);
                 return (_direction); 
                 }
     } 
@@ -270,11 +270,15 @@ int GetDirection(void)  // the value is in ADC code
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(500);
+            if (_49A_in == 0)
+            return;
             R_ch_out = 1;
             //Bip(okay, 5399);
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(500);
+            if (_49A_in == 0)
+            return;
             R_ch_out = 1;
             //Bip(okay, 5399);
             __delay_ms(300);
@@ -295,11 +299,15 @@ int GetDirection(void)  // the value is in ADC code
             __delay_ms(300);
             L_ch_out = 0; 
             __delay_ms(500);
+            if (_49A_in == 0)
+            return;
             L_ch_out = 1;
             //Bip(okay, 5399);
             __delay_ms(300);
             L_ch_out = 0; 
             __delay_ms(500);
+            if (_49A_in == 0)
+            return;
             L_ch_out = 1; 
             //Bip(okay, 5399);
             __delay_ms(300);

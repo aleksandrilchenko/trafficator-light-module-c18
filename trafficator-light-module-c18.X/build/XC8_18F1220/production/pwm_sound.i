@@ -3187,18 +3187,17 @@ void Bip(const char *sound, int size);
 void InitADC(unsigned char);
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
-_Bool GetDirection(void);
-_Bool AddRightBlinks(void);
-_Bool AddLeftBlinks(void);
-_Bool Turn_49A(void);
+int GetDirection(void);
+void AddRightBlinks(void);
+void AddLeftBlinks(void);
+int Turn_49A(void);
 void ReversOn(void);
 
 
 extern unsigned char sample;
 extern volatile int wait;
 # 59 "./user.h"
-extern _Bool wasTurningRight;
-extern _Bool wasTurningLeft;
+extern int _direction;
 
 extern int V_in_value;
 extern int V_out_value;
