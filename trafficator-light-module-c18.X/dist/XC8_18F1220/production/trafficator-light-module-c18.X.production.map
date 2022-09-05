@@ -7,10 +7,10 @@ Linker command line:
   -cn \
   -h+dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.sym \
   --cmf=dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.cmf \
-  -z -Q18F1320 -oC:\Users\Al\AppData\Local\Temp\xcAscqk.4 \
+  -z -Q18F1320 -oC:\Users\Al\AppData\Local\Temp\xcAsccs.4 \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/XC8_18F1220/production/trafficator-light-module-c18.X.production.map \
-  --md=C:\Users\Al\AppData\Local\Temp\xcAscqk.dat -E1 -ver=XC8 Compiler \
+  --md=C:\Users\Al\AppData\Local\Temp\xcAsccs.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-01FFFh -ACONST=00h-01FFFh \
   -ASMALLCONST=0100h-01FFhx31 -AMEDIUMCONST=0100h-01FFFh -ACOMRAM=01h-07Fh \
   -AABS1=00h-0FFh -ABIGRAM=01h-0FFh -ARAM=080h-0FFh -ABANK0=080h-0FFh \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Al\AppData\Local\Temp\xcAscqk.o \
+  C:\Users\Al\AppData\Local\Temp\xcAsccs.o \
   dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.o 
 
 Object code version is 3.11
@@ -33,7 +33,7 @@ Machine type is 18F1320
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Al\AppData\Local\Temp\xcAscqk.o
+C:\Users\Al\AppData\Local\Temp\xcAsccs.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 26       26        4        C       0
@@ -45,20 +45,23 @@ dist/XC8_18F1220/production\trafficator-light-module-c18.X.production.o
                 config                           300000   300000        E        0       4
                 temp                                 2B       2B        1        1       1
                 mediumconst                         AE6      AE6     151A      573       0
-                intcode_body                        666      666        4        C       0
-                text9                               2F2      2F2       C6        C       0
-                text8                               22C      22C       C6        C       0
-                text7                               654      654       12        C       0
-                text6                               5D8      5D8       38        C       0
-                text5                               3B8      3B8       C4        C       0
-                text4                                2A       2A      12A        C       0
-                text3                               610      610       2A        C       0
-                text2                               47C      47C       BE        C       0
-                text1                               154      154       D8        C       0
-                text0                               53A      53A       9E        C       0
+                intcode_body                        744      744        4        C       0
+                text12                              306      306       C6        C       0
+                text11                              240      240       C6        C       0
+                text10                              732      732       12        C       0
+                text9                               690      690       38        C       0
+                text8                               3CC      3CC       C4        C       0
+                text7                                2A       2A      12A        C       0
+                text6                               6C8      6C8       2A        C       0
+                text5                               490      490       BE        C       0
+                text4                               6F2      6F2       26        C       0
+                text3                               656      656       3A        C       0
+                text2                               5EC      5EC       6A        C       0
+                text1                               154      154       EC        C       0
+                text0                               54E      54E       9E        C       0
                 cstackCOMRAM                          1        1       1E        1       1
                 bssCOMRAM                            1F       1F        C        1       1
-                cinit                               63A      63A       1A        C       0
+                cinit                               718      718       1A        C       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
@@ -66,18 +69,21 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcode                               8        8        6         0
                 init                                 26       26        4         0
                 reset_vec                             0        0        6         0
-                intcode_body                        666      666        4         0
-                text9                               2F2      2F2       C6         0
-                text8                               22C      22C       C6         0
-                text7                               654      654       12         0
-                text6                               5D8      5D8       38         0
-                text5                               3B8      3B8       C4         0
-                text4                                2A       2A      12A         0
-                text3                               610      610       2A         0
-                text2                               47C      47C       BE         0
-                text1                               154      154       D8         0
-                text0                               53A      53A       9E         0
-                cinit                               63A      63A       1A         0
+                intcode_body                        744      744        4         0
+                text12                              306      306       C6         0
+                text11                              240      240       C6         0
+                text10                              732      732       12         0
+                text9                               690      690       38         0
+                text8                               3CC      3CC       C4         0
+                text7                                2A       2A      12A         0
+                text6                               6C8      6C8       2A         0
+                text5                               490      490       BE         0
+                text4                               6F2      6F2       26         0
+                text3                               656      656       3A         0
+                text2                               5EC      5EC       6A         0
+                text1                               154      154       EC         0
+                text0                               54E      54E       9E         0
+                cinit                               718      718       1A         0
 
         CLASS   CONST          
 
@@ -124,7 +130,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000006  000006         0       0  CODE    
                 cstackCOMRAM                   000001  00002B  00002C         1       1  COMRAM  
                 intcode                        000008  000006  00000E         4       0  CODE    
-                intcodelo                      000018  000652  00066A         C       0  CODE    
+                intcodelo                      000018  000730  000748         C       0  CODE    
                 mediumconst                    000AE6  00151A  002000       573       0  MEDIUMCO
 
 
@@ -136,16 +142,16 @@ UNUSED ADDRESS RANGES
         BIGSFR           000F80-000FFF               80
         CODE             000006-000007                2
                          00000E-000017                A
-                         00066A-000AE5              47C
+                         000748-000AE5              39E
         COMRAM           00002C-00007F               54
         CONST            000006-000007                2
                          00000E-000017                A
-                         00066A-000AE5              47C
+                         000748-000AE5              39E
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      00066A-000AE5              47C
+        MEDIUMCONST      000748-000AE5              39E
         RAM              000080-0000FF               80
         SFR              000F80-000FFF               80
-        SMALLCONST       00066A-000AE5              100
+        SMALLCONST       000748-000AE5              100
 
                                   Symbol Table
 
@@ -163,22 +169,31 @@ _ADCON1                     (abs)        000FC1
 _ADCON2                     (abs)        000FC0
 _ADRESH                     (abs)        000FC4
 _ADRESL                     (abs)        000FC3
-_AddLeftBlinks              text9        0002F2
-_AddRightBlinks             text8        00022C
+_AddLeftBlinks              text12       000306
+_AddRightBlinks             text11       000240
+_CCP1CON                    (abs)        000FBD
 _CCPR1L                     (abs)        000FBE
 _DC1B0                      (abs)        007DEC
 _DC1B1                      (abs)        007DED
+_GIE                        (abs)        007F97
 _GO_nDONE                   (abs)        007E11
-_GetADCValue                text4        00002A
-_GetCurrentValue            text3        000610
-_GetDirection               text2        00047C
-_InitApp                    text7        000654
+_GetADCValue                text7        00002A
+_GetCurrentValue            text6        0006C8
+_GetDirection               text5        000490
+_InitApp                    text10       000732
+_InitInterrupt              text4        0006F2
 _L_ch_in_value              bssCOMRAM    000025
+_OSCCON                     (abs)        000FD3
+_PEIE                       (abs)        007F96
 _PORTAbits                  (abs)        000F80
 _PORTBbits                  (abs)        000F81
+_PR2                        (abs)        000FCB
 _R_ch_in_value              bssCOMRAM    000027
-_ReversOn                   text6        0005D8
+_ReversOn                   text9        000690
+_T2CON                      (abs)        000FCA
+_TMR2IE                     (abs)        007CE9
 _TMR2IF                     (abs)        007CF1
+_TMR2ON                     (abs)        007E52
 _TRISA                      (abs)        000F92
 _TRISB                      (abs)        000F93
 _Turn_49A                   text1        000154
@@ -241,6 +256,9 @@ __Htemp                     temp         00002C
 __Htext                     text         000000
 __Htext0                    text0        000000
 __Htext1                    text1        000000
+__Htext10                   text10       000000
+__Htext11                   text11       000000
+__Htext12                   text12       000000
 __Htext2                    text2        000000
 __Htext3                    text3        000000
 __Htext4                    text4        000000
@@ -306,6 +324,9 @@ __Ltemp                     temp         00002B
 __Ltext                     text         000000
 __Ltext0                    text0        000000
 __Ltext1                    text1        000000
+__Ltext10                   text10       000000
+__Ltext11                   text11       000000
+__Ltext12                   text12       000000
 __Ltext2                    text2        000000
 __Ltext3                    text3        000000
 __Ltext4                    text4        000000
@@ -318,7 +339,7 @@ __S0                        (abs)        002000
 __S1                        (abs)        00002C
 __S4                        (abs)        000000
 __S5                        (abs)        000000
-___awdiv                    text5        0003B8
+___awdiv                    text8        0003CC
 ___awdiv@counter            cstackCOMRAM 000006
 ___awdiv@dividend           cstackCOMRAM 000002
 ___awdiv@divisor            cstackCOMRAM 000004
@@ -334,50 +355,58 @@ ___sp                       stack        000000
 __accesstop                 (abs)        000080
 __activetblptr              (abs)        000002
 __direction                 bssCOMRAM    000029
-__end_of_AddLeftBlinks      text9        0003B8
-__end_of_AddRightBlinks     text8        0002F2
-__end_of_GetADCValue        text4        000154
-__end_of_GetCurrentValue    text3        00063A
-__end_of_GetDirection       text2        00053A
-__end_of_InitApp            text7        000666
-__end_of_ReversOn           text6        000610
-__end_of_Turn_49A           text1        00022C
-__end_of___awdiv            text5        00047C
-__end_of__initialization    cinit        000646
-__end_of_high_isr           intcode_body 00066A
+__end_of_AddLeftBlinks      text12       0003CC
+__end_of_AddRightBlinks     text11       000306
+__end_of_GetADCValue        text7        000154
+__end_of_GetCurrentValue    text6        0006F2
+__end_of_GetDirection       text5        00054E
+__end_of_InitApp            text10       000744
+__end_of_InitInterrupt      text4        000718
+__end_of_ReversOn           text9        0006C8
+__end_of_Turn_49A           text1        000240
+__end_of___awdiv            text8        000490
+__end_of__initialization    cinit        000724
+__end_of_high_isr           intcode_body 000748
 __end_of_low_isr            intcodelo    000026
-__end_of_main               text0        0005D8
+__end_of_main               text0        0005EC
 __end_of_okay               mediumconst  001FFE
-__initialization            cinit        00063A
+__end_of_play               text2        000656
+__end_of_setPWM             text3        000690
+__initialization            cinit        000718
 __mediumconst               mediumconst  000AE6
 __pbssCOMRAM                bssCOMRAM    00001F
-__pcinit                    cinit        00063A
+__pcinit                    cinit        000718
 __pcstackCOMRAM             cstackCOMRAM 000001
 __pintcode                  intcode      000008
-__pintcode_body             intcode_body 000666
+__pintcode_body             intcode_body 000744
 __pintcodelo                intcodelo    000018
 __pmediumconst              mediumconst  000AE6
-__ptext0                    text0        00053A
+__ptext0                    text0        00054E
 __ptext1                    text1        000154
-__ptext2                    text2        00047C
-__ptext3                    text3        000610
-__ptext4                    text4        00002A
-__ptext5                    text5        0003B8
-__ptext6                    text6        0005D8
-__ptext7                    text7        000654
-__ptext8                    text8        00022C
-__ptext9                    text9        0002F2
+__ptext10                   text10       000732
+__ptext11                   text11       000240
+__ptext12                   text12       000306
+__ptext2                    text2        0005EC
+__ptext3                    text3        000656
+__ptext4                    text4        0006F2
+__ptext5                    text5        000490
+__ptext6                    text6        0006C8
+__ptext7                    text7        00002A
+__ptext8                    text8        0003CC
+__ptext9                    text9        000690
 __ramtop                    ramtop       000100
 __smallconst                smallconst   000000
 _high_isr                   intcode      000008
 _low_isr                    intcodelo    000018
-_main                       text0        00053A
+_main                       text0        00054E
 _okay                       mediumconst  000AE7
+_play                       text2        0005EC
+_setPWM                     text3        000656
 _wait                       bssCOMRAM    00001F
 btemp                       temp         00002B
-end_of_initialization       cinit        000646
+end_of_initialization       cinit        000724
 int$flags                   temp         00002B
-int_func                    intcode_body 000666
+int_func                    intcode_body 000744
 intlevel0                   text         000000
 intlevel1                   text         000000
 intlevel2                   text         000000
@@ -385,10 +414,14 @@ intlevel3                   text         000000
 isa$std                     (abs)        000001
 isa$xinst                   (abs)        000000
 main@Reverse_in_value       cstackCOMRAM 00001D
+play@i                      cstackCOMRAM 00000A
+play@size                   cstackCOMRAM 000006
+play@sound                  cstackCOMRAM 000004
+setPWM@sample               cstackCOMRAM 000003
 stackhi                     (abs)        000000
 stacklo                     (abs)        000000
 start                       init         000026
-start_initialization        cinit        00063A
+start_initialization        cinit        000718
 ttemp5                      temp         00002C
 ttemp6                      temp         00002F
 ttemp7                      temp         000033
@@ -399,7 +432,7 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-		___awdiv       		CODE           	03B8	0000	196
+		___awdiv       		CODE           	03CC	0000	196
 
 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c estimated size: 196
 
@@ -411,24 +444,31 @@ interrupts.c estimated size: 24
 
 shared
 		_okay          		MEDIUMCONST    	0AE7	0000	5399
-		__initialization		CODE           	063A	0000	12
+		__initialization		CODE           	0718	0000	12
 
 shared estimated size: 5411
 
 user.c
-		_GetCurrentValue		CODE           	0610	0000	42
-		_AddLeftBlinks 		CODE           	02F2	0000	198
-		_Turn_49A      		CODE           	0154	0000	216
-		_ReversOn      		CODE           	05D8	0000	56
-		_InitApp       		CODE           	0654	0000	18
+		_InitInterrupt 		CODE           	06F2	0000	38
+		_GetCurrentValue		CODE           	06C8	0000	42
+		_AddLeftBlinks 		CODE           	0306	0000	198
+		_Turn_49A      		CODE           	0154	0000	236
+		_ReversOn      		CODE           	0690	0000	56
+		_InitApp       		CODE           	0732	0000	18
 		_GetADCValue   		CODE           	002A	0000	298
-		_AddRightBlinks		CODE           	022C	0000	198
-		_GetDirection  		CODE           	047C	0000	190
+		_AddRightBlinks		CODE           	0240	0000	198
+		_GetDirection  		CODE           	0490	0000	190
 
-user.c estimated size: 1216
+user.c estimated size: 1274
 
 main.c
-		_main          		CODE           	053A	0000	158
+		_main          		CODE           	054E	0000	158
 
 main.c estimated size: 158
+
+pwm_sound.c
+		_play          		CODE           	05EC	0000	106
+		_setPWM        		CODE           	0656	0000	58
+
+pwm_sound.c estimated size: 164
 

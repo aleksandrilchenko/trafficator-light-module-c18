@@ -97,9 +97,10 @@ void setPWM(unsigned char sample)
 	DC1B1 = (sample&0x02)>>1;
 	DC1B0 = (sample&0x01);
 }
-void Bip(const char *sound, int size)
+void play(const char *sound, int size)
 {
-	int i;
+	InitInterrupt();
+    int i;
 	for(i=0; i<size; i++)
 	{
         // feed next sound sample to the PWM modulator
@@ -121,10 +122,10 @@ void pause(int cycles)
 
 // --------------------------------------------------------------------------
 //
-/*void main (void)
+/*void Bip (void)
 {
 
-	InitApp();
+	//InitApp();
 
 	while(1)
 	{

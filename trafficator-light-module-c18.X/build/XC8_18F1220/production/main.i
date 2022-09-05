@@ -3191,9 +3191,10 @@ void ConfigureOscillator(void);
 # 1 "./user.h" 1
 # 13 "./user.h"
 void InitApp(void);
-
+void InitInterrupt(void);
 void hi_isr(void);
-void Bip(const char *sound, int size);
+void play (const char *sound, int size);
+
 void InitADC(unsigned char);
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
@@ -3206,7 +3207,7 @@ void ReversOn(void);
 
 extern unsigned char sample;
 extern volatile int wait;
-# 59 "./user.h"
+# 60 "./user.h"
 extern int _direction;
 
 extern int V_in_value;

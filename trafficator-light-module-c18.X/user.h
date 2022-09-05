@@ -11,9 +11,10 @@
 /* TODO User level functions prototypes (i.e. InitApp) go here */
 
 void InitApp(void);         /* I/O and Peripheral Initialization */
-
+void InitInterrupt(void);
 void hi_isr(void);
-void Bip(const char *sound, int size);
+void play (const char *sound, int size);
+//void Bip (void);
 void InitADC(unsigned char);         /* I/O and Peripheral Initialization */
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);

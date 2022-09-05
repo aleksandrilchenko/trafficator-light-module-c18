@@ -54,51 +54,27 @@ void InitApp(void)
                                         001= 2 TAD
                                   bit 2-0 ADCS<2:0>:A/D Conversion Clock Select bits
                                         111= FRC(clock derived from A/D RC oscillator)*/
-    /*ADIF = 0;
-    ADIE = 1;
-    GIE = 0;*/
     
     /* Initialize peripherals */
 
     /* Configure the IPEN bit (1=on) in RCON to turn on/off int priorities */
 
     /* Enable interrupts */
-    
-    //GIE = 0;			// No INTs
-	//OSCCON = 0xF2;		// Master OSC at 8MHz RC INT with IDLE MODE
+}
 
-	/* RB7=1 
-	 * RB6=1
-	 * RB5=1
-	 * RB4=1
-	 * RB3=0 speaker e 470R
-	 * RB2=1 
-	 * RB1=1
-	 * RB0=1
-	 * 0xF7
-	 */
-	//TRISB = 0xF7;
-
-	/* PCFG7=0	NO SUCH BIT
-	 * PCFG6=1 RB4
-	 * PCFG5=1 RB1
-	 * PCFG4=1 RB0
-	 * PCFG3=1 RA3
-	 * PCFG2=1 RA2
-	 * PCFG1=1 RA1
-	 * PCFG0=1 RA0	
-	 * 0x7F
-	 */
-	//ADCON1 = 0x7F;
+void InitInterrupt(void)
+    {
+    GIE = 0;			// No INTs
+	OSCCON = 0xF2; // 0b11110010		// Master OSC at 8MHz RC INT with IDLE MODE
 
 	
 	// Timer 2: no interrupt (base period for the PWM on CCP)
-	/*T2CON = 0x00;	// Timer 2 off, FOSC/4, pre 1:1, post 1:1
+	T2CON = 0x00;	// Timer 2 off, FOSC/4, pre 1:1, post 1:1
 	PR2  = K_TMR2;	// Load comparator value (PWM period)
 	TMR2IF = 0;		// Clear the interrupt flag
 	TMR2IE = 1;		// Enable timer 2 interrupt (not necessary for the PWM)
 	TMR2ON = 1;		// Start the timer and the PWM modulation!
-*/
+
 	/* CCP to turn off the sound
 	 * P1M1=  0
 	 * P1M0=  0  single output P1A for PWM mode
@@ -110,7 +86,7 @@ void InitApp(void)
 	 * CCP1M0=0  PWM mode all active high
 	 *
 	 */
-	/*CCP1CON = 0x0C;
+	CCP1CON = 0x0C; //0b1100
 
 	// Initial PWM value (no sound)
 	CCPR1L=0;	// 8 higher bits
@@ -119,41 +95,11 @@ void InitApp(void)
 	
 	PEIE = 1;			// Enable Low Priority Interrupts
 	GIE=1;				// Enable High Priority Interrupts
-     */
+     
 }
-  
 
-/*void InitInterrupt (void)    // is not using now
-{
-        // TIMER0 Initialisation//
-    
-    OPTION_REG	=	0b10000111;	//set timer pre-scaler to 64/pre-scaler assigned to timer module 
-		//	nGPPU = 1;		// internal pull-ups disabled
-		//	INTEDG = 0;		// falling edge trigger the interrupt__don't care
-		//	T0CS = 0;		// timer transition on cycle clock
-		//	T0SE = 0		// increment on low to high transition of GP2
-		//	PSA = 0			// pre-scaler is set to the TIMER0 module
-		//  ps>>101, or 64 / 111, or 256
-    
-    //INTERRUPTS Initialisation//
-    
-	INTCON	= 0b10100000;
-		//GIE = 1 	//enable global interrupts
-		//PEIE = 0 	//disable peripheral interrupts
-		//T0IE = 1	//enable TMR0 interrupts
-		//INTE = 0	//disable GP2 interrupt
-		//GPIE = 0	//disable GPIO port change interrupt
-		//T0IF = 0	//timer0 overflow flag
-		//INTF = 0	//GP2 interrupt flag
-		//GPIF = 0	//ext pin change interrupt
-	T1CON	=	0x00; //clear unused timer
-	PIE1	=	0x00;	//nothing here is needed
-}*/
+// Gets the ADC value from AN0-AN6 , returns it as unsigned int 0-1023
 
-
-  /* GetADCValue:
- * Gets the ADC value from AN0-AN5 , returns it as unsigned int 0-1023
- */
 int GetADCValue(unsigned char Channel)
 {
     int temp_1 =0;
@@ -229,7 +175,7 @@ int GetDirection(void)  // the value is in ADC code
  int Turn_49A()
 {
         _49A_out = 1; 
-        //Bip(okay, 5399);
+        play (okay, 5399);
         //pause(32000);
         __delay_ms(100);
         

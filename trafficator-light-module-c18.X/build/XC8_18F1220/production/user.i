@@ -3185,9 +3185,10 @@ unsigned char __t3rd16on(void);
 # 1 "./user.h" 1
 # 13 "./user.h"
 void InitApp(void);
-
+void InitInterrupt(void);
 void hi_isr(void);
-void Bip(const char *sound, int size);
+void play (const char *sound, int size);
+
 void InitADC(unsigned char);
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
@@ -3200,7 +3201,7 @@ void ReversOn(void);
 
 extern unsigned char sample;
 extern volatile int wait;
-# 59 "./user.h"
+# 60 "./user.h"
 extern int _direction;
 
 extern int V_in_value;
@@ -3552,9 +3553,36 @@ void InitApp(void)
     TRISA = 0b11111011;
     TRISB = 0b10110110;
     ADCON2 = 0b00001111;
-# 123 "user.c"
+# 63 "user.c"
 }
-# 157 "user.c"
+
+void InitInterrupt(void)
+    {
+    GIE = 0;
+ OSCCON = 0xF2;
+
+
+
+ T2CON = 0x00;
+ PR2 = (8000000UL/4)/((11000));
+ TMR2IF = 0;
+ TMR2IE = 1;
+ TMR2ON = 1;
+# 89 "user.c"
+ CCP1CON = 0x0C;
+
+
+ CCPR1L=0;
+ DC1B1=0;
+ DC1B0=0;
+
+ PEIE = 1;
+ GIE=1;
+
+}
+
+
+
 int GetADCValue(unsigned char Channel)
 {
     int temp_1 =0;
@@ -3630,7 +3658,7 @@ int GetDirection(void)
  int Turn_49A()
 {
         PORTBbits.RB3 = 1;
-
+        play (okay, 5399);
 
         _delay((unsigned long)((100)*(8000000/4000.0)));
 

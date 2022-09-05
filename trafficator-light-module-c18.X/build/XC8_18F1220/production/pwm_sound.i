@@ -3181,9 +3181,10 @@ unsigned char __t3rd16on(void);
 # 1 "./user.h" 1
 # 13 "./user.h"
 void InitApp(void);
-
+void InitInterrupt(void);
 void hi_isr(void);
-void Bip(const char *sound, int size);
+void play (const char *sound, int size);
+
 void InitADC(unsigned char);
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
@@ -3196,7 +3197,7 @@ void ReversOn(void);
 
 extern unsigned char sample;
 extern volatile int wait;
-# 59 "./user.h"
+# 60 "./user.h"
 extern int _direction;
 
 extern int V_in_value;
@@ -3554,9 +3555,10 @@ void setPWM(unsigned char sample)
  DC1B1 = (sample&0x02)>>1;
  DC1B0 = (sample&0x01);
 }
-void Bip(const char *sound, int size)
+void play(const char *sound, int size)
 {
- int i;
+ InitInterrupt();
+    int i;
  for(i=0; i<size; i++)
  {
 
