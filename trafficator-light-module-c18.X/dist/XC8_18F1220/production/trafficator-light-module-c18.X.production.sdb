@@ -33,29 +33,29 @@
 [v _high_isr high_isr `IIH(v  1 e 1 0 ]
 "67
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]
-"85 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
+"99 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"93 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\pwm_sound.c
+"82 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\pwm_sound.c
 [v _setPWM setPWM `(v  1 e 1 0 ]
-"100
+"89
 [v _play play `(v  1 e 1 0 ]
 "39 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _InitApp InitApp `(v  1 e 1 0 ]
-"65
+"66
 [v _InitInterrupt InitInterrupt `(v  1 e 1 0 ]
-"103
+"110
 [v _GetADCValue GetADCValue `(i  1 e 2 0 ]
-"143
+"150
 [v _GetCurrentValue GetCurrentValue `(i  1 e 2 0 ]
-"152
+"159
 [v _GetDirection GetDirection `(i  1 e 2 0 ]
-"175
+"182
 [v _Turn_49A Turn_49A `(i  1 e 2 0 ]
-"210
+"216
 [v _AddRightBlinks AddRightBlinks `(v  1 e 1 0 ]
-"239
+"245
 [v _AddLeftBlinks AddLeftBlinks `(v  1 e 1 0 ]
-"268
+"274
 [v _ReversOn ReversOn `(v  1 e 1 0 ]
 "4 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X/ok-sound.h
 [v _okay okay `C[5399]uc  1 e 5399 0 ]
@@ -179,8 +179,8 @@
 [v _T2CON T2CON `VEuc  1 e 1 @4042 ]
 "2961
 [v _PR2 PR2 `VEuc  1 e 1 @4043 ]
-"3424
-[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"4033
+[v _INTCON INTCON `VEuc  1 e 1 @4082 ]
 "4559
 [v _DC1B0 DC1B0 `VEb  1 e 0 @32236 ]
 "4562
@@ -205,71 +205,71 @@
 [v _R_ch_in_value R_ch_in_value `i  1 e 2 0 ]
 "33
 [v _L_ch_in_value L_ch_in_value `i  1 e 2 0 ]
-"85 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
+"99 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"90
+"104
 [v main@Reverse_in_value Reverse_in_value `i  1 a 2 28 ]
-"135
+"149
 } 0
-"175 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"182 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _Turn_49A Turn_49A `(i  1 e 2 0 ]
 {
-"182
+"188
 [v Turn_49A@Current_value Current_value `i  1 a 2 26 ]
-"206
+"212
 } 0
-"100 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\pwm_sound.c
+"89 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\pwm_sound.c
 [v _play play `(v  1 e 1 0 ]
 {
-"103
+"92
 [v play@i i `i  1 a 2 9 ]
-"100
+"89
 [v play@sound sound `*.25Cuc  1 p 2 3 ]
 [v play@size size `i  1 p 2 5 ]
-"113
+"104
 } 0
-"93
+"82
 [v _setPWM setPWM `(v  1 e 1 0 ]
 {
 [v setPWM@sample sample `uc  1 a 1 wreg ]
 [v setPWM@sample sample `uc  1 a 1 wreg ]
-"96
+"85
 [v setPWM@sample sample `uc  1 a 1 2 ]
-"99
+"88
 } 0
-"65 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"66 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _InitInterrupt InitInterrupt `(v  1 e 1 0 ]
 {
-"99
+"106
 } 0
-"152
+"159
 [v _GetDirection GetDirection `(i  1 e 2 0 ]
 {
-"171
+"178
 } 0
-"143
+"150
 [v _GetCurrentValue GetCurrentValue `(i  1 e 2 0 ]
 {
-"146
+"153
 [v GetCurrentValue@V_out_value V_out_value `i  1 a 2 22 ]
-"145
+"152
 [v GetCurrentValue@V_in_value V_in_value `i  1 a 2 20 ]
-"148
+"155
 } 0
-"103
+"110
 [v _GetADCValue GetADCValue `(i  1 e 2 0 ]
 {
 [v GetADCValue@Channel Channel `uc  1 a 1 wreg ]
-"106
+"113
 [v GetADCValue@temp_2 temp_2 `i  1 a 2 16 ]
-"105
+"112
 [v GetADCValue@temp_1 temp_1 `i  1 a 2 14 ]
-"103
+"110
 [v GetADCValue@Channel Channel `uc  1 a 1 wreg ]
-"106
+"112
 [v GetADCValue@Channel Channel `uc  1 a 1 13 ]
-"137
+"144
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -284,25 +284,25 @@
 [v ___awdiv@divisor divisor `i  1 p 2 3 ]
 "41
 } 0
-"268 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
+"274 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\user.c
 [v _ReversOn ReversOn `(v  1 e 1 0 ]
 {
-"276
+"282
 } 0
 "39
 [v _InitApp InitApp `(v  1 e 1 0 ]
 {
-"63
+"64
 } 0
-"210
+"216
 [v _AddRightBlinks AddRightBlinks `(v  1 e 1 0 ]
 {
-"235
+"241
 } 0
-"239
+"245
 [v _AddLeftBlinks AddLeftBlinks `(v  1 e 1 0 ]
 {
-"264
+"270
 } 0
 "67 C:\Users\Al\Documents\MyProjects\trafficator-light-module-c18\trafficator-light-module-c18.X\interrupts.c
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]

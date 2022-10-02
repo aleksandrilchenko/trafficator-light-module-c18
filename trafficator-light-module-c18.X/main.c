@@ -81,6 +81,20 @@
 /******************************************************************************/
     int _direction;
 
+//#pragma interrupt_level 0
+//void __interrupt () hi_isr(void)
+    /*void __interrupt() ISR(void) 
+{
+    // a simple wait flag to wait for the time to feed the next sample into the PWM modulator
+    // kinda like the sampling period.
+	if(TMR2IF)
+	{
+		if(wait) wait--;
+
+		TMR2IF = 0;
+	}
+}*/
+
 
 void main()
 {

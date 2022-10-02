@@ -12,9 +12,7 @@
 
 void InitApp(void);         /* I/O and Peripheral Initialization */
 void InitInterrupt(void);
-void hi_isr(void);
 void play (const char *sound, int size);
-//void Bip (void);
 void InitADC(unsigned char);         /* I/O and Peripheral Initialization */
 int GetADCValue(unsigned char);
 int GetCurrentValue(void);
@@ -27,6 +25,7 @@ void ReversOn(void);
 
 extern unsigned char sample;
 extern volatile int wait;
+void pause(int cycles);
 
 
 /******************************************************************************/
@@ -52,13 +51,12 @@ extern volatile int wait;
 
     #define R_ch_out    PORTAbits.RA2
     #define L_ch_out    PORTBbits.RB0
-    #define _49A_out    PORTBbits.RB3
-    #define PWM_Pin     PORTBbits.RB6 //PWM P1C channel // RB5 must be input in Z-state
+    #define _49A_out    PORTBbits.RB2
+    #define PWM_Pin     PORTBbits.RB3 //PWM P1C channel // RB5 must be input in Z-state
     #define _49A_in     PORTAbits.RA4 //discrete input
 
 
 extern int _direction;
-
 extern int V_in_value;
 extern int V_out_value;
 extern int _49A_in_value;

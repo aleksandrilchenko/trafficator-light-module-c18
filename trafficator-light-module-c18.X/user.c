@@ -38,6 +38,7 @@
 
 void InitApp(void)
 {
+    INTCON = 0b00000000; // disable all ints
     /* TODO Initialize User Ports/Peripherals/Project here */
     /* Setup analog functionality and port direction */
     ADCON1 = 0b00010100;        // AN0,AN1,AN3,AN5,AN6 are analog inputs
@@ -45,7 +46,7 @@ void InitApp(void)
                                 /*1= Pin configured as a digital port
                                   0= Pin configured as an analog channel - digital input disabled and reads - 0*/
     TRISA = 0b11111011;
-    TRISB = 0b10110110;
+    TRISB = 0b10110010;
     ADCON2 = 0b00001111;        /*bit 7 ADFM:A/D Result Format Select bit
                                         1= Right justified 
                                         0= Left justified 
@@ -64,28 +65,34 @@ void InitApp(void)
 
 void InitInterrupt(void)
     {
-    GIE = 0;			// No INTs
-	OSCCON = 0xF2; // 0b11110010		// Master OSC at 8MHz RC INT with IDLE MODE
+	//OSCCON = 0xF2; // 0b11110010		// Master OSC at 8MHz RC INT with IDLE MODE
 
 	
 	// Timer 2: no interrupt (base period for the PWM on CCP)
 	T2CON = 0x00;	// Timer 2 off, FOSC/4, pre 1:1, post 1:1
 	PR2  = K_TMR2;	// Load comparator value (PWM period)
+    
+    // test code
+    //PR2= 0xFF;
+    //T2CKPS1 = 1; //TIMER2 prescaler 1:16
+    //T2CKPS0 = 0;
+    //TMR2ON = 1; //TIMER2 ON
+    // test code
 	TMR2IF = 0;		// Clear the interrupt flag
 	TMR2IE = 1;		// Enable timer 2 interrupt (not necessary for the PWM)
 	TMR2ON = 1;		// Start the timer and the PWM modulation!
 
 	/* CCP to turn off the sound
 	 * P1M1=  0
-	 * P1M0=  0  single output P1A for PWM mode
+	 * P1M0=  0  //single output P1A for PWM mode
 	 * DC1B1= 0
-	 * DC1B0= 0  lsb of pwm duty cycle
+	 * DC1B0= 0  //lsb of pwm duty cycle
 	 * CCP1M3=1
 	 * CCP1M2=1
 	 * CCP1M1=0
-	 * CCP1M0=0  PWM mode all active high
-	 *
+	 * CCP1M0=0  //PWM mode all active high
 	 */
+	 
 	CCP1CON = 0x0C; //0b1100
 
 	// Initial PWM value (no sound)
@@ -121,7 +128,7 @@ int GetADCValue(unsigned char Channel)
     __delay_ms(10);      // Time for Acqusition capacitor to charge up and show correct value
 	GO_nDONE  = 1;		  // Enable Go/Done
 	while(GO_nDONE)       // wait for conversion completion
-    ; 
+    
     //return ((ADRESH<<8)+ADRESL);   // Return 10 bit ADC value
     
     temp_1 = ((ADRESH<<8)+ADRESL); // measure adc (in first time)
@@ -174,9 +181,8 @@ int GetDirection(void)  // the value is in ADC code
   /*========  Turn On 49A  ==========*/    
  int Turn_49A()
 {
-        _49A_out = 1; 
+        _49A_out = 1;
         play (okay, 5399);
-        //pause(32000);
         __delay_ms(100);
         
         int Current_value = GetCurrentValue();
@@ -185,7 +191,7 @@ int GetDirection(void)  // the value is in ADC code
                 {
                 _49A_out = 1; 
                 __delay_ms(10);
-                //Bip(okay, 5399);
+                //play (okay, 5399);
                 GetDirection();
                 __delay_ms(10);
                 _49A_out = 0;                         
@@ -196,7 +202,7 @@ int GetDirection(void)  // the value is in ADC code
                 {
                 _49A_out = 1;
                 __delay_ms(100);
-                //Bip(okay, 5399);
+                //play (okay, 5399);
                 GetDirection();
                 __delay_ms(100);
                 _49A_out = 0;
@@ -212,21 +218,21 @@ int GetDirection(void)  // the value is in ADC code
             _49A_out = 0;
             L_ch_out = 0;    // latch the Left out to off state
             R_ch_out = 1;
-            //Bip(okay, 5399);
+            //play (okay, 5399);
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(500);
             if (_49A_in == 0)
             return;
             R_ch_out = 1;
-            //Bip(okay, 5399);
+            //play (okay, 5399);
             __delay_ms(300);
             R_ch_out = 0; 
             __delay_ms(500);
             if (_49A_in == 0)
             return;
             R_ch_out = 1;
-            //Bip(okay, 5399);
+            //play (okay, 5399);
             __delay_ms(300);
             R_ch_out = 0;
             L_ch_out = 0;
@@ -241,21 +247,21 @@ int GetDirection(void)  // the value is in ADC code
             _49A_out = 0;
             R_ch_out = 0;    // latch the Right out to off state
             L_ch_out = 1; 
-            //Bip(okay, 5399);
+            //play (okay, 5399);
             __delay_ms(300);
             L_ch_out = 0; 
             __delay_ms(500);
             if (_49A_in == 0)
             return;
             L_ch_out = 1;
-            //Bip(okay, 5399);
+            //play (okay, 5399);
             __delay_ms(300);
             L_ch_out = 0; 
             __delay_ms(500);
             if (_49A_in == 0)
             return;
             L_ch_out = 1; 
-            //Bip(okay, 5399);
+            //play (okay, 5399);
             __delay_ms(300);
             L_ch_out = 0; 
             R_ch_out = 0;    
@@ -269,7 +275,7 @@ int GetDirection(void)  // the value is in ADC code
             {
             L_ch_out = 1; 
             R_ch_out = 1;
-            //Bip(okay, 5399);
+            //play (okay, 5399);
             __delay_ms(120);
             L_ch_out = 0; R_ch_out = 0;
             __delay_ms(500);        

@@ -72,23 +72,12 @@
 #define ON  1
 #define OFF 0
 
-#include"ok-sound.h"
+#include "ok-sound.h"
 volatile int wait;
 
 // --------------------------------------------------------------------------
-//
-//#pragma interrupt_level 0
-void hi_isr(void)
-{
-    // a simple wait flag to wait for the time to feed the next sample into the PWM modulator
-    // kinda like the sampling period.
-	if(TMR2IF)
-	{
-		if(wait) wait--;
 
-		TMR2IF = 0;
-	}
-}
+
 
 void setPWM(unsigned char sample)
 {
@@ -110,6 +99,8 @@ void play(const char *sound, int size)
         wait=1;
 		while(wait);
 	}
+    PEIE = 0;			// Disable Low Priority Interrupts
+	GIE=0;				// Disable High Priority Interrupts
 }
 		
 void pause(int cycles)
@@ -119,26 +110,5 @@ void pause(int cycles)
 	while(wait);
 }
 
-
 // --------------------------------------------------------------------------
 //
-/*void Bip (void)
-{
-
-	//InitApp();
-
-	while(1)
-	{
-		
-		wait=1;
-		while(wait);
-
-		// Play the sound on the array 
-		play(okay, 5399);
-		
-		// Pause 4 secs
-		pause(32000);
-	}
-
-	while(1);
-}*/
