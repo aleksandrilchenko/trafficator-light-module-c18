@@ -1,0 +1,11 @@
+Do this in two steps. First generate the RAW file (in audacity, there is an option to export to headerless RAW audio file under Export -> Export Audio). Make sure you export to 8-bit signed or unsigned values.
+http://www.enide.net/webcms/index.php?page=pcm2pwm
+
+Then, using a linux tool called xxd, you convert the binary file into a c header file(I suppose you could do this with any hex viewer but I haven't tried). The header file has comma separated hexadecimal values of all samples of the audio in an array. You can copy from the array, and using a little scripting, convert those hexadecimal values into any representation.
+
+Here is the format that xxd -i input.raw outputs by default:
+
+unsigned char hel_raw[] = {
+  0x7e, 0x7e, ......
+};
+unsigned int hel_raw_len = 2555;

@@ -1,0 +1,26 @@
+  1. Address : *
+     Company : *
+     Phone/Fax : *
+     e-mail : *
+  2. Name : REL_PP_4BLINK
+  3. Quantity : 1/1 pts.
+  4. GERBER-files format : RS-274-X  [4.4](included apperture definitions)
+     Units : MILS
+  5. Type : FR-4
+  6. Dimensions : 48.3 x 20.4 mm
+     Thickness : 1.2 mm
+     Copper thickness : 50 or 30 mkm
+  7. Solder mask : Yes
+     Type of solder mask: red
+  8. Silk : No
+  9. GERBER-files:
+              top layer : .TOP
+           bottom layer : .BOT
+        top solder mask : .TMK
+     bottom solder mask : .BMK
+       
+                 border : .BRD
+            	  drill : .DRL
+                   
+ 
+With best regards, *.
