@@ -58,24 +58,12 @@
 #endif
 
 #include "user.h"
-
+#include "ok-sound.h"
 /******************************************************************************/
 /* pwm_sound Functions                                                             */
 /******************************************************************************/
 
-#include    <pic18.h>
-
-#define FOSC	8000000UL
-#define T2_FREQ	(11000)		// Between 8000Hz and 11025Hz (same as the WAV file)
-#define K_TMR2	 (FOSC/4)/(T2_FREQ) 
-
-#define ON  1
-#define OFF 0
-
-#include "ok-sound.h"
 volatile int wait;
-
-// --------------------------------------------------------------------------
 
 
 
@@ -101,14 +89,17 @@ void play(const char *sound, int size)
 	}
     PEIE = 0;			// Disable Low Priority Interrupts
 	GIE=0;				// Disable High Priority Interrupts
+    TMR2IF = 0;		// Clear the interrupt flag
+	TMR2IE = 0;		// Disable timer 2 interrupt (not necessary for the PWM)
+	TMR2ON = 0;		// Stop the timer and the PWM modulation!
 }
 		
-void pause(int cycles)
+/*void pause(int cycles)
 {
 	setPWM(0);
 	wait=cycles;
 	while(wait);
-}
+}*/
 
 // --------------------------------------------------------------------------
 //

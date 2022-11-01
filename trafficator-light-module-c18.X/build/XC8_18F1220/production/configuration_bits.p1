@@ -332,3 +332,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4388
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f1320.h: 4388: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"51 configuration_bits.c
+[p x OSC  =  INTIO2        ]
+"52
+[p x FSCM  =  OFF        ]
+"53
+[p x IESO  =  ON        ]
+"56
+[p x PWRT  =  ON         ]
+"57
+[p x BOR  =  OFF         ]
+"61
+[p x WDT  =  OFF         ]
+"62
+[p x WDTPS  =  32768     ]
+"65
+[p x MCLRE  =  OFF       ]
+"68
+[p x STVR  =  ON         ]
+"69
+[p x LVP  =  OFF         ]
+"72
+[p x CP0  =  OFF         ]
+"73
+[p x CP1  =  OFF         ]
+"76
+[p x CPB  =  OFF         ]
+"77
+[p x CPD  =  OFF         ]
+"80
+[p x WRT0  =  OFF        ]
+"81
+[p x WRT1  =  OFF        ]
+"84
+[p x WRTC  =  OFF        ]
+"85
+[p x WRTB  =  OFF        ]
+"86
+[p x WRTD  =  OFF        ]
+"89
+[p x EBTR0  =  OFF       ]
+"90
+[p x EBTR1  =  OFF       ]
+"93
+[; ;configuration_bits.c: 93: 
+[p x EBTRB  =  OFF       ]
